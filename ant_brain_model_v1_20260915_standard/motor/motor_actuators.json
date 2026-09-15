@@ -1,0 +1,27 @@
+{
+  "locomotion": {
+    "actuator": "THORACIC_TRIPOD_CPG",
+    "outputs": [
+      "SPEED_THROTTLE",
+      "ANGULAR_STEERING_BIAS"
+    ],
+    "max_speed_cm_s": 2.5,
+    "turning_rate_rad_s": 3.14
+  },
+  "gnathal": {
+    "actuator": "SUBESOPHAGEAL_MANDIBULAR_CLAW",
+    "actions": [
+      "GRASP_LEAF",
+      "PULP_SUBSTRATE",
+      "TROPHALLAXIS_EXCHANGE"
+    ]
+  },
+  "gaster": {
+    "actuator": "DUFOUR_TRAIL_GLAND",
+    "actions": [
+      "DEPOSIT_FOOD_TRAIL",
+      "DEPOSIT_HOME_TRAIL",
+      "STRIDULATE_ALARM"
+    ]
+  }
+}

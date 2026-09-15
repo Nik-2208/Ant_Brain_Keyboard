@@ -1,0 +1,230 @@
+[
+  {
+    "regionId": 0,
+    "systemId": "CHEMOSENSORY",
+    "name": "Left Antennal Lobe (AL-L)",
+    "code": "AL-L",
+    "ratio": 0.075,
+    "center3D": [
+      -0.75,
+      -0.45,
+      0.85
+    ],
+    "spread3D": [
+      0.25,
+      0.25,
+      0.25
+    ],
+    "colorHex": "#10b981",
+    "description": "Left chemosensory deutocerebrum processing odorant receptor antennal inputs."
+  },
+  {
+    "regionId": 1,
+    "systemId": "CHEMOSENSORY",
+    "name": "Right Antennal Lobe (AL-R)",
+    "code": "AL-R",
+    "ratio": 0.075,
+    "center3D": [
+      0.75,
+      -0.45,
+      0.85
+    ],
+    "spread3D": [
+      0.25,
+      0.25,
+      0.25
+    ],
+    "colorHex": "#10b981",
+    "description": "Right chemosensory deutocerebrum processing odorant receptor antennal inputs."
+  },
+  {
+    "regionId": 2,
+    "systemId": "VISUAL",
+    "name": "Left Optic Lobe (OL-L)",
+    "code": "OL-L",
+    "ratio": 0.075,
+    "center3D": [
+      -1.65,
+      0.15,
+      0.2
+    ],
+    "spread3D": [
+      0.35,
+      0.4,
+      0.35
+    ],
+    "colorHex": "#ec4899",
+    "description": "Left compound eye retinotopic processing, optic flow, and polarization vision."
+  },
+  {
+    "regionId": 3,
+    "systemId": "VISUAL",
+    "name": "Right Optic Lobe (OL-R)",
+    "code": "OL-R",
+    "ratio": 0.075,
+    "center3D": [
+      1.65,
+      0.15,
+      0.2
+    ],
+    "spread3D": [
+      0.35,
+      0.4,
+      0.35
+    ],
+    "colorHex": "#ec4899",
+    "description": "Right compound eye retinotopic processing, optic flow, and polarization vision."
+  },
+  {
+    "regionId": 4,
+    "systemId": "CENTRAL_INTEGRATION",
+    "name": "Central Complex (CX - EB/PB/FB)",
+    "code": "CX",
+    "ratio": 0.18,
+    "center3D": [
+      0,
+      0.15,
+      0.05
+    ],
+    "spread3D": [
+      0.45,
+      0.3,
+      0.3
+    ],
+    "colorHex": "#06b6d4",
+    "description": "16-wedge heading orientation ring attractor and Euclidean home-vector path integrator."
+  },
+  {
+    "regionId": 5,
+    "systemId": "ASSOCIATIVE_MEMORY",
+    "name": "Left Mushroom Body (MB-L)",
+    "code": "MB-L",
+    "ratio": 0.08,
+    "center3D": [
+      -0.9,
+      0.75,
+      -0.3
+    ],
+    "spread3D": [
+      0.35,
+      0.35,
+      0.35
+    ],
+    "colorHex": "#f59e0b",
+    "description": "Left high-dimensional associative olfactory-visual memory and conditioned valence."
+  },
+  {
+    "regionId": 6,
+    "systemId": "ASSOCIATIVE_MEMORY",
+    "name": "Right Mushroom Body (MB-R)",
+    "code": "MB-R",
+    "ratio": 0.08,
+    "center3D": [
+      0.9,
+      0.75,
+      -0.3
+    ],
+    "spread3D": [
+      0.35,
+      0.35,
+      0.35
+    ],
+    "colorHex": "#f59e0b",
+    "description": "Right high-dimensional associative olfactory-visual memory and conditioned valence."
+  },
+  {
+    "regionId": 7,
+    "systemId": "MOTOR_STEERING",
+    "name": "Subesophageal Zone (SEZ)",
+    "code": "SEZ",
+    "ratio": 0.08,
+    "center3D": [
+      0,
+      -0.85,
+      0.25
+    ],
+    "spread3D": [
+      0.3,
+      0.25,
+      0.3
+    ],
+    "colorHex": "#8b5cf6",
+    "description": "Gnathal premotor center controlling mandibular grasp, feeding, and forward thrust."
+  },
+  {
+    "regionId": 8,
+    "systemId": "MOTOR_STEERING",
+    "name": "Lateral Accessory Lobes (LAL)",
+    "code": "LAL",
+    "ratio": 0.08,
+    "center3D": [
+      0,
+      -0.25,
+      -0.45
+    ],
+    "spread3D": [
+      0.45,
+      0.25,
+      0.3
+    ],
+    "colorHex": "#a855f7",
+    "description": "Descending steering flip-flop network computing bilateral thoracic turn bias."
+  },
+  {
+    "regionId": 9,
+    "systemId": "SOCIAL_COMMUNICATION",
+    "name": "Social Recognition & Cuticular Hydrocarbon Zone",
+    "code": "SOC",
+    "ratio": 0.1,
+    "center3D": [
+      0,
+      -0.35,
+      0.5
+    ],
+    "spread3D": [
+      0.4,
+      0.3,
+      0.35
+    ],
+    "colorHex": "#14b8a6",
+    "description": "Nestmate recognition, trophallactic coordination, and trail recruitment processing."
+  },
+  {
+    "regionId": 10,
+    "systemId": "MOTIVATION_HOMEOSTASIS",
+    "name": "Protocerebral Motivation Hub",
+    "code": "MOTIV",
+    "ratio": 0.08,
+    "center3D": [
+      0,
+      0.45,
+      0.35
+    ],
+    "spread3D": [
+      0.35,
+      0.3,
+      0.3
+    ],
+    "colorHex": "#f97316",
+    "description": "Integrates metabolic energy reserves, hunger drive, and task demand priorities."
+  },
+  {
+    "regionId": 11,
+    "systemId": "NEUROMODULATORY",
+    "name": "Dopaminergic / Octopaminergic Modulatory Cluster",
+    "code": "MODUL",
+    "ratio": 0.02,
+    "center3D": [
+      0,
+      0,
+      0
+    ],
+    "spread3D": [
+      0.2,
+      0.2,
+      0.2
+    ],
+    "colorHex": "#e11d48",
+    "description": "Neuromodulatory neurons broadcasting reward prediction error (RPE) and arousal."
+  }
+]

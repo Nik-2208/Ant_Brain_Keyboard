@@ -1,0 +1,15 @@
+{
+  "stdp": {
+    "a_plus": 0.01,
+    "a_minus": 0.012,
+    "tau_plus_ms": 20,
+    "tau_minus_ms": 20,
+    "w_min": 0,
+    "w_max": 1
+  },
+  "three_factor_neuromodulation": {
+    "reward_transmitter": "OCTOPAMINE",
+    "punishment_transmitter": "DOPAMINE",
+    "eligibility_trace_decay": 0.95
+  }
+}

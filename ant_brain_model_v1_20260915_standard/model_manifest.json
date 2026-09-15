@@ -1,0 +1,108 @@
+{
+  "format": "ANT_BRAIN_EXECUTABLE_PACKAGE_V1",
+  "model_version": "v1.0.0",
+  "model_id": "model-1789457531582-yzi2",
+  "model_name": "FORAGE Policy Trained_Ant_Brain_Step_0",
+  "species_profile": "Formica rufa",
+  "brain_model_type": "BIOLOGICALLY INFORMED / MODELLED ANT BRAIN",
+  "hardware_profile": "STANDARD",
+  "created_at": "2026-09-15T07:32:11.837Z",
+  "random_seed": 42,
+  "neuron_count": 128,
+  "synapse_count": 256,
+  "neuropil_regions_count": 16,
+  "nervous_system_span": "HEAD_TO_TOE (Sensory Antennae -> AL -> MB/CX -> SEZ/LAL -> VNC -> Thoracic T1-T3 -> Abdomen)",
+  "body_model": {
+    "segments": [
+      "HEAD",
+      "ANTENNAE_L",
+      "ANTENNAE_R",
+      "MANDIBLES",
+      "THORAX",
+      "LEGS_T1",
+      "LEGS_T2",
+      "LEGS_T3",
+      "PETIOLE",
+      "GASTER"
+    ],
+    "locomotion": "TRIPOD_GAIT_CONTROLLER",
+    "energy_expenditure_rate": 0.1
+  },
+  "learning_system": {
+    "algorithm": "NEURAL",
+    "stdp_plasticity_enabled": true,
+    "neuromodulation_channels": [
+      "OCTOPAMINE (Appetitive / Arousal)",
+      "DOPAMINE (Aversive / Motor)",
+      "SEROTONIN (Pacing / Social)"
+    ],
+    "memory_subsystems": [
+      "WORKING_MEMORY",
+      "EPISODIC_SPATIAL_VECTORS",
+      "PHEROMONE_TRAIL_CACHE",
+      "TASK_STATE"
+    ]
+  },
+  "task_interface": {
+    "universal_action_space": [
+      "MOVE_FORWARD",
+      "STEER_LEFT",
+      "STEER_RIGHT",
+      "GRASP_MANDIBLES",
+      "RELEASE_MANDIBLES",
+      "DEPOSIT_PHEROMONE",
+      "STRIDULATE",
+      "WAIT"
+    ],
+    "observation_adapters": [
+      "foodLeft",
+      "foodCenter",
+      "foodRight",
+      "homeLeft",
+      "homeCenter",
+      "homeRight",
+      "foodOdorConcentration",
+      "nestOdorConcentration",
+      "obstacleCenter",
+      "predatorProximity",
+      "energy",
+      "hunger",
+      "carryingFoodAmount",
+      "threatAvoidance"
+    ],
+    "current_task": "FORAGE"
+  },
+  "colony_support": {
+    "multi_agent": true,
+    "polymorphic_castes": [
+      "QUEEN",
+      "MINIM",
+      "MINOR",
+      "MEDIA",
+      "MAJOR",
+      "SOLDIER"
+    ],
+    "agriculture": "ATTA_FUNGUS_GARDEN",
+    "collective_structures": [
+      "LIVING_BRIDGE",
+      "ACROBATIC_TOWER"
+    ]
+  },
+  "provenance_summary": {
+    "evidence_levels": {
+      "MEASURED": "Homologous sensory receptor / neuropil anatomical proportions",
+      "RECONSTRUCTED": "Mushroom body calyces, Antennal lobe microglomeruli geometry",
+      "INFERRED": "Central Complex 16-wedge ring attractor & path integration vector math",
+      "MODELLED": "LIF/STDP computational network weights, synthetic sensory-motor policy",
+      "HYPOTHETICAL": "Arbitrary synthetic reward task transfer weights"
+    },
+    "scientific_integrity_guarantee": "No artificial ant connectome data is presented as empirical truth. All modeled circuits preserve explicit provenance."
+  },
+  "offline_execution": true,
+  "entry_points": {
+    "python_run": "run_model.py",
+    "python_train": "train.py",
+    "python_infer": "infer.py",
+    "python_inspect": "inspect.py"
+  }
+}

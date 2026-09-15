@@ -1,0 +1,33 @@
+{
+  "olfaction": {
+    "sensors": [
+      "ANTENNA_LEFT_ORN",
+      "ANTENNA_RIGHT_ORN"
+    ],
+    "dynamic_range": [
+      0,
+      100
+    ],
+    "noise_variance": 0.02,
+    "latency_ms": 5
+  },
+  "celestial_polarization": {
+    "sensor": "DORSAL_RIM_AREA_OMMATIDIA",
+    "e_vector_wedges": 16,
+    "latency_ms": 2
+  },
+  "mechanosensation": {
+    "sensors": [
+      "TARSAL_SUBSTRATE_VIBRATION",
+      "PEDICEL_JOHNSTONS_ORGAN"
+    ],
+    "stridulation_detection": true
+  },
+  "internal_homeostasis": {
+    "sensors": [
+      "METABOLIC_ENERGY_RESERVE",
+      "STARVATION_STRESS",
+      "DAMAGE_NOCICEPTION"
+    ]
+  }
+}

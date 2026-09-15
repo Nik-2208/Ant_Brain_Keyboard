@@ -1,0 +1,8 @@
+{
+  "living_structures": [
+    "HORIZONTAL_GAP_BRIDGE",
+    "VERTICAL_ACROBATIC_TOWER"
+  ],
+  "tensile_grip_strength": 0.85,
+  "auto_dissolution_idle_seconds": 10
+}

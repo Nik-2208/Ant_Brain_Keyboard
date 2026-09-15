@@ -1,0 +1,19 @@
+{
+  "name": "ant-brain",
+  "version": "0.1.0",
+  "description": "An experimental biologically inspired ant intelligence and multi-agent learning platform.",
+  "main": "app.js",
+  "scripts": {
+    "start": "python serve_viz.py"
+  },
+  "author": {
+    "name": "Nikhilesh H. Chavda",
+    "url": "https://nik-portfolio-lime.vercel.app/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nik-2208"
+  },
+  "homepage": "https://github.com/Nik-2208",
+  "license": "MIT"
+}

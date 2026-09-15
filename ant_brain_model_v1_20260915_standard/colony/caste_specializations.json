@@ -1,0 +1,23 @@
+{
+  "QUEEN": {
+    "body_scale": 2.2,
+    "role": "REPRODUCTION",
+    "founding": "CLAUSTRAL"
+  },
+  "MINIM": {
+    "body_scale": 0.4,
+    "role": "FUNGUS_GARDEN_NURSE"
+  },
+  "MINOR": {
+    "body_scale": 0.7,
+    "role": "SUBTERRANEAN_DIGGER"
+  },
+  "MEDIA": {
+    "body_scale": 1,
+    "role": "LEAF_HARVEST_FORAGER"
+  },
+  "MAJOR": {
+    "body_scale": 1.6,
+    "role": "COLONY_DEFENSE_SOLDIER"
+  }
+}

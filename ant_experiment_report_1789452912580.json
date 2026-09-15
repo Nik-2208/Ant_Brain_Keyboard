@@ -1,0 +1,23 @@
+{
+  "version": "1.2.0-antbrain",
+  "timestamp": "2026-09-15T06:15:12.512Z",
+  "section": "PRESETS",
+  "presetId": "known-good-demo",
+  "ablations": {
+    "pheromones": false,
+    "memory": false,
+    "chemosensory": false,
+    "trophallaxis": false,
+    "predatorFear": false
+  },
+  "sweepResults": null,
+  "hypothesis": {
+    "text": "Elevated predator aggression reduces collective foraging efficiency by >40%",
+    "evaluation": null
+  },
+  "colonyMetrics": {
+    "population": 12,
+    "foodStored": 37.085522058326276,
+    "totalHarvested": 42.253333333333345
+  }
+}

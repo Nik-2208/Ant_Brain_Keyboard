@@ -1,0 +1,4098 @@
+[
+  {
+    "synapse_id": "SYN_00000",
+    "pre_neuron_id": "NEURON_0000",
+    "post_neuron_id": "NEURON_0001",
+    "weight": 0.5,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00001",
+    "pre_neuron_id": "NEURON_0000",
+    "post_neuron_id": "NEURON_0002",
+    "weight": 0.5499,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00002",
+    "pre_neuron_id": "NEURON_0001",
+    "post_neuron_id": "NEURON_0002",
+    "weight": 0.5993,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00003",
+    "pre_neuron_id": "NEURON_0001",
+    "post_neuron_id": "NEURON_0003",
+    "weight": 0.6478,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00004",
+    "pre_neuron_id": "NEURON_0002",
+    "post_neuron_id": "NEURON_0003",
+    "weight": 0.6947,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00005",
+    "pre_neuron_id": "NEURON_0002",
+    "post_neuron_id": "NEURON_0004",
+    "weight": 0.7397,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00006",
+    "pre_neuron_id": "NEURON_0003",
+    "post_neuron_id": "NEURON_0004",
+    "weight": 0.7823,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00007",
+    "pre_neuron_id": "NEURON_0003",
+    "post_neuron_id": "NEURON_0005",
+    "weight": 0.8221,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00008",
+    "pre_neuron_id": "NEURON_0004",
+    "post_neuron_id": "NEURON_0005",
+    "weight": 0.8587,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00009",
+    "pre_neuron_id": "NEURON_0004",
+    "post_neuron_id": "NEURON_0006",
+    "weight": 0.8917,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00010",
+    "pre_neuron_id": "NEURON_0005",
+    "post_neuron_id": "NEURON_0006",
+    "weight": 0.9207,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00011",
+    "pre_neuron_id": "NEURON_0005",
+    "post_neuron_id": "NEURON_0007",
+    "weight": 0.9456,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00012",
+    "pre_neuron_id": "NEURON_0006",
+    "post_neuron_id": "NEURON_0007",
+    "weight": 0.966,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00013",
+    "pre_neuron_id": "NEURON_0006",
+    "post_neuron_id": "NEURON_0008",
+    "weight": 0.9818,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00014",
+    "pre_neuron_id": "NEURON_0007",
+    "post_neuron_id": "NEURON_0008",
+    "weight": 0.9927,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00015",
+    "pre_neuron_id": "NEURON_0007",
+    "post_neuron_id": "NEURON_0009",
+    "weight": 0.9987,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00016",
+    "pre_neuron_id": "NEURON_0008",
+    "post_neuron_id": "NEURON_0009",
+    "weight": 0.9998,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00017",
+    "pre_neuron_id": "NEURON_0008",
+    "post_neuron_id": "NEURON_0010",
+    "weight": 0.9958,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00018",
+    "pre_neuron_id": "NEURON_0009",
+    "post_neuron_id": "NEURON_0010",
+    "weight": 0.9869,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00019",
+    "pre_neuron_id": "NEURON_0009",
+    "post_neuron_id": "NEURON_0011",
+    "weight": 0.9732,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00020",
+    "pre_neuron_id": "NEURON_0010",
+    "post_neuron_id": "NEURON_0011",
+    "weight": 0.9546,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00021",
+    "pre_neuron_id": "NEURON_0010",
+    "post_neuron_id": "NEURON_0012",
+    "weight": 0.9316,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00022",
+    "pre_neuron_id": "NEURON_0011",
+    "post_neuron_id": "NEURON_0012",
+    "weight": 0.9042,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00023",
+    "pre_neuron_id": "NEURON_0011",
+    "post_neuron_id": "NEURON_0013",
+    "weight": 0.8729,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00024",
+    "pre_neuron_id": "NEURON_0012",
+    "post_neuron_id": "NEURON_0013",
+    "weight": 0.8377,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00025",
+    "pre_neuron_id": "NEURON_0012",
+    "post_neuron_id": "NEURON_0014",
+    "weight": 0.7992,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00026",
+    "pre_neuron_id": "NEURON_0013",
+    "post_neuron_id": "NEURON_0014",
+    "weight": 0.7578,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00027",
+    "pre_neuron_id": "NEURON_0013",
+    "post_neuron_id": "NEURON_0015",
+    "weight": 0.7137,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00028",
+    "pre_neuron_id": "NEURON_0014",
+    "post_neuron_id": "NEURON_0015",
+    "weight": 0.6675,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00029",
+    "pre_neuron_id": "NEURON_0014",
+    "post_neuron_id": "NEURON_0016",
+    "weight": 0.6196,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00030",
+    "pre_neuron_id": "NEURON_0015",
+    "post_neuron_id": "NEURON_0016",
+    "weight": 0.5706,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00031",
+    "pre_neuron_id": "NEURON_0015",
+    "post_neuron_id": "NEURON_0017",
+    "weight": 0.5208,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00032",
+    "pre_neuron_id": "NEURON_0016",
+    "post_neuron_id": "NEURON_0017",
+    "weight": 0.4708,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00033",
+    "pre_neuron_id": "NEURON_0016",
+    "post_neuron_id": "NEURON_0018",
+    "weight": 0.4211,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00034",
+    "pre_neuron_id": "NEURON_0017",
+    "post_neuron_id": "NEURON_0018",
+    "weight": 0.3722,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00035",
+    "pre_neuron_id": "NEURON_0017",
+    "post_neuron_id": "NEURON_0019",
+    "weight": 0.3246,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00036",
+    "pre_neuron_id": "NEURON_0018",
+    "post_neuron_id": "NEURON_0019",
+    "weight": 0.2787,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00037",
+    "pre_neuron_id": "NEURON_0018",
+    "post_neuron_id": "NEURON_0020",
+    "weight": 0.2351,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00038",
+    "pre_neuron_id": "NEURON_0019",
+    "post_neuron_id": "NEURON_0020",
+    "weight": 0.1941,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00039",
+    "pre_neuron_id": "NEURON_0019",
+    "post_neuron_id": "NEURON_0021",
+    "weight": 0.1561,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00040",
+    "pre_neuron_id": "NEURON_0020",
+    "post_neuron_id": "NEURON_0021",
+    "weight": 0.1216,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00041",
+    "pre_neuron_id": "NEURON_0020",
+    "post_neuron_id": "NEURON_0022",
+    "weight": 0.0909,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00042",
+    "pre_neuron_id": "NEURON_0021",
+    "post_neuron_id": "NEURON_0022",
+    "weight": 0.0642,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00043",
+    "pre_neuron_id": "NEURON_0021",
+    "post_neuron_id": "NEURON_0023",
+    "weight": 0.0419,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00044",
+    "pre_neuron_id": "NEURON_0022",
+    "post_neuron_id": "NEURON_0023",
+    "weight": 0.0242,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00045",
+    "pre_neuron_id": "NEURON_0022",
+    "post_neuron_id": "NEURON_0024",
+    "weight": 0.0112,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00046",
+    "pre_neuron_id": "NEURON_0023",
+    "post_neuron_id": "NEURON_0024",
+    "weight": 0.0032,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00047",
+    "pre_neuron_id": "NEURON_0023",
+    "post_neuron_id": "NEURON_0025",
+    "weight": 0,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00048",
+    "pre_neuron_id": "NEURON_0024",
+    "post_neuron_id": "NEURON_0025",
+    "weight": 0.0019,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00049",
+    "pre_neuron_id": "NEURON_0024",
+    "post_neuron_id": "NEURON_0026",
+    "weight": 0.0088,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00050",
+    "pre_neuron_id": "NEURON_0025",
+    "post_neuron_id": "NEURON_0026",
+    "weight": 0.0205,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00051",
+    "pre_neuron_id": "NEURON_0025",
+    "post_neuron_id": "NEURON_0027",
+    "weight": 0.0371,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00052",
+    "pre_neuron_id": "NEURON_0026",
+    "post_neuron_id": "NEURON_0027",
+    "weight": 0.0583,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00053",
+    "pre_neuron_id": "NEURON_0026",
+    "post_neuron_id": "NEURON_0028",
+    "weight": 0.0839,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00054",
+    "pre_neuron_id": "NEURON_0027",
+    "post_neuron_id": "NEURON_0028",
+    "weight": 0.1136,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00055",
+    "pre_neuron_id": "NEURON_0027",
+    "post_neuron_id": "NEURON_0029",
+    "weight": 0.1472,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00056",
+    "pre_neuron_id": "NEURON_0028",
+    "post_neuron_id": "NEURON_0029",
+    "weight": 0.1844,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00057",
+    "pre_neuron_id": "NEURON_0028",
+    "post_neuron_id": "NEURON_0030",
+    "weight": 0.2247,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00058",
+    "pre_neuron_id": "NEURON_0029",
+    "post_neuron_id": "NEURON_0030",
+    "weight": 0.2677,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00059",
+    "pre_neuron_id": "NEURON_0029",
+    "post_neuron_id": "NEURON_0031",
+    "weight": 0.3131,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00060",
+    "pre_neuron_id": "NEURON_0030",
+    "post_neuron_id": "NEURON_0031",
+    "weight": 0.3603,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00061",
+    "pre_neuron_id": "NEURON_0030",
+    "post_neuron_id": "NEURON_0032",
+    "weight": 0.4089,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00062",
+    "pre_neuron_id": "NEURON_0031",
+    "post_neuron_id": "NEURON_0032",
+    "weight": 0.4585,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00063",
+    "pre_neuron_id": "NEURON_0031",
+    "post_neuron_id": "NEURON_0033",
+    "weight": 0.5084,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00064",
+    "pre_neuron_id": "NEURON_0032",
+    "post_neuron_id": "NEURON_0033",
+    "weight": 0.5583,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00065",
+    "pre_neuron_id": "NEURON_0032",
+    "post_neuron_id": "NEURON_0034",
+    "weight": 0.6076,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00066",
+    "pre_neuron_id": "NEURON_0033",
+    "post_neuron_id": "NEURON_0034",
+    "weight": 0.6558,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00067",
+    "pre_neuron_id": "NEURON_0033",
+    "post_neuron_id": "NEURON_0035",
+    "weight": 0.7024,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00068",
+    "pre_neuron_id": "NEURON_0034",
+    "post_neuron_id": "NEURON_0035",
+    "weight": 0.7471,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00069",
+    "pre_neuron_id": "NEURON_0034",
+    "post_neuron_id": "NEURON_0036",
+    "weight": 0.7892,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00070",
+    "pre_neuron_id": "NEURON_0035",
+    "post_neuron_id": "NEURON_0036",
+    "weight": 0.8285,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00071",
+    "pre_neuron_id": "NEURON_0035",
+    "post_neuron_id": "NEURON_0037",
+    "weight": 0.8645,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00072",
+    "pre_neuron_id": "NEURON_0036",
+    "post_neuron_id": "NEURON_0037",
+    "weight": 0.8968,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00073",
+    "pre_neuron_id": "NEURON_0036",
+    "post_neuron_id": "NEURON_0038",
+    "weight": 0.9252,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00074",
+    "pre_neuron_id": "NEURON_0037",
+    "post_neuron_id": "NEURON_0038",
+    "weight": 0.9494,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00075",
+    "pre_neuron_id": "NEURON_0037",
+    "post_neuron_id": "NEURON_0039",
+    "weight": 0.969,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00076",
+    "pre_neuron_id": "NEURON_0038",
+    "post_neuron_id": "NEURON_0039",
+    "weight": 0.984,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00077",
+    "pre_neuron_id": "NEURON_0038",
+    "post_neuron_id": "NEURON_0040",
+    "weight": 0.9941,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00078",
+    "pre_neuron_id": "NEURON_0039",
+    "post_neuron_id": "NEURON_0040",
+    "weight": 0.9993,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00079",
+    "pre_neuron_id": "NEURON_0039",
+    "post_neuron_id": "NEURON_0041",
+    "weight": 0.9995,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00080",
+    "pre_neuron_id": "NEURON_0040",
+    "post_neuron_id": "NEURON_0041",
+    "weight": 0.9947,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00081",
+    "pre_neuron_id": "NEURON_0040",
+    "post_neuron_id": "NEURON_0042",
+    "weight": 0.9849,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00082",
+    "pre_neuron_id": "NEURON_0041",
+    "post_neuron_id": "NEURON_0042",
+    "weight": 0.9704,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00083",
+    "pre_neuron_id": "NEURON_0041",
+    "post_neuron_id": "NEURON_0043",
+    "weight": 0.9511,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00084",
+    "pre_neuron_id": "NEURON_0042",
+    "post_neuron_id": "NEURON_0043",
+    "weight": 0.9273,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00085",
+    "pre_neuron_id": "NEURON_0042",
+    "post_neuron_id": "NEURON_0044",
+    "weight": 0.8992,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00086",
+    "pre_neuron_id": "NEURON_0043",
+    "post_neuron_id": "NEURON_0044",
+    "weight": 0.8672,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00087",
+    "pre_neuron_id": "NEURON_0043",
+    "post_neuron_id": "NEURON_0045",
+    "weight": 0.8315,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00088",
+    "pre_neuron_id": "NEURON_0044",
+    "post_neuron_id": "NEURON_0045",
+    "weight": 0.7925,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00089",
+    "pre_neuron_id": "NEURON_0044",
+    "post_neuron_id": "NEURON_0046",
+    "weight": 0.7505,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00090",
+    "pre_neuron_id": "NEURON_0045",
+    "post_neuron_id": "NEURON_0046",
+    "weight": 0.7061,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00091",
+    "pre_neuron_id": "NEURON_0045",
+    "post_neuron_id": "NEURON_0047",
+    "weight": 0.6595,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00092",
+    "pre_neuron_id": "NEURON_0046",
+    "post_neuron_id": "NEURON_0047",
+    "weight": 0.6114,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00093",
+    "pre_neuron_id": "NEURON_0046",
+    "post_neuron_id": "NEURON_0048",
+    "weight": 0.5622,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00094",
+    "pre_neuron_id": "NEURON_0047",
+    "post_neuron_id": "NEURON_0048",
+    "weight": 0.5124,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00095",
+    "pre_neuron_id": "NEURON_0047",
+    "post_neuron_id": "NEURON_0049",
+    "weight": 0.4624,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00096",
+    "pre_neuron_id": "NEURON_0048",
+    "post_neuron_id": "NEURON_0049",
+    "weight": 0.4128,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00097",
+    "pre_neuron_id": "NEURON_0048",
+    "post_neuron_id": "NEURON_0050",
+    "weight": 0.3641,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00098",
+    "pre_neuron_id": "NEURON_0049",
+    "post_neuron_id": "NEURON_0050",
+    "weight": 0.3168,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00099",
+    "pre_neuron_id": "NEURON_0049",
+    "post_neuron_id": "NEURON_0051",
+    "weight": 0.2712,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00100",
+    "pre_neuron_id": "NEURON_0050",
+    "post_neuron_id": "NEURON_0051",
+    "weight": 0.228,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00101",
+    "pre_neuron_id": "NEURON_0050",
+    "post_neuron_id": "NEURON_0052",
+    "weight": 0.1875,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00102",
+    "pre_neuron_id": "NEURON_0051",
+    "post_neuron_id": "NEURON_0052",
+    "weight": 0.1501,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00103",
+    "pre_neuron_id": "NEURON_0051",
+    "post_neuron_id": "NEURON_0053",
+    "weight": 0.1162,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00104",
+    "pre_neuron_id": "NEURON_0052",
+    "post_neuron_id": "NEURON_0053",
+    "weight": 0.0861,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00105",
+    "pre_neuron_id": "NEURON_0052",
+    "post_neuron_id": "NEURON_0054",
+    "weight": 0.0602,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00106",
+    "pre_neuron_id": "NEURON_0053",
+    "post_neuron_id": "NEURON_0054",
+    "weight": 0.0386,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00107",
+    "pre_neuron_id": "NEURON_0053",
+    "post_neuron_id": "NEURON_0055",
+    "weight": 0.0217,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00108",
+    "pre_neuron_id": "NEURON_0054",
+    "post_neuron_id": "NEURON_0055",
+    "weight": 0.0095,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00109",
+    "pre_neuron_id": "NEURON_0054",
+    "post_neuron_id": "NEURON_0056",
+    "weight": 0.0023,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00110",
+    "pre_neuron_id": "NEURON_0055",
+    "post_neuron_id": "NEURON_0056",
+    "weight": 0,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00111",
+    "pre_neuron_id": "NEURON_0055",
+    "post_neuron_id": "NEURON_0057",
+    "weight": 0.0027,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00112",
+    "pre_neuron_id": "NEURON_0056",
+    "post_neuron_id": "NEURON_0057",
+    "weight": 0.0104,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00113",
+    "pre_neuron_id": "NEURON_0056",
+    "post_neuron_id": "NEURON_0058",
+    "weight": 0.023,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00114",
+    "pre_neuron_id": "NEURON_0057",
+    "post_neuron_id": "NEURON_0058",
+    "weight": 0.0403,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00115",
+    "pre_neuron_id": "NEURON_0057",
+    "post_neuron_id": "NEURON_0059",
+    "weight": 0.0623,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00116",
+    "pre_neuron_id": "NEURON_0058",
+    "post_neuron_id": "NEURON_0059",
+    "weight": 0.0886,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00117",
+    "pre_neuron_id": "NEURON_0058",
+    "post_neuron_id": "NEURON_0060",
+    "weight": 0.119,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00118",
+    "pre_neuron_id": "NEURON_0059",
+    "post_neuron_id": "NEURON_0060",
+    "weight": 0.1532,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00119",
+    "pre_neuron_id": "NEURON_0059",
+    "post_neuron_id": "NEURON_0061",
+    "weight": 0.1909,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00120",
+    "pre_neuron_id": "NEURON_0060",
+    "post_neuron_id": "NEURON_0061",
+    "weight": 0.2317,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00121",
+    "pre_neuron_id": "NEURON_0060",
+    "post_neuron_id": "NEURON_0062",
+    "weight": 0.2752,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00122",
+    "pre_neuron_id": "NEURON_0061",
+    "post_neuron_id": "NEURON_0062",
+    "weight": 0.3209,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00123",
+    "pre_neuron_id": "NEURON_0061",
+    "post_neuron_id": "NEURON_0063",
+    "weight": 0.3684,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00124",
+    "pre_neuron_id": "NEURON_0062",
+    "post_neuron_id": "NEURON_0063",
+    "weight": 0.4172,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00125",
+    "pre_neuron_id": "NEURON_0062",
+    "post_neuron_id": "NEURON_0064",
+    "weight": 0.4668,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00126",
+    "pre_neuron_id": "NEURON_0063",
+    "post_neuron_id": "NEURON_0064",
+    "weight": 0.5168,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00127",
+    "pre_neuron_id": "NEURON_0063",
+    "post_neuron_id": "NEURON_0065",
+    "weight": 0.5666,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00128",
+    "pre_neuron_id": "NEURON_0064",
+    "post_neuron_id": "NEURON_0065",
+    "weight": 0.6158,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00129",
+    "pre_neuron_id": "NEURON_0064",
+    "post_neuron_id": "NEURON_0066",
+    "weight": 0.6637,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00130",
+    "pre_neuron_id": "NEURON_0065",
+    "post_neuron_id": "NEURON_0066",
+    "weight": 0.7101,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00131",
+    "pre_neuron_id": "NEURON_0065",
+    "post_neuron_id": "NEURON_0067",
+    "weight": 0.7543,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00132",
+    "pre_neuron_id": "NEURON_0066",
+    "post_neuron_id": "NEURON_0067",
+    "weight": 0.796,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00133",
+    "pre_neuron_id": "NEURON_0066",
+    "post_neuron_id": "NEURON_0068",
+    "weight": 0.8348,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00134",
+    "pre_neuron_id": "NEURON_0067",
+    "post_neuron_id": "NEURON_0068",
+    "weight": 0.8702,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00135",
+    "pre_neuron_id": "NEURON_0067",
+    "post_neuron_id": "NEURON_0069",
+    "weight": 0.9019,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00136",
+    "pre_neuron_id": "NEURON_0068",
+    "post_neuron_id": "NEURON_0069",
+    "weight": 0.9296,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00137",
+    "pre_neuron_id": "NEURON_0068",
+    "post_neuron_id": "NEURON_0070",
+    "weight": 0.953,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00138",
+    "pre_neuron_id": "NEURON_0069",
+    "post_neuron_id": "NEURON_0070",
+    "weight": 0.9718,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00139",
+    "pre_neuron_id": "NEURON_0069",
+    "post_neuron_id": "NEURON_0071",
+    "weight": 0.986,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00140",
+    "pre_neuron_id": "NEURON_0070",
+    "post_neuron_id": "NEURON_0071",
+    "weight": 0.9953,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00141",
+    "pre_neuron_id": "NEURON_0070",
+    "post_neuron_id": "NEURON_0072",
+    "weight": 0.9997,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00142",
+    "pre_neuron_id": "NEURON_0071",
+    "post_neuron_id": "NEURON_0072",
+    "weight": 0.999,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00143",
+    "pre_neuron_id": "NEURON_0071",
+    "post_neuron_id": "NEURON_0073",
+    "weight": 0.9934,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00144",
+    "pre_neuron_id": "NEURON_0072",
+    "post_neuron_id": "NEURON_0073",
+    "weight": 0.9828,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00145",
+    "pre_neuron_id": "NEURON_0072",
+    "post_neuron_id": "NEURON_0074",
+    "weight": 0.9674,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00146",
+    "pre_neuron_id": "NEURON_0073",
+    "post_neuron_id": "NEURON_0074",
+    "weight": 0.9474,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00147",
+    "pre_neuron_id": "NEURON_0073",
+    "post_neuron_id": "NEURON_0075",
+    "weight": 0.9229,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00148",
+    "pre_neuron_id": "NEURON_0074",
+    "post_neuron_id": "NEURON_0075",
+    "weight": 0.8941,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00149",
+    "pre_neuron_id": "NEURON_0074",
+    "post_neuron_id": "NEURON_0076",
+    "weight": 0.8614,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00150",
+    "pre_neuron_id": "NEURON_0075",
+    "post_neuron_id": "NEURON_0076",
+    "weight": 0.8251,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00151",
+    "pre_neuron_id": "NEURON_0075",
+    "post_neuron_id": "NEURON_0077",
+    "weight": 0.7856,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00152",
+    "pre_neuron_id": "NEURON_0076",
+    "post_neuron_id": "NEURON_0077",
+    "weight": 0.7432,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00153",
+    "pre_neuron_id": "NEURON_0076",
+    "post_neuron_id": "NEURON_0078",
+    "weight": 0.6984,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00154",
+    "pre_neuron_id": "NEURON_0077",
+    "post_neuron_id": "NEURON_0078",
+    "weight": 0.6516,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00155",
+    "pre_neuron_id": "NEURON_0077",
+    "post_neuron_id": "NEURON_0079",
+    "weight": 0.6032,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00156",
+    "pre_neuron_id": "NEURON_0078",
+    "post_neuron_id": "NEURON_0079",
+    "weight": 0.5539,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00157",
+    "pre_neuron_id": "NEURON_0078",
+    "post_neuron_id": "NEURON_0080",
+    "weight": 0.504,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00158",
+    "pre_neuron_id": "NEURON_0079",
+    "post_neuron_id": "NEURON_0080",
+    "weight": 0.454,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00159",
+    "pre_neuron_id": "NEURON_0079",
+    "post_neuron_id": "NEURON_0081",
+    "weight": 0.4046,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00160",
+    "pre_neuron_id": "NEURON_0080",
+    "post_neuron_id": "NEURON_0081",
+    "weight": 0.356,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00161",
+    "pre_neuron_id": "NEURON_0080",
+    "post_neuron_id": "NEURON_0082",
+    "weight": 0.309,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00162",
+    "pre_neuron_id": "NEURON_0081",
+    "post_neuron_id": "NEURON_0082",
+    "weight": 0.2638,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00163",
+    "pre_neuron_id": "NEURON_0081",
+    "post_neuron_id": "NEURON_0083",
+    "weight": 0.221,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00164",
+    "pre_neuron_id": "NEURON_0082",
+    "post_neuron_id": "NEURON_0083",
+    "weight": 0.1809,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00165",
+    "pre_neuron_id": "NEURON_0082",
+    "post_neuron_id": "NEURON_0084",
+    "weight": 0.1441,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00166",
+    "pre_neuron_id": "NEURON_0083",
+    "post_neuron_id": "NEURON_0084",
+    "weight": 0.1108,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00167",
+    "pre_neuron_id": "NEURON_0083",
+    "post_neuron_id": "NEURON_0085",
+    "weight": 0.0814,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00168",
+    "pre_neuron_id": "NEURON_0084",
+    "post_neuron_id": "NEURON_0085",
+    "weight": 0.0562,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00169",
+    "pre_neuron_id": "NEURON_0084",
+    "post_neuron_id": "NEURON_0086",
+    "weight": 0.0354,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00170",
+    "pre_neuron_id": "NEURON_0085",
+    "post_neuron_id": "NEURON_0086",
+    "weight": 0.0193,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00171",
+    "pre_neuron_id": "NEURON_0085",
+    "post_neuron_id": "NEURON_0087",
+    "weight": 0.008,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00172",
+    "pre_neuron_id": "NEURON_0086",
+    "post_neuron_id": "NEURON_0087",
+    "weight": 0.0015,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00173",
+    "pre_neuron_id": "NEURON_0086",
+    "post_neuron_id": "NEURON_0088",
+    "weight": 0.0001,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00174",
+    "pre_neuron_id": "NEURON_0087",
+    "post_neuron_id": "NEURON_0088",
+    "weight": 0.0037,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00175",
+    "pre_neuron_id": "NEURON_0087",
+    "post_neuron_id": "NEURON_0089",
+    "weight": 0.0122,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00176",
+    "pre_neuron_id": "NEURON_0088",
+    "post_neuron_id": "NEURON_0089",
+    "weight": 0.0256,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00177",
+    "pre_neuron_id": "NEURON_0088",
+    "post_neuron_id": "NEURON_0090",
+    "weight": 0.0437,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00178",
+    "pre_neuron_id": "NEURON_0089",
+    "post_neuron_id": "NEURON_0090",
+    "weight": 0.0664,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00179",
+    "pre_neuron_id": "NEURON_0089",
+    "post_neuron_id": "NEURON_0091",
+    "weight": 0.0934,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00180",
+    "pre_neuron_id": "NEURON_0090",
+    "post_neuron_id": "NEURON_0091",
+    "weight": 0.1245,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00181",
+    "pre_neuron_id": "NEURON_0090",
+    "post_neuron_id": "NEURON_0092",
+    "weight": 0.1593,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00182",
+    "pre_neuron_id": "NEURON_0091",
+    "post_neuron_id": "NEURON_0092",
+    "weight": 0.1976,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00183",
+    "pre_neuron_id": "NEURON_0091",
+    "post_neuron_id": "NEURON_0093",
+    "weight": 0.2388,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00184",
+    "pre_neuron_id": "NEURON_0092",
+    "post_neuron_id": "NEURON_0093",
+    "weight": 0.2827,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00185",
+    "pre_neuron_id": "NEURON_0092",
+    "post_neuron_id": "NEURON_0094",
+    "weight": 0.3288,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00186",
+    "pre_neuron_id": "NEURON_0093",
+    "post_neuron_id": "NEURON_0094",
+    "weight": 0.3765,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00187",
+    "pre_neuron_id": "NEURON_0093",
+    "post_neuron_id": "NEURON_0095",
+    "weight": 0.4255,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00188",
+    "pre_neuron_id": "NEURON_0094",
+    "post_neuron_id": "NEURON_0095",
+    "weight": 0.4752,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00189",
+    "pre_neuron_id": "NEURON_0094",
+    "post_neuron_id": "NEURON_0096",
+    "weight": 0.5252,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00190",
+    "pre_neuron_id": "NEURON_0095",
+    "post_neuron_id": "NEURON_0096",
+    "weight": 0.5749,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00191",
+    "pre_neuron_id": "NEURON_0095",
+    "post_neuron_id": "NEURON_0097",
+    "weight": 0.6239,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00192",
+    "pre_neuron_id": "NEURON_0096",
+    "post_neuron_id": "NEURON_0097",
+    "weight": 0.6717,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00193",
+    "pre_neuron_id": "NEURON_0096",
+    "post_neuron_id": "NEURON_0098",
+    "weight": 0.7177,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00194",
+    "pre_neuron_id": "NEURON_0097",
+    "post_neuron_id": "NEURON_0098",
+    "weight": 0.7615,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00195",
+    "pre_neuron_id": "NEURON_0097",
+    "post_neuron_id": "NEURON_0099",
+    "weight": 0.8028,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00196",
+    "pre_neuron_id": "NEURON_0098",
+    "post_neuron_id": "NEURON_0099",
+    "weight": 0.841,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00197",
+    "pre_neuron_id": "NEURON_0098",
+    "post_neuron_id": "NEURON_0100",
+    "weight": 0.8758,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00198",
+    "pre_neuron_id": "NEURON_0099",
+    "post_neuron_id": "NEURON_0100",
+    "weight": 0.9068,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00199",
+    "pre_neuron_id": "NEURON_0099",
+    "post_neuron_id": "NEURON_0101",
+    "weight": 0.9338,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00200",
+    "pre_neuron_id": "NEURON_0100",
+    "post_neuron_id": "NEURON_0101",
+    "weight": 0.9565,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00201",
+    "pre_neuron_id": "NEURON_0100",
+    "post_neuron_id": "NEURON_0102",
+    "weight": 0.9746,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00202",
+    "pre_neuron_id": "NEURON_0101",
+    "post_neuron_id": "NEURON_0102",
+    "weight": 0.9879,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00203",
+    "pre_neuron_id": "NEURON_0101",
+    "post_neuron_id": "NEURON_0103",
+    "weight": 0.9964,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00204",
+    "pre_neuron_id": "NEURON_0102",
+    "post_neuron_id": "NEURON_0103",
+    "weight": 0.9999,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00205",
+    "pre_neuron_id": "NEURON_0102",
+    "post_neuron_id": "NEURON_0104",
+    "weight": 0.9984,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00206",
+    "pre_neuron_id": "NEURON_0103",
+    "post_neuron_id": "NEURON_0104",
+    "weight": 0.992,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00207",
+    "pre_neuron_id": "NEURON_0103",
+    "post_neuron_id": "NEURON_0105",
+    "weight": 0.9806,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00208",
+    "pre_neuron_id": "NEURON_0104",
+    "post_neuron_id": "NEURON_0105",
+    "weight": 0.9644,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00209",
+    "pre_neuron_id": "NEURON_0104",
+    "post_neuron_id": "NEURON_0106",
+    "weight": 0.9436,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00210",
+    "pre_neuron_id": "NEURON_0105",
+    "post_neuron_id": "NEURON_0106",
+    "weight": 0.9183,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00211",
+    "pre_neuron_id": "NEURON_0105",
+    "post_neuron_id": "NEURON_0107",
+    "weight": 0.8889,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00212",
+    "pre_neuron_id": "NEURON_0106",
+    "post_neuron_id": "NEURON_0107",
+    "weight": 0.8556,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00213",
+    "pre_neuron_id": "NEURON_0106",
+    "post_neuron_id": "NEURON_0108",
+    "weight": 0.8187,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00214",
+    "pre_neuron_id": "NEURON_0107",
+    "post_neuron_id": "NEURON_0108",
+    "weight": 0.7787,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00215",
+    "pre_neuron_id": "NEURON_0107",
+    "post_neuron_id": "NEURON_0109",
+    "weight": 0.7358,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00216",
+    "pre_neuron_id": "NEURON_0108",
+    "post_neuron_id": "NEURON_0109",
+    "weight": 0.6906,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00217",
+    "pre_neuron_id": "NEURON_0108",
+    "post_neuron_id": "NEURON_0110",
+    "weight": 0.6435,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00218",
+    "pre_neuron_id": "NEURON_0109",
+    "post_neuron_id": "NEURON_0110",
+    "weight": 0.595,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00219",
+    "pre_neuron_id": "NEURON_0109",
+    "post_neuron_id": "NEURON_0111",
+    "weight": 0.5455,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00220",
+    "pre_neuron_id": "NEURON_0110",
+    "post_neuron_id": "NEURON_0111",
+    "weight": 0.4956,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00221",
+    "pre_neuron_id": "NEURON_0110",
+    "post_neuron_id": "NEURON_0112",
+    "weight": 0.4457,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00222",
+    "pre_neuron_id": "NEURON_0111",
+    "post_neuron_id": "NEURON_0112",
+    "weight": 0.3963,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00223",
+    "pre_neuron_id": "NEURON_0111",
+    "post_neuron_id": "NEURON_0113",
+    "weight": 0.348,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00224",
+    "pre_neuron_id": "NEURON_0112",
+    "post_neuron_id": "NEURON_0113",
+    "weight": 0.3012,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00225",
+    "pre_neuron_id": "NEURON_0112",
+    "post_neuron_id": "NEURON_0114",
+    "weight": 0.2564,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00226",
+    "pre_neuron_id": "NEURON_0113",
+    "post_neuron_id": "NEURON_0114",
+    "weight": 0.214,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00227",
+    "pre_neuron_id": "NEURON_0113",
+    "post_neuron_id": "NEURON_0115",
+    "weight": 0.1745,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00228",
+    "pre_neuron_id": "NEURON_0114",
+    "post_neuron_id": "NEURON_0115",
+    "weight": 0.1383,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00229",
+    "pre_neuron_id": "NEURON_0114",
+    "post_neuron_id": "NEURON_0116",
+    "weight": 0.1056,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00230",
+    "pre_neuron_id": "NEURON_0115",
+    "post_neuron_id": "NEURON_0116",
+    "weight": 0.0769,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00231",
+    "pre_neuron_id": "NEURON_0115",
+    "post_neuron_id": "NEURON_0117",
+    "weight": 0.0524,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00232",
+    "pre_neuron_id": "NEURON_0116",
+    "post_neuron_id": "NEURON_0117",
+    "weight": 0.0324,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00233",
+    "pre_neuron_id": "NEURON_0116",
+    "post_neuron_id": "NEURON_0118",
+    "weight": 0.0171,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00234",
+    "pre_neuron_id": "NEURON_0117",
+    "post_neuron_id": "NEURON_0118",
+    "weight": 0.0065,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00235",
+    "pre_neuron_id": "NEURON_0117",
+    "post_neuron_id": "NEURON_0119",
+    "weight": 0.001,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00236",
+    "pre_neuron_id": "NEURON_0118",
+    "post_neuron_id": "NEURON_0119",
+    "weight": 0.0004,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00237",
+    "pre_neuron_id": "NEURON_0118",
+    "post_neuron_id": "NEURON_0120",
+    "weight": 0.0048,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00238",
+    "pre_neuron_id": "NEURON_0119",
+    "post_neuron_id": "NEURON_0120",
+    "weight": 0.0141,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00239",
+    "pre_neuron_id": "NEURON_0119",
+    "post_neuron_id": "NEURON_0121",
+    "weight": 0.0283,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00240",
+    "pre_neuron_id": "NEURON_0120",
+    "post_neuron_id": "NEURON_0121",
+    "weight": 0.0472,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00241",
+    "pre_neuron_id": "NEURON_0120",
+    "post_neuron_id": "NEURON_0122",
+    "weight": 0.0706,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00242",
+    "pre_neuron_id": "NEURON_0121",
+    "post_neuron_id": "NEURON_0122",
+    "weight": 0.0984,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00243",
+    "pre_neuron_id": "NEURON_0121",
+    "post_neuron_id": "NEURON_0123",
+    "weight": 0.1301,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00244",
+    "pre_neuron_id": "NEURON_0122",
+    "post_neuron_id": "NEURON_0123",
+    "weight": 0.1655,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00245",
+    "pre_neuron_id": "NEURON_0122",
+    "post_neuron_id": "NEURON_0124",
+    "weight": 0.2043,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00246",
+    "pre_neuron_id": "NEURON_0123",
+    "post_neuron_id": "NEURON_0124",
+    "weight": 0.2461,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00247",
+    "pre_neuron_id": "NEURON_0123",
+    "post_neuron_id": "NEURON_0125",
+    "weight": 0.2903,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00248",
+    "pre_neuron_id": "NEURON_0124",
+    "post_neuron_id": "NEURON_0125",
+    "weight": 0.3367,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00249",
+    "pre_neuron_id": "NEURON_0124",
+    "post_neuron_id": "NEURON_0126",
+    "weight": 0.3847,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00250",
+    "pre_neuron_id": "NEURON_0125",
+    "post_neuron_id": "NEURON_0126",
+    "weight": 0.4338,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00251",
+    "pre_neuron_id": "NEURON_0125",
+    "post_neuron_id": "NEURON_0127",
+    "weight": 0.4836,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "OCTOPAMINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00252",
+    "pre_neuron_id": "NEURON_0126",
+    "post_neuron_id": "NEURON_0127",
+    "weight": 0.5336,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00253",
+    "pre_neuron_id": "NEURON_0126",
+    "post_neuron_id": "NEURON_0000",
+    "weight": 0.5832,
+    "delay_ms": 1.5,
+    "type": "INHIBITORY",
+    "neurotransmitter": "GABA",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00254",
+    "pre_neuron_id": "NEURON_0127",
+    "post_neuron_id": "NEURON_0000",
+    "weight": 0.632,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  },
+  {
+    "synapse_id": "SYN_00255",
+    "pre_neuron_id": "NEURON_0127",
+    "post_neuron_id": "NEURON_0001",
+    "weight": 0.6795,
+    "delay_ms": 1.5,
+    "type": "EXCITATORY",
+    "neurotransmitter": "ACETYLCHOLINE",
+    "plasticity_rule": "STDP_THREE_FACTOR_OCTOPAMINE",
+    "release_probability": 0.85,
+    "provenance": {
+      "classification": "BIOLOGICALLY_INFORMED_MODEL",
+      "evidence": "MODELLED",
+      "confidence": 0.92
+    }
+  }
+]

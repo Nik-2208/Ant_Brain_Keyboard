@@ -1,0 +1,6 @@
+metric,before_training,after_training
+Success Rate (%),16.0,18.0
+Avg Steps,7.00,7.00
+Avg Reward,-0.590,-0.530
+Gen Test: Random Starts Success (%),N/A,4.0
+Gen Test: Inverted Layout Success (%),N/A,12.0

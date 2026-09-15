@@ -1,0 +1,19 @@
+{
+  "subsystems": {
+    "working_memory": {
+      "capacity": 8,
+      "decay_half_life_s": 15
+    },
+    "spatial_path_integration": {
+      "accumulator": "CENTRAL_COMPLEX_FAN_SHAPED_BODY",
+      "vector_decay_rate": 0.001
+    },
+    "episodic_food_site_memory": {
+      "capacity": 16,
+      "associative_weights": "MUSHROOM_BODY_OUTPUT"
+    },
+    "pheromone_trail_cache": {
+      "memory_points": 32
+    }
+  }
+}

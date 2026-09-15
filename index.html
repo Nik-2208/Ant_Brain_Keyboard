@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ant Keyboard Task - Multi-Agent & Parallel 3D Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=3.0">
+    <!-- Import Three.js & OrbitControls via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- Canvas Confetti for victory animations -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- TOP HEADER BAR -->
+        <header class="header-bar">
+            <div class="brand">
+                <span class="ant-icon">🐜</span>
+                <h1>ANT BRAIN <span class="tag" style="background: rgba(0, 242, 254, 0.15); color: var(--accent-cyan); font-weight: 600; border: 1px solid rgba(0, 242, 254, 0.4);">Created & Developed by Nikhilesh H. Chavda</span> <span class="tag">ant_brain_model_v1_20260915_standard</span></h1>
+            </div>
+            
+            <div class="header-controls">
+                <div class="control-group">
+                    <label>MODE:</label>
+                    <select id="mode-select" class="select-input">
+                        <option value="INDIVIDUAL">INDIVIDUAL (1 Ant / 1 Keyboard)</option>
+                        <option value="COLLABORATIVE" selected>COLLABORATIVE (Multi-Ant / 1 Keyboard)</option>
+                        <option value="PARALLEL">PARALLEL (Multi-Ant / 2 Keyboards)</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>ANTS:</label>
+                    <select id="ants-select" class="select-input small">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>TARGET MODE:</label>
+                    <select id="target-mode-select" class="select-input">
+                        <option value="SINGLE">SINGLE LETTER</option>
+                        <option value="SEQUENCE" selected>WORD / SEQUENCE</option>
+                    </select>
+                </div>
+
+                <div id="single-letter-container" class="control-group" style="display: none;">
+                    <label>KEY:</label>
+                    <select id="single-key-select" class="select-input small font-mono">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E" selected>E</option>
+                        <option value="F">F</option>
+                    </select>
+                </div>
+
+                <div id="sequence-container" class="control-group">
+                    <label>SEQUENCE:</label>
+                    <select id="sequence-preset-select" class="select-input font-mono">
+                        <option value="FACE" selected>FACE</option>
+                        <option value="CAFE">CAFE</option>
+                        <option value="BAD">BAD</option>
+                        <option value="DECAF">DECAF</option>
+                        <option value="ABC">ABC</option>
+                        <option value="FED">FED</option>
+                        <option value="CUSTOM">Custom (A-F)...</option>
+                    </select>
+                    <input type="text" id="custom-sequence-input" class="text-input font-mono" placeholder="e.g. BADE" maxlength="8" style="display: none; width: 90px; text-transform: uppercase;">
+                </div>
+                <div class="control-group">
+                    <button id="btn-about" class="icon-btn" title="Project Credits & Attribution">ℹ️ About</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN 3D VIEWPORT CONTAINER -->
+        <main class="viewport-container" id="main-viewport-container">
+            <div id="split-wrapper" class="split-wrapper">
+                <!-- 3D KEYBOARD / SIMULATION -->
+                <div id="pane-simulation" class="split-pane pane-simulation" style="flex: 1 1 100%;">
+                    <div class="pane-overlay-header">
+                        <span class="pane-title">🐜 ANT SIMULATION</span>
+                        <div class="pane-actions">
+                            <button id="btn-fullscreen-sim" class="pane-btn" title="Fullscreen Simulation">⛶ Sim</button>
+                        </div>
+                    </div>
+                    <div id="canvas-3d" class="viewport-canvas"></div>
+                </div>
+            </div>
+
+            <!-- LEFT MULTI-ANT TELEMETRY PANEL -->
+            <aside class="panel left-panel glass font-mono" id="panel-left">
+                <div class="panel-header">
+                    <h2>DECENTRALIZED COLONY TELEMETRY</h2>
+                    <span id="state-badge" class="badge badge-searching">DECENTRALIZED</span>
+                </div>
+                
+                <div class="metric-row">
+                    <span class="label">ACTIVE MODE</span>
+                    <span id="val-mode" class="value highlight">COLLABORATIVE</span>
+                </div>
+
+                <div class="metric-row">
+                    <span class="label">COLONY POPULATION</span>
+                    <span id="val-ant-count" class="value">3 Ants</span>
+                </div>
+
+                <!-- DECENTRALIZED COLONY STATE SUMMARY -->
+                <div class="collaboration-summary-card">
+                    <div class="collab-header">
+                        <span class="collab-title">COLONY ROLE & RECRUITMENT STATUS</span>
+                        <span id="val-collab-mode-badge" class="sub-badge">ADAPTIVE</span>
+                    </div>
+                    <div class="collab-metrics-grid">
+                        <div class="collab-stat"><span class="lbl">FORAGERS</span><span id="stat-foragers" class="val text-green">0</span></div>
+                        <div class="collab-stat"><span class="lbl">EXPLORERS</span><span id="stat-explorers" class="val text-cyan">0</span></div>
+                        <div class="collab-stat"><span class="lbl">BUILDERS</span><span id="stat-builders" class="val text-amber">0</span></div>
+                        <div class="collab-stat"><span class="lbl">RECRUITING</span><span id="stat-recruiting" class="val text-purple">0</span></div>
+                    </div>
+                    <div class="collab-metrics-grid" style="margin-top: 6px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 6px;">
+                        <div class="collab-stat"><span class="lbl">MESSAGES/SEC</span><span id="stat-msg-rate" class="val text-cyan">0</span></div>
+                        <div class="collab-stat"><span class="lbl">PHEROMONE TRAILS</span><span id="stat-phero-trails" class="val text-green">0</span></div>
+                        <div class="collab-stat"><span class="lbl">COOP TASKS</span><span id="stat-coop-tasks" class="val text-amber">0</span></div>
+                        <div class="collab-stat"><span class="lbl">ACTIVE CLAIMS</span><span id="stat-active-claims" class="val text-muted">0</span></div>
+                    </div>
+                    <div class="task-ownership-title" style="margin-top: 8px;">DYNAMIC TASK OPPORTUNITIES</div>
+                    <div id="task-ownership-list" class="task-ownership-container">
+                        <!-- Dynamic task claims list -->
+                    </div>
+                </div>
+
+                <div class="target-card">
+                    <span class="label">COLONY TARGET SEQUENCE</span>
+                    <div id="target-display" class="target-display-box">
+                        <span id="val-current-target" class="target-key-highlight">F</span>
+                        <span id="val-target-sequence" class="target-sequence-list">[<span class="active">F</span>-A-C-E]</span>
+                    </div>
+                </div>
+
+                <div class="metric-row">
+                    <span class="label">SEQUENCE PROGRESS</span>
+                    <span id="val-progress" class="value">0 / 4 Keys</span>
+                </div>
+
+                <div class="progress-track">
+                    <div id="seq-progress-bar" class="progress-fill" style="width: 0%;"></div>
+                </div>
+
+                <div class="section-title">DECENTRALIZED AGENT ROSTER</div>
+                <div id="agents-roster" class="roster-container">
+                    <!-- Dynamic per-ant status cards -->
+                </div>
+            </aside>
+
+            <!-- RIGHT REAL-TIME OBSERVABILITY & DIAGNOSTICS PANEL -->
+            <aside class="panel right-panel glass font-mono" id="panel-right">
+                <div class="panel-header">
+                    <h2>ANT OBSERVABILITY & INTENT HUB</h2>
+                    <span class="sub-tag">ant_brain_model_v1_20260915_standard</span>
+                </div>
+
+                <!-- REAL-TIME ANT SELECTION & INTENT INSPECTOR -->
+                <div class="control-group" style="margin-top: 4px;">
+                    <label>SELECT ANT:</label>
+                    <select id="ant-inspector-select" class="select-input font-mono">
+                        <option value="1" selected>ANT #1</option>
+                        <option value="2">ANT #2</option>
+                        <option value="3">ANT #3</option>
+                        <option value="4">ANT #4</option>
+                        <option value="5">ANT #5</option>
+                    </select>
+                </div>
+
+                <!-- WHY IS THIS ANT DOING THIS? COLLABORATION & INTENT INSPECTOR CARD -->
+                <div id="ant-intent-inspector-card" class="inspector-card intent-card" style="border-color: rgba(0, 242, 254, 0.4); background: rgba(10, 20, 35, 0.75);">
+                    <div class="inspector-header" style="color: var(--accent-cyan);">🔍 WHY IS THIS ANT DOING THIS? (INTENT INSPECTOR)</div>
+                    <div id="intent-inspector-body" class="inspector-body font-mono" style="font-size: 10px;">
+                        <div>Selected: <strong id="intent-ant-id" class="text-cyan">ANT #1</strong> | Current Role: <span id="intent-role" class="badge badge-active">FORAGER</span></div>
+                        <div>Role Motivation: <span id="intent-role-motivation" class="text-green">High colony food demand & nearby scent trail</span></div>
+                        <div>Current Task: <strong id="intent-task-id">#1 [D]</strong> | Status: <span id="intent-task-status" class="text-amber">IN_PROGRESS</span></div>
+                        <div>Co-Action Sub-Role: <strong id="intent-sub-role" class="text-purple">PULLER</strong> | Sync State: <span id="intent-sync-state" class="text-cyan">SYNC</span></div>
+                        
+                        <div style="margin-top: 6px; font-weight: bold; color: var(--accent-amber);">TOP EVALUATED TASK UTILITIES:</div>
+                        <div id="intent-top-utilities" style="background: rgba(0,0,0,0.3); padding: 4px 6px; border-radius: 4px; line-height: 1.4;">
+                            <div>1. Task #1 [D]: Utility = +8.45 (Dist: 0.8m, Phero: +2.1, Role: +3.0)</div>
+                            <div>2. Task #2 [E]: Utility = +4.10 (Dist: 2.2m, Phero: +0.5, Congest: -1.2)</div>
+                            <div>3. Explore Zone B: Utility = +2.30 (Novelty: +2.0)</div>
+                        </div>
+
+                        <div style="margin-top: 6px; font-weight: bold; color: var(--accent-green);">SENSED PHEROMONES & MESSAGES:</div>
+                        <div>Food Phero: <strong id="intent-phero-food">1.85</strong> | Home: <strong id="intent-phero-home">0.92</strong> | Recruit: <strong id="intent-phero-recruit">0.00</strong></div>
+                        <div>Recent Messages: <span id="intent-messages" class="text-muted">RECRUIT_REQUEST from Ant #2 (TTL: 14s)</span></div>
+
+                        <div style="margin-top: 6px; font-weight: bold; color: var(--accent-cyan);">REASON FOR CURRENT ACTION:</div>
+                        <div id="intent-action-reason" class="text-cyan" style="font-style: italic;">"Moving to key [D] because utility score (+8.45) exceeds all alternatives."</div>
+                    </div>
+                </div>
+
+                <!-- LIVE CAUSAL NEURAL TRACE PANEL -->
+                <div class="causal-trace-card">
+                    <div class="trace-header">
+                        <span>LIVE CAUSAL NEURAL TRACE (Click Node to Focus)</span>
+                        <span id="trace-step-count" class="sub-badge">STEP #0</span>
+                    </div>
+                    <div id="causal-trace-list" class="causal-trace-list">
+                        <div class="trace-item empty">Awaiting runtime neural signal transmission...</div>
+                    </div>
+                </div>
+
+                <!-- SYSTEM DEBUG & EVENT STREAM DIAGNOSTICS MONITOR -->
+                <div class="diagnostics-card font-mono">
+                    <div class="diag-header">SYSTEM DEBUG & EVENT STREAM MONITOR</div>
+                    <div class="diag-grid">
+                        <div>Model: <span class="text-cyan">v1_20260915_std</span></div>
+                        <div>Selected Ant: <span id="debug-selected-ant" class="text-amber">#1</span></div>
+                        <div>Neurons Loaded: <span id="debug-neurons-loaded" class="text-green">128</span></div>
+                        <div>Synapses Loaded: <span id="debug-synapses-loaded" class="text-cyan">256</span></div>
+                        <div>Active Neurons: <span id="debug-active-neurons" class="text-amber">0</span></div>
+                        <div>Active Synapses: <span id="debug-active-synapses" class="text-amber">0</span></div>
+                        <div>Neural Events: <span id="debug-neural-events" class="text-green">0</span></div>
+                        <div>Events / sec: <span id="debug-events-rate" class="text-green">0</span></div>
+                        <div>Signals Visible: <span id="debug-rendered-signals" class="text-cyan">0</span></div>
+                        <div>Signals Completed: <span id="debug-signals-completed" class="text-green">0</span></div>
+                        <div id="debug-latest-event" style="grid-column: span 2; font-size: 8.5px; color: var(--accent-cyan);">Latest Event: None</div>
+                        <div id="debug-status-line" style="grid-column: span 2; font-size: 8.5px; color: var(--accent-amber);">Stream Status: Active & Streaming</div>
+                    </div>
+                </div>
+
+                <!-- SIGNAL INSPECTOR CARD -->
+                <div id="signal-inspector-card" class="inspector-card signal-card">
+                    <div class="inspector-header">SIGNAL TRANSMISSION INSPECTOR</div>
+                    <div id="signal-inspector-body" class="inspector-body">
+                        <div>Signal ID: <strong id="sig-id" class="text-cyan">SYN_00002</strong></div>
+                        <div>Ant ID: <strong id="sig-ant">ANT #1</strong></div>
+                        <div>Pre-Neuron: <strong id="sig-pre">NEURON_0000 (AL)</strong></div>
+                        <div>Post-Neuron: <strong id="sig-post">NEURON_0002 (MB)</strong></div>
+                        <div>Weight: <strong id="sig-weight">0.55</strong> | Delay: <strong id="sig-delay">1.50 ms</strong></div>
+                        <div>Status: <span id="sig-status" class="text-green">TRAVELLING (45%)</span></div>
+                    </div>
+                </div>
+
+                <!-- NEURON & SYNAPSE INSPECTOR CARD -->
+                <div id="neuron-inspector-card" class="inspector-card">
+                    <div class="inspector-header">NEURON / SYNAPSE INSPECTOR</div>
+                    <div id="inspector-body" class="inspector-body">
+                        <div>Selected: <strong id="insp-id">NEURON_0000</strong> (<span id="insp-type">Sensory</span>)</div>
+                        <div>Region: <strong id="insp-region">ANTENNAL_LOBE</strong></div>
+                        <div>Morphology: <span id="insp-morph" class="sub-badge text-amber">MODELLED / COMPUTATIONAL MORPHOLOGY</span></div>
+                        <div>Membrane Potential: <strong id="insp-membrane">-65.00 mV</strong></div>
+                        <div>State: <span id="insp-state" class="text-cyan">Resting</span> | Threshold: <strong>-45.00 mV</strong></div>
+                        <div>Connections: <span id="insp-conn">In: 4 | Out: 12</span></div>
+                        <button id="btn-fire-selected-neuron" class="action-btn tiny highlight-btn" style="margin-top: 6px; width: 100%;">⚡ FIRE THIS NEURON NOW</button>
+                    </div>
+                </div>
+
+                <!-- MODEL TRANSPARENCY BADGE -->
+                <div class="model-badge-card">
+                    <div class="model-title">MODEL TRANSPARENCY & PROVENANCE</div>
+                    <div class="model-info-grid font-mono">
+                        <div>Model: <strong>ant_brain_model_v1_20260915_standard</strong></div>
+                        <div>Type: <strong>Live Computational Neural Activity</strong></div>
+                        <div>Neurons: <strong id="model-neuron-count">128 LIF Nodes</strong> | Synapses: <strong id="model-synapse-count">256 Connections</strong></div>
+                        <div>Provenances: <strong>MODELLED MORPHOLOGY & LIF SYNAPSES</strong></div>
+                        <div class="text-muted" style="font-size: 8px; margin-top:2px;">Scientific integrity: Modeled spiking network dynamics. Not an empirical ant connectome scan.</div>
+                    </div>
+                </div>
+
+                <!-- AUTHORITATIVE REWARD ENGINE & INTEGRITY CARD -->
+                <div class="model-badge-card" style="border-color: rgba(0, 230, 118, 0.3);">
+                    <div class="model-title" style="color: var(--accent-green);">REWARD & PUNISHMENT ENGINE (PER-ANT ISOLATED)</div>
+                    <div class="model-info-grid font-mono">
+                        <div>Selected Ant: <strong id="rwd-ant-id" class="text-amber">Ant #1</strong></div>
+                        <div>Episode Reward: <strong id="rwd-episode" class="text-green">+0.00</strong></div>
+                        <div>Last Reward: <strong id="rwd-last" class="text-cyan">+0.00</strong> (<span id="rwd-reason">INITIALIZED</span>)</div>
+                        <div>Positive Total: <strong id="rwd-pos-total" class="text-green">+0.00</strong> | Penalty Total: <strong id="rwd-neg-total" class="text-amber">0.00</strong></div>
+                        <div style="margin-top: 4px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 2px;">
+                            Duplicates: <strong id="rwd-dup-count">0</strong> | Invalid: <strong id="rwd-inv-count">0</strong> | NaN/Inf: <strong id="rwd-nan-count">0</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHEROMONE FIELD TELEMETRY -->
+                <div class="metric-row" style="margin-top: 4px;">
+                    <span class="label">PHEROMONE FIELD</span>
+                    <span id="val-pheromone" class="value text-cyan">Active Trail (Conc: 0.68)</span>
+                </div>
+
+                <!-- REAL-TIME ANT DECISION TERMINAL -->
+                <div class="terminal-header-row">
+                    <span class="section-title" style="margin:0;">DECISION TERMINAL LOG</span>
+                    <select id="terminal-filter-select" class="select-input small font-mono">
+                        <option value="ALL">ALL LOGS</option>
+                        <option value="BRAIN">BRAIN</option>
+                        <option value="MOVEMENT">MOVEMENT</option>
+                        <option value="COMM">COMM</option>
+                        <option value="PHEROMONE">PHEROMONE</option>
+                        <option value="TASK">TASK</option>
+                        <option value="ERROR">ERROR</option>
+                    </select>
+                </div>
+                <div id="comm-log" class="comm-log-box font-mono">
+                    <div class="log-line text-cyan">[SYSTEM] ant_brain_model_v1_20260915_standard Initialized.</div>
+                    <div class="log-line text-amber">[WATCHDOG] Stuck-detection monitor active (15-step threshold).</div>
+                </div>
+            </aside>
+
+            <!-- BOTTOM SIMULATION CONTROLS BAR -->
+            <footer class="bottom-bar glass">
+                <div class="playback-controls">
+                    <button id="btn-play" class="icon-btn play-btn" title="Play / Pause">
+                        <span id="play-icon">⏸</span>
+                    </button>
+                    <button id="btn-step" class="icon-btn" title="Single Step Forward">⏭ Step</button>
+                    <button id="btn-reset" class="icon-btn" title="Reset Episode">🔄 Reset</button>
+                </div>
+
+                <div class="speed-control">
+                    <label>SPEED:</label>
+                    <input type="range" id="speed-slider" min="0.2" max="4.0" step="0.2" value="1.0">
+                    <span id="speed-val" class="font-mono">1.0x</span>
+                </div>
+
+                <div class="view-controls">
+                    <button id="btn-reframe" class="icon-btn" title="Reset Camera View">🎥 Frame View</button>
+                    <button id="btn-topdown" class="icon-btn" title="Top-Down Camera">📐 Top View</button>
+                    <button id="btn-toggle-panels" class="icon-btn" title="Toggle UI Sidebars">👁️ Toggle Panels</button>
+                </div>
+
+                <div class="footer-attribution font-mono">
+                    ANT BRAIN • Created & Developed by Nikhilesh H. Chavda • © 2026
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- ABOUT / CREDITS MODAL OVERLAY -->
+    <div id="about-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content glass font-mono">
+            <div class="modal-header">
+                <h2>ANT BRAIN — PROJECT AUTHORSHIP & CREDITS</h2>
+                <button id="btn-close-modal" class="close-btn">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="credit-card">
+                    <div class="creator-title">PRIMARY CREATOR & DEVELOPER</div>
+                    <div class="creator-name">Nikhilesh H. Chavda</div>
+                    <p style="font-size: 11px; margin-top: 4px; color: var(--accent-cyan);">ANT BRAIN is conceived, designed, engineered, and developed by Nikhilesh H. Chavda.</p>
+                    <div class="creator-links" style="margin-top: 8px;">
+                        <a href="https://github.com/Nik-2208" target="_blank" rel="noopener noreferrer">🌐 GitHub: https://github.com/Nik-2208</a>
+                        <a href="https://www.linkedin.com/in/nikhilesh-chavda-2b779533a/" target="_blank" rel="noopener noreferrer">💼 LinkedIn: https://www.linkedin.com/in/nikhilesh-chavda-2b779533a/</a>
+                        <a href="https://nik-portfolio-lime.vercel.app/" target="_blank" rel="noopener noreferrer">🚀 Portfolio: https://nik-portfolio-lime.vercel.app/</a>
+                    </div>
+                </div>
+
+                <div class="model-spec" style="margin-top: 10px;">
+                    <h3>PROJECT METADATA & MODEL SPECIFICATION</h3>
+                    <p>• <strong>Project Name</strong>: ANT BRAIN</p>
+                    <p>• <strong>Current Release</strong>: v0.1.0 (Experimental / Open Source)</p>
+                    <p>• <strong>Active Model</strong>: <code>ant_brain_model_v1_20260915_standard</code> (Project-developed component by Nikhilesh H. Chavda)</p>
+                    <p>• <strong>Architecture</strong>: 128 Leaky Integrate-and-Fire (LIF) modeled neurons, 256/512 weighted synaptic connections.</p>
+                    <p>• <strong>Execution Mode</strong>: Shared brain definition with isolated per-ant runtime LIF states.</p>
+                    <p>• <strong>Copyright</strong>: © 2026 Nikhilesh H. Chavda. All Rights Reserved.</p>
+                </div>
+
+                <div class="disclaimer-spec" style="margin-top: 10px; font-size: 9px; color: var(--text-muted); border-top: 1px dashed rgba(255,255,255,0.15); padding-top: 6px;">
+                    <strong>BIOLOGICAL INSPIRATION DISCLAIMER:</strong> ANT BRAIN is a biologically informed computational model inspired by ant nervous systems and collective colony behavior. It is not a reconstruction of a real biological ant brain or biological connectome. Biological concepts serve as inspiration for computational abstractions.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=4.0"></script>
+</body>
+</html>

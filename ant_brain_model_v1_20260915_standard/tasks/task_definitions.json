@@ -1,0 +1,28 @@
+{
+  "standard_benchmarks": [
+    {
+      "id": "FORAGE",
+      "name": "Closed-Loop Food Foraging"
+    },
+    {
+      "id": "MAZE",
+      "name": "Obstacle Barrier Navigation"
+    },
+    {
+      "id": "TRAIL_FOLLOW",
+      "name": "Chemotactic Pheromone Trail Tracking"
+    },
+    {
+      "id": "EVADE",
+      "name": "Predator Threat Avoidance"
+    },
+    {
+      "id": "SYNTHETIC_MAZE",
+      "name": "2D Continuous Vector Navigation"
+    },
+    {
+      "id": "ROBOTIC_JOINT",
+      "name": "Bio-Robotic Leg Joint Control"
+    }
+  ]
+}
