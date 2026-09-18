@@ -10,18 +10,19 @@ import time
 from typing import Dict, List, Any, Tuple, Optional
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from ant_brain_model_v1_20260915_standard.run_model import load_model, ExecutableAntBrain
+from ant_brain_loader import AntBrainPackage, ExecutableAntBrain
+from keyboard_environment import KeyboardLayout, KeyTile
 from keyboard_adapter import KeyboardObservationAdapter, KeyboardActionAdapter
 
 class TaskClaim:
-    """Represents a unique task instance in the multi-agent colony system."""
-    def __init__(self, task_id: str, target_key: str, order: int = 1, keyboard_id: str = "KEYBOARD_A"):
-        self.task_id = task_id          # e.g., TASK_SEQ_1_D or TASK_INST_A#1
-        self.target_key = target_key    # D, E, C, A, F
-        self.order = order              # Sequence position (1-indexed)
+    """Represents a unique character typing task instance in the sentence task."""
+    def __init__(self, task_id: str, target_char: str, order: int = 1, keyboard_id: str = "KEYBOARD_A"):
+        self.task_id = task_id          # e.g., TASK_SENT_1_72_H
+        self.target_char = target_char  # Actual character to type: 'H', 'e', ' ', '!'
+        self.order = order              # Sequence index (1-indexed)
         self.keyboard_id = keyboard_id
         self.claimed_by: Optional[int] = None
-        self.status = "PENDING"          # PENDING, CLAIMED, IN_PROGRESS, COMPLETED
+        self.status = "PENDING"          # PENDING, CLAIMED, IN_PROGRESS, COMPLETED, FAILED
         self.last_activity = time.time()
         self.claim_timeout = 8.0        # Seconds before stale claim is automatically unlocked
 
@@ -30,36 +31,86 @@ class TaskClaim:
             return (time.time() - self.last_activity) > self.claim_timeout
         return False
 
-class CommunicationHub:
-    """Colony Communication & Atomic Task Allocation Layer."""
 
-    def __init__(self):
+class SentenceResultChecker:
+    """Evaluates and compares the target sentence vs actual verified typed outputs."""
+
+    @staticmethod
+    def evaluate(target_sentence: str, actual_typed: str, individual_outputs: Optional[Dict[int, str]] = None) -> Dict[str, Any]:
+        match = (target_sentence == actual_typed)
+        correct_count = 0
+        min_len = min(len(target_sentence), len(actual_typed))
+
+        for i in range(min_len):
+            if target_sentence[i] == actual_typed[i]:
+                correct_count += 1
+
+        accuracy = (correct_count / max(1, len(target_sentence))) * 100.0 if len(target_sentence) > 0 else 100.0
+
+        first_mismatch_idx = -1
+        expected_char = None
+        actual_char = None
+        for i in range(max(len(target_sentence), len(actual_typed))):
+            t_c = target_sentence[i] if i < len(target_sentence) else None
+            a_c = actual_typed[i] if i < len(actual_typed) else None
+            if t_c != a_c:
+                first_mismatch_idx = i
+                expected_char = t_c
+                actual_char = a_c
+                break
+
+        missing_chars = target_sentence[len(actual_typed):] if len(target_sentence) > len(actual_typed) else ""
+        extra_chars = actual_typed[len(target_sentence):] if len(actual_typed) > len(target_sentence) else ""
+
+        return {
+            'target_sentence': target_sentence,
+            'actual_typed': actual_typed,
+            'match': match,
+            'accuracy': accuracy,
+            'correct_chars': correct_count,
+            'total_target_chars': len(target_sentence),
+            'total_typed_chars': len(actual_typed),
+            'first_mismatch': {
+                'index': first_mismatch_idx,
+                'expected': expected_char,
+                'actual': actual_char
+            } if first_mismatch_idx != -1 else None,
+            'missing': missing_chars,
+            'extra': extra_chars,
+            'individual_outputs': individual_outputs or {}
+        }
+
+
+class CommunicationHub:
+    """Colony Communication, Atomic Task Allocation & Global Sentence Assembly Layer."""
+
+    def __init__(self, full_layout: Optional[Dict[str, KeyTile]] = None):
         self.tasks: Dict[str, TaskClaim] = {}
         self.agent_positions: Dict[int, Tuple[float, float]] = {}
         self.agent_statuses: Dict[int, str] = {}
         self.signal_events: List[Dict[str, Any]] = []
-        self.ordering_mode: str = "ORDERED"  # ORDERED or PARALLEL
+        self.ordering_mode: str = "ORDERED"  # ORDERED or INDEPENDENT
+        self.full_layout = full_layout or KeyboardLayout.get_full_keyboard()
+        self.verified_typed_chars: List[Tuple[int, str, int]] = [] # [(order, char, ant_id)]
 
     def set_ordering_mode(self, mode: str) -> None:
         self.ordering_mode = mode.upper()
 
-    def announce_task(self, task_id: str, target_key: str, order: int = 1, keyboard_id: str = "KEYBOARD_A") -> TaskClaim:
-        claim = TaskClaim(task_id, target_key, order, keyboard_id)
+    def announce_task(self, task_id: str, target_char: str, order: int = 1, keyboard_id: str = "KEYBOARD_A") -> TaskClaim:
+        claim = TaskClaim(task_id, target_char, order, keyboard_id)
         self.tasks[task_id] = claim
         self.signal_events.append({
             'type': 'ANNOUNCE',
             'task_id': task_id,
-            'target_key': target_key,
+            'target_char': target_char,
             'order': order,
             'keyboard_id': keyboard_id,
             'timestamp': time.time()
         })
         return claim
 
-
-
     def get_unlocked_order(self, keyboard_id: str = "KEYBOARD_A") -> int:
-        """In ORDERED mode, return lowest uncompleted order index."""
+        """In ORDERED mode, returns the lowest uncompleted sentence character position."""
         kbd_tasks = [t for t in self.tasks.values() if t.keyboard_id == keyboard_id]
         if not kbd_tasks:
             return 1
@@ -67,7 +118,7 @@ class CommunicationHub:
         return min(uncompleted) if uncompleted else 999
 
     def reserve_task_atomic(self, ant_id: int, ant_pos: Tuple[float, float], keyboard_id: str = "KEYBOARD_A") -> Optional[TaskClaim]:
-        """Atomically find & reserve best pending task for ant based on distance and ordering mode."""
+        """Atomically find & reserve best pending character task for ant."""
         self.check_and_release_timeouts()
 
         allowed_tasks = [t for t in self.tasks.values() if t.keyboard_id == keyboard_id and t.status == "PENDING"]
@@ -79,9 +130,9 @@ class CommunicationHub:
         if not allowed_tasks:
             return None
 
-        # Sort candidate tasks by distance to ant position
+        # Sort candidate tasks by distance from ant to the target key on full keyboard
         def task_distance(t: TaskClaim) -> float:
-            key_x, key_y = self.get_key_pos_estimate(t.target_key, t.keyboard_id)
+            key_x, key_y = self.get_key_pos(t.target_char, t.keyboard_id)
             return math.sqrt((key_x - ant_pos[0]) ** 2 + (key_y - ant_pos[1]) ** 2)
 
         allowed_tasks.sort(key=task_distance)
@@ -96,88 +147,79 @@ class CommunicationHub:
             'type': 'CLAIM',
             'ant_id': ant_id,
             'task_id': selected_task.task_id,
-            'target_key': selected_task.target_key,
+            'target_char': selected_task.target_char,
             'timestamp': time.time()
         })
-
         return selected_task
 
-    def update_task_progress(self, ant_id: int, task_id: str, status: str = "IN_PROGRESS") -> None:
-        if task_id in self.tasks:
-            t = self.tasks[task_id]
-            if t.claimed_by == ant_id:
-                t.status = status
-                t.last_activity = time.time()
-
-    def release_task(self, ant_id: int, task_id: str, completed: bool = False) -> None:
+    def complete_task(self, task_id: str, ant_id: int, verified_char: str) -> None:
         if task_id in self.tasks:
             task = self.tasks[task_id]
-            if task.claimed_by == ant_id:
-                if completed:
-                    task.status = "COMPLETED"
-                else:
-                    task.status = "PENDING"
-                    task.claimed_by = None
-                task.last_activity = time.time()
-                self.signal_events.append({
-                    'type': 'RELEASE',
-                    'ant_id': ant_id,
-                    'task_id': task_id,
-                    'completed': completed,
-                    'timestamp': time.time()
-                })
+            task.status = "COMPLETED"
+            task.last_activity = time.time()
+            self.verified_typed_chars.append((task.order, verified_char, ant_id))
+            self.signal_events.append({
+                'type': 'COMPLETE',
+                'ant_id': ant_id,
+                'task_id': task_id,
+                'verified_char': verified_char,
+                'timestamp': time.time()
+            })
 
-    def check_and_release_timeouts(self) -> List[str]:
-        """Failure recovery: release tasks claimed by inactive or timed-out ants."""
-        released = []
+    def release_task(self, task_id: str, ant_id: int) -> None:
+        if task_id in self.tasks and self.tasks[task_id].status != "COMPLETED":
+            self.tasks[task_id].status = "PENDING"
+            self.tasks[task_id].claimed_by = None
+            self.tasks[task_id].last_activity = time.time()
+            self.signal_events.append({
+                'type': 'RELEASE',
+                'ant_id': ant_id,
+                'task_id': task_id,
+                'timestamp': time.time()
+            })
+
+    def check_and_release_timeouts(self) -> None:
         for t in self.tasks.values():
             if t.is_expired():
                 t.status = "PENDING"
                 t.claimed_by = None
                 t.last_activity = time.time()
-                released.append(t.task_id)
-                self.signal_events.append({
-                    'type': 'TIMEOUT_RELEASE',
-                    'task_id': t.task_id,
-                    'timestamp': time.time()
-                })
-        return released
 
-    def get_key_pos_estimate(self, key_char: str, keyboard_id: str) -> Tuple[float, float]:
-        key_map_a = {'A': (0.0, 1.5), 'B': (1.0, 1.5), 'C': (2.0, 1.5), 'D': (0.0, 0.0), 'E': (1.0, 0.0), 'F': (2.0, 0.0)}
-        key_map_b = {'A': (2.0, 1.5), 'B': (3.0, 1.5), 'C': (4.0, 1.5), 'D': (2.0, 0.0), 'E': (3.0, 0.0), 'F': (4.0, 0.0)}
-        if keyboard_id == "KEYBOARD_B":
-            return key_map_b.get(key_char, (3.0, 0.0))
-        return key_map_a.get(key_char, (1.0, 0.0))
+    def get_overall_typed_text(self) -> str:
+        """Assembles verified typed text strictly sorted by character task order."""
+        sorted_chars = sorted(self.verified_typed_chars, key=lambda x: x[0])
+        return "".join([c[1] for c in sorted_chars])
 
-    def recruit(self, task_id: str, requesting_ant_id: int) -> None:
-        self.signal_events.append({
-            'type': 'RECRUIT',
-            'from_ant_id': requesting_ant_id,
-            'task_id': task_id,
-            'timestamp': time.time()
-        })
-
-    def coordinate(self, ant_id: int, pos: Tuple[float, float], status: str) -> None:
+    def update_agent_telemetry(self, ant_id: int, pos: Tuple[float, float], status: str) -> None:
         self.agent_positions[ant_id] = pos
         self.agent_statuses[ant_id] = status
+
+    def get_key_pos(self, char: str, keyboard_id: str = "KEYBOARD_A") -> Tuple[float, float]:
+        tile = KeyboardLayout.find_key_for_char(char, self.full_layout)
+        if tile:
+            return (tile.x, tile.y)
+        return (0.0, 1.4)
 
     def clear(self):
         self.tasks.clear()
         self.agent_positions.clear()
         self.agent_statuses.clear()
         self.signal_events.clear()
+        self.verified_typed_chars.clear()
+
 
 class AntAgentInstance:
-    """Individual Ant Agent holding runtime state and running the SAME shared ant_brain_model_v1_20260915_standard."""
+    """Individual Ant Agent holding runtime state and running the SAME shared AntWire .antbrain package."""
 
-    def __init__(self, ant_id: int, manifest: dict, neurons: list, synapses: list, color_hex: str = "#ef4444"):
+    def __init__(self, ant_id: int, package: AntBrainPackage, color_hex: str = "#ef4444"):
         self.ant_id = ant_id
         self.color_hex = color_hex
-        self.brain = ExecutableAntBrain(manifest, neurons, synapses)
+        self.package = package
+        self.brain = ExecutableAntBrain(package)
+        self.typed_buffer: List[str] = []
         self.reset()
 
-    def reset(self, start_pos: Tuple[float, float] = (1.0, -0.8), start_theta: float = math.pi / 2):
+    def reset(self, start_pos: Tuple[float, float] = (0.0, -1.0), start_theta: float = math.pi / 2):
         self.ant_x, self.ant_y = start_pos
         self.ant_theta = start_theta
         self.step_count = 0
@@ -189,8 +231,12 @@ class AntAgentInstance:
         self.done = False
         self.status = "SEARCHING"  # SEARCHING, MOVING, APPROACHING, INTERACTING, RECOVERING, COMPLETED, FAILED
         self.current_task: Optional[TaskClaim] = None
+        self.typed_buffer = []
         self.trajectory = [{'x': self.ant_x, 'y': self.ant_y}]
         self.brain.reset()
+
+    def get_typed_string(self) -> str:
+        return "".join(self.typed_buffer)
 
     def step(self, env_state: dict, comm_hub: Optional[CommunicationHub] = None) -> Tuple[float, bool, dict]:
         if self.done:
@@ -202,7 +248,7 @@ class AntAgentInstance:
         throttle, turn, dep_food, dep_home = KeyboardActionAdapter.process_action(brain_out)
 
         # Kinematics Update with Target Angle Integration & Local Ant Collision Avoidance
-        target_pos = env_state.get('target_pos', (1.0, 0.0))
+        target_pos = env_state.get('target_pos', (0.0, 1.4))
         dx_t = target_pos[0] - self.ant_x
         dy_t = target_pos[1] - self.ant_y
         
@@ -219,21 +265,21 @@ class AntAgentInstance:
                     d_other_x = self.ant_x - other_pos[0]
                     d_other_y = self.ant_y - other_pos[1]
                     dist_other = math.sqrt(d_other_x * d_other_x + d_other_y * d_other_y)
-                    if 0.01 < dist_other < 0.45:  # Collision proximity boundary
+                    if 0.01 < dist_other < 0.45:
                         avoid_angle = math.atan2(d_other_y, d_other_x) - self.ant_theta
                         avoid_turn += math.sin(avoid_angle) * (0.45 - dist_other)
 
-        # Combine brain turn readout with relative bearing steering and collision avoidance
-        effective_turn = 0.5 * turn + 0.4 * math.tanh(rel_angle * 2.0) + 0.3 * avoid_turn
+        # Steering synthesis
+        effective_turn = 0.5 * turn + 0.5 * math.tanh(rel_angle * 2.5) + 0.3 * avoid_turn
         self.ant_theta += effective_turn * 0.4
         
-        speed = max(0.12, throttle) * 0.15
+        speed = max(0.12, throttle) * 0.16
         dx = speed * math.cos(self.ant_theta)
         dy = speed * math.sin(self.ant_theta)
 
         # Movement delta & Watchdog Stuck Detection
         dist_moved = math.sqrt((self.ant_x - self.prev_x)**2 + (self.ant_y - self.prev_y)**2)
-        if dist_moved < 0.005:
+        if dist_moved < 0.004:
             self.stuck_step_count += 1
         else:
             self.stuck_step_count = 0
@@ -248,60 +294,66 @@ class AntAgentInstance:
         curr_dist = math.sqrt((target_pos[0] - self.ant_x) ** 2 + (target_pos[1] - self.ant_y) ** 2)
         if self.stuck_step_count >= 15:
             self.status = "RECOVERING"
-            # Watchdog Recovery: Re-steer away from deadlock
-            self.ant_theta += math.pi * 0.5
-            self.stuck_step_count = 0
-            if comm_hub and self.current_task:
-                comm_hub.release_task(self.ant_id, self.current_task.task_id, completed=False)
-                self.current_task = None
-        elif curr_dist <= 0.3:
+            self.ant_theta += random.choice([-1.0, 1.0]) * (math.pi / 3.0)
+            if self.stuck_step_count >= 25:
+                if self.current_task and comm_hub:
+                    comm_hub.release_task(self.current_task.task_id, self.ant_id)
+                    self.current_task = None
+                    self.status = "SEARCHING"
+                    self.stuck_step_count = 0
+        elif curr_dist < 0.28:
             self.status = "INTERACTING"
-        elif curr_dist <= 1.0:
+        elif curr_dist < 0.8:
             self.status = "APPROACHING"
         else:
             self.status = "MOVING"
 
         if comm_hub:
-            comm_hub.coordinate(self.ant_id, (self.ant_x, self.ant_y), self.status)
+            comm_hub.update_agent_telemetry(self.ant_id, (self.ant_x, self.ant_y), self.status)
 
-        reward = -0.01
-        correct_press = False
-        wrong_press = False
-
-        # Collision with target key tile
-        target_key = env_state['target_key']
-        layout = env_state['layout']
-
+        # Key press check on Full Keyboard Layout
+        key_pressed_tile = None
+        layout = env_state.get('layout', {})
         for k_id, tile in layout.items():
-            if tile.contains(self.ant_x, self.ant_y):
-                self.done = True
-                if k_id == target_key or tile.label == target_key:
-                    reward += 1.0
-                    correct_press = True
-                    self.status = "COMPLETED"
-                else:
-                    reward -= 1.0
-                    wrong_press = True
-                    self.status = "FAILURE"
+            dist_k = math.sqrt((tile.x - self.ant_x)**2 + (tile.y - self.ant_y)**2)
+            threshold = (tile.width + tile.height) / 4.0 * 0.95
+            if dist_k <= max(0.18, threshold):
+                key_pressed_tile = tile
                 break
 
-        if not self.done and self.step_count >= env_state.get('max_steps', 50):
-            self.done = True
-            reward -= 0.5
-            self.status = "FAILURE"
-
-        self.last_reward = reward
-        self.total_reward += reward
+        reward = -0.01
+        done = False
+        target_char = self.current_task.target_char if self.current_task else None
 
         info = {
             'ant_id': self.ant_id,
-            'target_key': target_key,
-            'correct': correct_press,
-            'wrong': wrong_press,
-            'steps': self.step_count,
-            'distance': self.total_distance,
-            'throttle': throttle,
-            'turn': turn
+            'status': self.status,
+            'key_pressed': key_pressed_tile.id if key_pressed_tile else None,
+            'target_char': target_char,
+            'typed_buffer': self.get_typed_string()
         }
 
-        return reward, self.done, info
+        if key_pressed_tile:
+            if target_char and key_pressed_tile.matches_char(target_char):
+                reward += 2.5
+                self.status = "COMPLETED"
+                done = True
+                self.typed_buffer.append(target_char)
+                if self.current_task and comm_hub:
+                    comm_hub.complete_task(self.current_task.task_id, self.ant_id, target_char)
+            else:
+                reward -= 0.6
+                self.status = "FAILED"
+
+        if self.step_count >= env_state.get('max_steps', 100):
+            done = True
+            if self.status != "COMPLETED":
+                self.status = "FAILED"
+                if self.current_task and comm_hub:
+                    comm_hub.release_task(self.current_task.task_id, self.ant_id)
+
+        self.last_reward = reward
+        self.total_reward += reward
+        self.done = done
+
+        return reward, done, info

@@ -1,0 +1,7 @@
+{
+  "tactile_antennation": true,
+  "stridulation_sound": true,
+  "trophallaxis_liquid_exchange": true,
+  "message_ttl_seconds": 15,
+  "communication_radius_cm": 2.5
+}

@@ -1,0 +1,36 @@
+{
+  "antennae": {
+    "channels": 2,
+    "sensor_separation_mm": 0.6,
+    "detection_range_mm": 8,
+    "resolution": "CONTINUOUS_GRADIENT",
+    "noise_variance": 0.02,
+    "sampling_rate_hz": 60,
+    "directional_sensitivity": "BILATERAL_TROPOTAXIS",
+    "biological_status": "BIOLOGICALLY_SUPPORTED"
+  },
+  "olfactory_chemical": {
+    "pheromone_channels": [
+      "FOOD_TRAIL",
+      "HOME_TRAIL",
+      "ALARM",
+      "RECRUITMENT"
+    ],
+    "detection_threshold": 0.05,
+    "saturation_level": 100,
+    "decay_interpretation": "EXPONENTIAL_HALF_LIFE",
+    "biological_status": "BIOLOGICALLY_SUPPORTED"
+  },
+  "mechanosensory": {
+    "tarsal_vibration": true,
+    "pedicel_johnstons_organ": true,
+    "collision_detection_radius_mm": 1.2,
+    "biological_status": "BIOLOGICALLY_SUPPORTED"
+  },
+  "vision": {
+    "dorsal_rim_polarization_ommatidia": 16,
+    "field_of_view_deg": 180,
+    "biological_status": "APPROXIMATION",
+    "notes": "Simplified e-vector detection based on Cataglyphis skylight polarization."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "central_complex_accumulator": {
+    "x": 0,
+    "y": 0
+  },
+  "integrated_vector_distance": 0,
+  "home_vector_confidence": 0.95,
+  "status": "MODELLED",
+  "citation": "Stone et al. (2017) Central Complex Path Integration"
+}

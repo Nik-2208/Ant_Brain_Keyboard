@@ -48,11 +48,16 @@ It is **not** a reconstruction of a real biological ant brain, biological connec
 
 ---
 
-## 🧠 Model Attribution
+---
 
-- **Active Project Model**: `ant_brain_model_v1_20260915_standard`
+## 🧠 Model Attribution & Technical Benchmark Report
+
+- **Active Project Model**: `antwire_ant_ant-6dct_vv1.0.0_2026-09-17T17-17-14-363Z.antbrain` (`Ant-6DCT`)
 - **Classification**: Project-developed component by Nikhilesh H. Chavda.
-- **Structure**: Computational spiking model (Leaky Integrate-and-Fire / LIF) with 128 modeled neuron nodes across 16 neuropil region abstractions, executing per-ant runtime memory and synaptic states.
+- **Structure**: Computational spiking model (Leaky Integrate-and-Fire / LIF) with 128 modeled neuron nodes across 12 neuropil region abstractions, executing per-ant runtime memory and synaptic states.
+- **Audit Completeness**: **90.7% Verified Computational Completeness** (18/18 inventory categories present).
+
+📊 **[Read Complete Technical Benchmark Report (ANTWIRE_ANTBRAIN_MODEL_BENCHMARK_REPORT.md)](file:///c:/Users/Nikhilesh/Desktop/RL%20model/ANTWIRE_ANTBRAIN_MODEL_BENCHMARK_REPORT.md)**
 
 ---
 

@@ -3,26 +3,112 @@
 // Created & Developed by Nikhilesh H. Chavda
 // GitHub: https://github.com/Nik-2208 | Portfolio: https://nik-portfolio-lime.vercel.app/
 // Copyright © 2026 Nikhilesh H. Chavda. All Rights Reserved.
-// Model: ant_brain_model_v1_20260915_standard
+// Model: antwire_ant_ant-6dct_vv1.0.0_2026-09-17T17-17-14-363Z.antbrain
 // ====================================================================
 
 const ANT_COLORS = [0xef4444, 0x00f2fe, 0x00e676, 0xffaa00, 0x9d4edd, 0xff2a85];
 const ANT_COLORS_HEX = ["#ef4444", "#00f2fe", "#00e676", "#ffaa00", "#9d4edd", "#ff2a85"];
 
-const KEYS_SINGLE = {
-    'A': { x: 0.0, y: 1.5 }, 'B': { x: 1.0, y: 1.5 }, 'C': { x: 2.0, y: 1.5 },
-    'D': { x: 0.0, y: 0.0 }, 'E': { x: 1.0, y: 0.0 }, 'F': { x: 2.0, y: 0.0 }
+const FULL_KEYBOARD_LAYOUT = {
+    // Row 5: F-Keys (y = 3.5)
+    'ESC': { x: -4.2, y: 3.5, width: 0.5, height: 0.45, label: 'Esc', char: '' },
+    'F1': { x: -3.4, y: 3.5, width: 0.5, height: 0.45, label: 'F1', char: '' },
+    'F2': { x: -2.82, y: 3.5, width: 0.5, height: 0.45, label: 'F2', char: '' },
+    'F3': { x: -2.24, y: 3.5, width: 0.5, height: 0.45, label: 'F3', char: '' },
+    'F4': { x: -1.66, y: 3.5, width: 0.5, height: 0.45, label: 'F4', char: '' },
+    'F5': { x: -0.83, y: 3.5, width: 0.5, height: 0.45, label: 'F5', char: '' },
+    'F6': { x: -0.25, y: 3.5, width: 0.5, height: 0.45, label: 'F6', char: '' },
+    'F7': { x: 0.33, y: 3.5, width: 0.5, height: 0.45, label: 'F7', char: '' },
+    'F8': { x: 0.91, y: 3.5, width: 0.5, height: 0.45, label: 'F8', char: '' },
+    'F9': { x: 1.74, y: 3.5, width: 0.5, height: 0.45, label: 'F9', char: '' },
+    'F10': { x: 2.32, y: 3.5, width: 0.5, height: 0.45, label: 'F10', char: '' },
+    'F11': { x: 2.90, y: 3.5, width: 0.5, height: 0.45, label: 'F11', char: '' },
+    'F12': { x: 3.48, y: 3.5, width: 0.5, height: 0.45, label: 'F12', char: '' },
+
+    // Row 4: Numbers & Symbols (y = 2.8)
+    '`': { x: -4.2, y: 2.8, width: 0.52, height: 0.52, label: '` ~', char: '`', shiftChar: '~' },
+    '1': { x: -3.6, y: 2.8, width: 0.52, height: 0.52, label: '1 !', char: '1', shiftChar: '!' },
+    '2': { x: -3.0, y: 2.8, width: 0.52, height: 0.52, label: '2 @', char: '2', shiftChar: '@' },
+    '3': { x: -2.4, y: 2.8, width: 0.52, height: 0.52, label: '3 #', char: '3', shiftChar: '#' },
+    '4': { x: -1.8, y: 2.8, width: 0.52, height: 0.52, label: '4 $', char: '4', shiftChar: '$' },
+    '5': { x: -1.2, y: 2.8, width: 0.52, height: 0.52, label: '5 %', char: '5', shiftChar: '%' },
+    '6': { x: -0.6, y: 2.8, width: 0.52, height: 0.52, label: '6 ^', char: '6', shiftChar: '^' },
+    '7': { x: 0.0, y: 2.8, width: 0.52, height: 0.52, label: '7 &', char: '7', shiftChar: '&' },
+    '8': { x: 0.6, y: 2.8, width: 0.52, height: 0.52, label: '8 *', char: '8', shiftChar: '*' },
+    '9': { x: 1.2, y: 2.8, width: 0.52, height: 0.52, label: '9 (', char: '9', shiftChar: '(' },
+    '0': { x: 1.8, y: 2.8, width: 0.52, height: 0.52, label: '0 )', char: '0', shiftChar: ')' },
+    '-': { x: 2.4, y: 2.8, width: 0.52, height: 0.52, label: '- _', char: '-', shiftChar: '_' },
+    '=': { x: 3.0, y: 2.8, width: 0.52, height: 0.52, label: '= +', char: '=', shiftChar: '+' },
+    'BACKSPACE': { x: 3.8, y: 2.8, width: 0.92, height: 0.52, label: '⌫', char: '' },
+
+    // Row 3: QWERTY Row (y = 2.1)
+    'TAB': { x: -4.25, y: 2.1, width: 0.75, height: 0.52, label: 'Tab', char: '\t' },
+    'Q': { x: -3.5, y: 2.1, width: 0.52, height: 0.52, label: 'Q', char: 'q', shiftChar: 'Q' },
+    'W': { x: -2.9, y: 2.1, width: 0.52, height: 0.52, label: 'W', char: 'w', shiftChar: 'W' },
+    'E': { x: -2.3, y: 2.1, width: 0.52, height: 0.52, label: 'E', char: 'e', shiftChar: 'E' },
+    'R': { x: -1.7, y: 2.1, width: 0.52, height: 0.52, label: 'R', char: 'r', shiftChar: 'R' },
+    'T': { x: -1.1, y: 2.1, width: 0.52, height: 0.52, label: 'T', char: 't', shiftChar: 'T' },
+    'Y': { x: -0.5, y: 2.1, width: 0.52, height: 0.52, label: 'Y', char: 'y', shiftChar: 'Y' },
+    'U': { x: 0.1, y: 2.1, width: 0.52, height: 0.52, label: 'U', char: 'u', shiftChar: 'U' },
+    'I': { x: 0.7, y: 2.1, width: 0.52, height: 0.52, label: 'I', char: 'i', shiftChar: 'I' },
+    'O': { x: 1.3, y: 2.1, width: 0.52, height: 0.52, label: 'O', char: 'o', shiftChar: 'O' },
+    'P': { x: 1.9, y: 2.1, width: 0.52, height: 0.52, label: 'P', char: 'p', shiftChar: 'P' },
+    '[': { x: 2.5, y: 2.1, width: 0.52, height: 0.52, label: '[ {', char: '[', shiftChar: '{' },
+    ']': { x: 3.1, y: 2.1, width: 0.52, height: 0.52, label: '] }', char: ']', shiftChar: '}' },
+    '\\': { x: 3.7, y: 2.1, width: 0.52, height: 0.52, label: '\\ |', char: '\\', shiftChar: '|' },
+
+    // Row 2: Home Row (y = 1.4)
+    'CAPS': { x: -4.2, y: 1.4, width: 0.85, height: 0.52, label: 'Caps', char: '' },
+    'A': { x: -3.4, y: 1.4, width: 0.52, height: 0.52, label: 'A', char: 'a', shiftChar: 'A' },
+    'S': { x: -2.8, y: 1.4, width: 0.52, height: 0.52, label: 'S', char: 's', shiftChar: 'S' },
+    'D': { x: -2.2, y: 1.4, width: 0.52, height: 0.52, label: 'D', char: 'd', shiftChar: 'D' },
+    'F': { x: -1.6, y: 1.4, width: 0.52, height: 0.52, label: 'F', char: 'f', shiftChar: 'F' },
+    'G': { x: -1.0, y: 1.4, width: 0.52, height: 0.52, label: 'G', char: 'g', shiftChar: 'G' },
+    'H': { x: -0.4, y: 1.4, width: 0.52, height: 0.52, label: 'H', char: 'h', shiftChar: 'H' },
+    'J': { x: 0.2, y: 1.4, width: 0.52, height: 0.52, label: 'J', char: 'j', shiftChar: 'J' },
+    'K': { x: 0.8, y: 1.4, width: 0.52, height: 0.52, label: 'K', char: 'k', shiftChar: 'K' },
+    'L': { x: 1.4, y: 1.4, width: 0.52, height: 0.52, label: 'L', char: 'l', shiftChar: 'L' },
+    ';': { x: 2.0, y: 1.4, width: 0.52, height: 0.52, label: '; :', char: ';', shiftChar: ':' },
+    "'": { x: 2.6, y: 1.4, width: 0.52, height: 0.52, label: "' \"", char: "'", shiftChar: '"' },
+    'ENTER': { x: 3.4, y: 1.4, width: 1.05, height: 0.52, label: 'Enter ↵', char: '\n' },
+
+    // Row 1: Bottom Row (y = 0.7)
+    'SHIFT_L': { x: -4.1, y: 0.7, width: 1.05, height: 0.52, label: 'Shift ⇧', char: '' },
+    'Z': { x: -3.2, y: 0.7, width: 0.52, height: 0.52, label: 'Z', char: 'z', shiftChar: 'Z' },
+    'X': { x: -2.6, y: 0.7, width: 0.52, height: 0.52, label: 'X', char: 'x', shiftChar: 'X' },
+    'C': { x: -2.0, y: 0.7, width: 0.52, height: 0.52, label: 'C', char: 'c', shiftChar: 'C' },
+    'V': { x: -1.4, y: 0.7, width: 0.52, height: 0.52, label: 'V', char: 'v', shiftChar: 'V' },
+    'B': { x: -0.8, y: 0.7, width: 0.52, height: 0.52, label: 'B', char: 'b', shiftChar: 'B' },
+    'N': { x: -0.2, y: 0.7, width: 0.52, height: 0.52, label: 'N', char: 'n', shiftChar: 'N' },
+    'M': { x: 0.4, y: 0.7, width: 0.52, height: 0.52, label: 'M', char: 'm', shiftChar: 'M' },
+    ',': { x: 1.0, y: 0.7, width: 0.52, height: 0.52, label: ', <', char: ',', shiftChar: '<' },
+    '.': { x: 1.6, y: 0.7, width: 0.52, height: 0.52, label: '. >', char: '.', shiftChar: '>' },
+    '/': { x: 2.2, y: 0.7, width: 0.52, height: 0.52, label: '/ ?', char: '/', shiftChar: '?' },
+    'SHIFT_R': { x: 3.3, y: 0.7, width: 1.2, height: 0.52, label: 'Shift ⇧', char: '' },
+
+    // Row 0: Modifier & Space Row (y = 0.0)
+    'CTRL_L': { x: -4.2, y: 0.0, width: 0.7, height: 0.52, label: 'Ctrl', char: '' },
+    'WIN_L': { x: -3.45, y: 0.0, width: 0.6, height: 0.52, label: '❖', char: '' },
+    'ALT_L': { x: -2.8, y: 0.0, width: 0.6, height: 0.52, label: 'Alt', char: '' },
+    'SPACE': { x: 0.1, y: 0.0, width: 3.2, height: 0.52, label: 'SPACE', char: ' ', shiftChar: ' ' },
+    'ALT_R': { x: 2.8, y: 0.0, width: 0.6, height: 0.52, label: 'Alt', char: '' },
+    'FN': { x: 3.45, y: 0.0, width: 0.6, height: 0.52, label: 'Fn', char: '' },
+    'CTRL_R': { x: 4.15, y: 0.0, width: 0.7, height: 0.52, label: 'Ctrl', char: '' }
 };
 
-const KEYS_KBD_A = {
-    'A_A': { x: -2.0, y: 1.0, label: 'A' }, 'A_B': { x: -1.0, y: 1.0, label: 'B' }, 'A_C': { x: 0.0, y: 1.0, label: 'C' },
-    'A_D': { x: -2.0, y: 0.0, label: 'D' }, 'A_E': { x: -1.0, y: 0.0, label: 'E' }, 'A_F': { x: 0.0, y: 0.0, label: 'F' }
-};
-
-const KEYS_KBD_B = {
-    'B_A': { x: 2.0, y: 1.0, label: 'A' }, 'B_B': { x: 3.0, y: 1.0, label: 'B' }, 'B_C': { x: 4.0, y: 1.0, label: 'C' },
-    'B_D': { x: 2.0, y: 0.0, label: 'D' }, 'B_E': { x: 3.0, y: 0.0, label: 'E' }, 'B_F': { x: 4.0, y: 0.0, label: 'F' }
-};
+function findKeyForChar(targetChar, layout = FULL_KEYBOARD_LAYOUT) {
+    if (!targetChar) return null;
+    for (let k in layout) {
+        const tile = layout[k];
+        if (targetChar === ' ' && k === 'SPACE') return { keyId: k, tile };
+        if (targetChar === '\n' && k === 'ENTER') return { keyId: k, tile };
+        if (targetChar === '\t' && k === 'TAB') return { keyId: k, tile };
+        if (tile.char === targetChar || tile.shiftChar === targetChar || tile.label.toUpperCase() === targetChar.toUpperCase()) {
+            return { keyId: k, tile };
+        }
+    }
+    return null;
+}
 
 const KEY_RADIUS = 0.35;
 const MAX_STEPS = 50;
@@ -44,16 +130,17 @@ let simState = {
     mode: 'COLLABORATIVE',
     antCount: 3,
     targetMode: 'SEQUENCE',
-    singleKeyTarget: 'E',
-    sequencePreset: 'DECAF',
-    customSequence: 'DECAF',
+    singleKeyTarget: 'H',
+    sequencePreset: 'Hello, world!',
+    customSequence: 'Hello, world!',
     orderingMode: 'ORDERED',
     isPlaying: true,
     speed: 1.0,
-    modelDir: 'ant_brain_model_v1_20260915_standard',
+    modelDir: 'ant_brain_pkg',
     stepCount: 0,
     completedTasksCount: 0,
-    activeSequence: ['D', 'E', 'C', 'A', 'F'],
+    targetSentence: 'Hello, world!',
+    activeSequence: ['H', 'e', 'l', 'l', 'o', ',', ' ', 'w', 'o', 'r', 'l', 'd', '!'],
     currentSequenceIndex: 0,
     selectedRegion: 'ALL',
     viewLayoutMode: 'SPLIT',
@@ -266,9 +353,9 @@ const neuralBus = new NeuralEventBus();
 class JSAntBrain {
     constructor(antId, manifest, neurons, synapses) {
         this.antId = antId;
-        this.manifest = manifest || {};
-        this.neurons = neurons || [];
-        this.synapses = synapses || [];
+        this.manifest = manifest ? JSON.parse(JSON.stringify(manifest)) : {};
+        this.neurons = (neurons && neurons.length > 0) ? JSON.parse(JSON.stringify(neurons)) : [];
+        this.synapses = (synapses && synapses.length > 0) ? JSON.parse(JSON.stringify(synapses)) : [];
         this.neuronStates = {};
         this.spikes = {};
         this.lastFiredNeurons = [];
@@ -283,6 +370,8 @@ class JSAntBrain {
                 this.neurons.push({ id: `NEURON_${String(i).padStart(4, '0')}`, resting_potential: -65, threshold: -45, region: 'DEFAULT' });
             }
         }
+        this.neuronStates = {};
+        this.spikes = {};
         this.neurons.forEach(n => {
             this.neuronStates[n.id] = n.resting_potential || -65;
             this.spikes[n.id] = false;
@@ -839,7 +928,9 @@ class SimAntAgent {
     }
 
     evaluateTaskUtility(task, layout) {
-        const targetPos = layout[task.target] || layout[`A_${task.target}`] || layout[`B_${task.target}`] || { x: 1.0, y: 0.0 };
+        const xOff = task.kbd === "KEYBOARD_B" ? 5.0 : (simState.mode === "PARALLEL" ? -4.5 : 0.0);
+        const found = findKeyForChar(task.target);
+        const targetPos = found ? { x: found.tile.x + xOff, y: found.tile.y } : { x: xOff, y: 1.4 };
         const dist = Math.sqrt((targetPos.x - this.x) ** 2 + (targetPos.y - this.y) ** 2);
 
         // Utility formula components
@@ -879,18 +970,28 @@ class SimAntAgent {
     evaluateLocalTasks() {
         this.evaluateRole();
 
-        const layout = (simState.mode === 'PARALLEL') ? KEYS_KBD_A : KEYS_SINGLE;
-        let allowedTasks = commTasks.filter(t => t.status === 'PENDING' || t.status === 'VISIBLE' || t.claimedBy === this.id);
+        const layout = FULL_KEYBOARD_LAYOUT;
+        let taskList = (simState.mode === 'INDIVIDUAL') ? (this.individualTasks || []) : commTasks;
+        let allowedTasks = taskList.filter(t => t.status === 'PENDING' || t.status === 'VISIBLE' || t.claimedBy === this.id);
 
         if (simState.orderingMode === 'ORDERED' && simState.targetMode === 'SEQUENCE') {
-            const uncompletedOrders = commTasks.filter(t => t.status !== 'COMPLETED').map(t => t.order || 1);
-            const unlockedOrder = uncompletedOrders.length > 0 ? Math.min(...uncompletedOrders) : 999;
-            allowedTasks = allowedTasks.filter(t => (t.order || 1) === unlockedOrder);
+            if (simState.mode === 'INDIVIDUAL') {
+                const uncompletedOrders = taskList.filter(t => t.status !== 'COMPLETED').map(t => t.order || 1);
+                const unlockedOrder = uncompletedOrders.length > 0 ? Math.min(...uncompletedOrders) : 999;
+                allowedTasks = allowedTasks.filter(t => (t.order || 1) === unlockedOrder);
+            } else {
+                const pendingUnclaimed = taskList.filter(t => (t.status === 'PENDING' || t.status === 'VISIBLE'));
+                if (pendingUnclaimed.length > 0) {
+                    const pendingOrders = pendingUnclaimed.map(t => t.order || 1);
+                    const minPendingOrder = Math.min(...pendingOrders);
+                    allowedTasks = pendingUnclaimed.filter(t => (t.order || 1) >= minPendingOrder);
+                }
+            }
         }
 
         if (allowedTasks.length === 0) {
             this.topEvaluatedUtilities = [];
-            this.lastDecisionReason = "No eligible tasks in current sequence order";
+            this.lastDecisionReason = "No eligible tasks available in queue";
             return null;
         }
 
@@ -908,7 +1009,7 @@ class SimAntAgent {
         }));
 
         const best = utilityList[0];
-        if (best && best.util.netUtility > 0) {
+        if (best && best.util.netUtility > -50) {
             const selected = best.task;
             if (selected.status === 'PENDING' || selected.status === 'VISIBLE') {
                 selected.status = 'CLAIMED';
@@ -951,6 +1052,7 @@ let commTasks = [];
 // --- THREE.JS SIMULATION SCENE ---
 let scene, camera, renderer, controls;
 let padGroupA, padGroupB;
+let allKeyMeshes = [];
 let antMeshes = [], antLegsList = [];
 let trajectoryLines = [], trajectoryGeometries = [];
 let signalMeshGroup;
@@ -966,9 +1068,9 @@ function init3DSimulation() {
     scene.fog = new THREE.FogExp2(0x0a0d14, 0.08);
 
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-    camera.position.set(1.0, 4.5, 4.5);
+    camera.position.set(0.0, 6.5, 3.8);
 
-    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.shadowMap.enabled = true;
@@ -977,14 +1079,14 @@ function init3DSimulation() {
     container.appendChild(renderer.domElement);
 
     controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.target.set(1.0, 0.3, 0.5);
+    controls.target.set(0.0, 0.0, -1.5);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
     scene.add(ambientLight);
 
-    const dirLight = new THREE.DirectionalLight(0x00f2fe, 1.0);
+    const dirLight = new THREE.DirectionalLight(0x00f2fe, 1.1);
     dirLight.position.set(5, 8, 5);
     dirLight.castShadow = true;
     scene.add(dirLight);
@@ -998,34 +1100,40 @@ function init3DSimulation() {
 }
 
 function rebuildKeyboards3D() {
+    if (!scene) return;
     if (padGroupA) scene.remove(padGroupA);
     if (padGroupB) scene.remove(padGroupB);
 
     padGroupA = new THREE.Group();
     padGroupB = new THREE.Group();
+    allKeyMeshes = [];
 
     if (simState.mode === "PARALLEL") {
-        createKeyboardPadMesh(KEYS_KBD_A, padGroupA, "KEYBOARD A");
-        createKeyboardPadMesh(KEYS_KBD_B, padGroupB, "KEYBOARD B");
+        createKeyboardPadMesh(FULL_KEYBOARD_LAYOUT, padGroupA, "KEYBOARD A", -4.5);
+        createKeyboardPadMesh(FULL_KEYBOARD_LAYOUT, padGroupB, "KEYBOARD B", 5.0);
         scene.add(padGroupA);
         scene.add(padGroupB);
     } else {
-        createKeyboardPadMesh(KEYS_SINGLE, padGroupA, "KEYBOARD");
+        createKeyboardPadMesh(FULL_KEYBOARD_LAYOUT, padGroupA, "KEYBOARD", 0.0);
         scene.add(padGroupA);
     }
 }
 
-function createKeyboardPadMesh(layout, group, labelText) {
+function createKeyboardPadMesh(layout, group, labelText, xOffset = 0.0) {
     Object.keys(layout).forEach(k => {
         const item = layout[k];
         const labelStr = item.label || k;
-        const geo = new THREE.BoxGeometry(0.8, 0.15, 0.8);
-        const mat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.3, metalness: 0.6, emissive: 0x0f172a });
+        const width = item.width || 0.52;
+        const height = item.height || 0.52;
+
+        const geo = new THREE.BoxGeometry(width, 0.12, height);
+        const mat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.3, metalness: 0.6, emissive: 0x0f172a, emissiveIntensity: 0.1 });
 
         const keyMesh = new THREE.Mesh(geo, mat);
-        keyMesh.position.set(item.x, 0.075, -item.y);
+        keyMesh.position.set(item.x + xOffset, 0.06, -item.y);
         keyMesh.castShadow = true;
         keyMesh.receiveShadow = true;
+        keyMesh.userData = { keyId: k, tile: item, xOffset: xOffset };
 
         const wireGeo = new THREE.EdgesGeometry(geo);
         const wireMat = new THREE.LineBasicMaterial({ color: 0x334155 });
@@ -1035,24 +1143,26 @@ function createKeyboardPadMesh(layout, group, labelText) {
         canvas.width = 128; canvas.height = 128;
         const ctx = canvas.getContext('2d');
         ctx.fillStyle = '#1e293b'; ctx.fillRect(0, 0, 128, 128);
-        ctx.fillStyle = '#00f2fe'; ctx.font = 'bold 72px Inter, sans-serif';
+        ctx.fillStyle = '#00f2fe'; ctx.font = 'bold 50px Inter, sans-serif';
         ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
         ctx.fillText(labelStr, 64, 64);
 
         const tex = new THREE.CanvasTexture(canvas);
         tex.needsUpdate = true;
-        const labelGeo = new THREE.PlaneGeometry(0.6, 0.6);
+        const labelGeo = new THREE.PlaneGeometry(width * 0.85, height * 0.85);
         const labelMat = new THREE.MeshBasicMaterial({ map: tex, transparent: true });
         const labelMesh = new THREE.Mesh(labelGeo, labelMat);
         labelMesh.rotation.x = -Math.PI / 2;
-        labelMesh.position.y = 0.081;
+        labelMesh.position.y = 0.065;
         keyMesh.add(labelMesh);
 
         group.add(keyMesh);
+        allKeyMeshes.push(keyMesh);
     });
 }
 
 function rebuildAnts3D() {
+    if (!scene) return;
     antMeshes.forEach(m => scene.remove(m));
     trajectoryLines.forEach(l => scene.remove(l));
     antMeshes = [];
@@ -1668,6 +1778,336 @@ function rebuildBrain3D() {
     fitToBrain();
 }
 
+// --- HIERARCHICAL NEURAL INSPECTOR STATE & FUNCTIONS ---
+let showAllNeurons = false;
+let neuralSearchQuery = '';
+let activeSelectedNeuronId = null;
+
+const NEURAL_STAGES = ['INPUT', 'SENSORY', 'PROCESSING', 'MEMORY', 'DECISION', 'MOTOR', 'OUTPUT'];
+
+const STAGE_CONFIG = {
+    'INPUT': { title: '1. INPUT STAGE', color: '#00f2fe', bg: 'rgba(0, 242, 254, 0.15)' },
+    'SENSORY': { title: '2. SENSORY STAGE', color: '#00e676', bg: 'rgba(0, 230, 118, 0.15)' },
+    'PROCESSING': { title: '3. PROCESSING STAGE', color: '#38bdf8', bg: 'rgba(56, 189, 248, 0.15)' },
+    'MEMORY': { title: '4. MEMORY STAGE', color: '#9d4edd', bg: 'rgba(157, 78, 221, 0.15)' },
+    'DECISION': { title: '5. DECISION STAGE', color: '#c084fc', bg: 'rgba(192, 132, 252, 0.15)' },
+    'MOTOR': { title: '6. MOTOR STAGE', color: '#ffaa00', bg: 'rgba(255, 170, 0, 0.15)' },
+    'OUTPUT': { title: '7. OUTPUT STAGE', color: '#ff3d71', bg: 'rgba(255, 61, 113, 0.15)' }
+};
+
+function getNeuronStage(n, index, totalNeurons) {
+    if (!n) return 'PROCESSING';
+    const region = (n.region || '').toUpperCase();
+    const cellType = (n.cell_type || n.type || '').toUpperCase();
+    const id = (n.id || '').toUpperCase();
+
+    if (cellType.includes('INPUT') || id.includes('INPUT') || region.includes('INPUT')) return 'INPUT';
+    if (region.includes('ANTENNAL') || cellType.includes('SENSORY') || id.includes('SENS')) return 'SENSORY';
+    if (region.includes('MUSHROOM') || cellType.includes('KENYON') || cellType.includes('INTER')) return 'PROCESSING';
+    if (region.includes('PB') || region.includes('MEMORY') || cellType.includes('MEMORY') || id.includes('MEM')) return 'MEMORY';
+    if (region.includes('EB') || region.includes('CENTRAL') || cellType.includes('COMMAND') || id.includes('DECIS')) return 'DECISION';
+    if (region.includes('SUBESOPHAGEAL') || cellType.includes('MOTOR') || id.includes('MOT')) return 'MOTOR';
+    if (region.includes('VENTRAL') || cellType.includes('OUTPUT') || id.includes('OUT')) return 'OUTPUT';
+
+    const total = totalNeurons || 128;
+    const ratio = index / total;
+    if (ratio < 0.08) return 'INPUT';
+    if (ratio < 0.22) return 'SENSORY';
+    if (ratio < 0.52) return 'PROCESSING';
+    if (ratio < 0.68) return 'MEMORY';
+    if (ratio < 0.82) return 'DECISION';
+    if (ratio < 0.94) return 'MOTOR';
+    return 'OUTPUT';
+}
+
+function initHierarchicalNeuralInspectorControls() {
+    const btnActive = document.getElementById('btn-filter-active');
+    const btnAll = document.getElementById('btn-filter-all');
+    const searchInput = document.getElementById('neural-search-input');
+    const btnFire = document.getElementById('btn-fire-selected-neuron');
+
+    if (btnActive) {
+        btnActive.onclick = () => {
+            showAllNeurons = false;
+            btnActive.classList.add('active');
+            if (btnAll) btnAll.classList.remove('active');
+            updateHierarchicalNeuralInspector();
+        };
+    }
+
+    if (btnAll) {
+        btnAll.onclick = () => {
+            showAllNeurons = true;
+            btnAll.classList.add('active');
+            if (btnActive) btnActive.classList.remove('active');
+            updateHierarchicalNeuralInspector();
+        };
+    }
+
+    if (searchInput) {
+        searchInput.oninput = (e) => {
+            neuralSearchQuery = e.target.value.toLowerCase().trim();
+            updateHierarchicalNeuralInspector();
+        };
+    }
+
+    if (btnFire) {
+        btnFire.onclick = () => {
+            if (!activeSelectedNeuronId) return;
+            const selectedAnt = activeAnts.find(a => a.id === activeSelectedAntId) || activeAnts[0];
+            if (selectedAnt && selectedAnt.brain) {
+                selectedAnt.brain.spikes[activeSelectedNeuronId] = true;
+                selectedAnt.brain.neuronStates[activeSelectedNeuronId] = -40.0;
+                updateHierarchicalNeuralInspector();
+            }
+        };
+    }
+}
+
+function updateHierarchicalNeuralInspector() {
+    if (!brainPackage || !brainPackage.neurons) return;
+
+    const stageContainer = document.getElementById('neural-stage-container');
+    if (!stageContainer) return;
+
+    const selectedAnt = activeAnts.find(a => a.id === activeSelectedAntId) || activeAnts[0];
+    const antBrain = selectedAnt ? selectedAnt.brain : null;
+
+    if (!activeSelectedNeuronId && brainPackage.neurons.length > 0) {
+        activeSelectedNeuronId = brainPackage.neurons[0].id;
+    }
+
+    const preSynapses = (brainPackage.synapses || []).filter(s => s.post_neuron_id === activeSelectedNeuronId);
+    const postSynapses = (brainPackage.synapses || []).filter(s => s.pre_neuron_id === activeSelectedNeuronId);
+    
+    const preConnectedIds = new Set(preSynapses.map(s => s.pre_neuron_id));
+    const postConnectedIds = new Set(postSynapses.map(s => s.post_neuron_id));
+
+    let totalSpikes = 0;
+    const activeNeuronIds = new Set();
+
+    brainPackage.neurons.forEach(n => {
+        if (antBrain) {
+            const isSpike = antBrain.spikes[n.id] || false;
+            const pot = antBrain.neuronStates[n.id] || n.resting_potential || -65.0;
+            if (isSpike || pot > (n.resting_potential || -65.0) + 5.0) {
+                activeNeuronIds.add(n.id);
+            }
+            if (isSpike) totalSpikes++;
+        }
+    });
+
+    const elSpikeRate = document.getElementById('raster-spike-rate');
+    if (elSpikeRate) elSpikeRate.textContent = `${totalSpikes * 5} Spikes/sec`;
+
+    const filteredNeurons = brainPackage.neurons.filter((n, idx) => {
+        if (neuralSearchQuery) {
+            const matchId = n.id.toLowerCase().includes(neuralSearchQuery);
+            const matchRegion = (n.region || '').toLowerCase().includes(neuralSearchQuery);
+            const matchType = (n.cell_type || n.type || '').toLowerCase().includes(neuralSearchQuery);
+            if (!matchId && !matchRegion && !matchType) return false;
+        }
+
+        if (!showAllNeurons) {
+            const isActive = activeNeuronIds.has(n.id);
+            const isSelected = n.id === activeSelectedNeuronId;
+            const isConnected = preConnectedIds.has(n.id) || postConnectedIds.has(n.id);
+            const isDefaultRelevant = activeNeuronIds.size === 0 && (idx < 5 || idx > brainPackage.neurons.length - 6);
+            return isActive || isSelected || isConnected || isDefaultRelevant;
+        }
+
+        return true;
+    });
+
+    const stageGroups = {};
+    NEURAL_STAGES.forEach(s => { stageGroups[s] = []; });
+
+    filteredNeurons.forEach((n) => {
+        const origIndex = brainPackage.neurons.findIndex(bn => bn.id === n.id);
+        const stage = getNeuronStage(n, origIndex, brainPackage.neurons.length);
+        if (stageGroups[stage]) {
+            stageGroups[stage].push({ neuron: n, index: origIndex });
+        }
+    });
+
+    let html = '<div id="spiking-grid" style="display:none;"></div>';
+
+    NEURAL_STAGES.forEach(stageKey => {
+        const cfg = STAGE_CONFIG[stageKey];
+        const nodes = stageGroups[stageKey] || [];
+        if (nodes.length === 0 && !showAllNeurons) return;
+
+        const totalInStage = brainPackage.neurons.filter((n, i) => getNeuronStage(n, i, brainPackage.neurons.length) === stageKey).length;
+
+        html += `
+            <div class="neural-stage-group">
+                <div class="stage-header" style="border-left: 3px solid ${cfg.color};">
+                    <div class="stage-title">
+                        <span>${cfg.title}</span>
+                        <span class="stage-badge-tag" style="background:${cfg.bg}; color:${cfg.color};">${nodes.length} / ${totalInStage}</span>
+                    </div>
+                </div>
+                <div class="stage-nodes-list">
+        `;
+
+        if (nodes.length === 0) {
+            html += `<div class="text-muted" style="font-size: 8.5px; padding: 2px 6px;">No active/connected nodes in this stage.</div>`;
+        } else {
+            nodes.sort((a, b) => a.neuron.id.localeCompare(b.neuron.id));
+
+            nodes.forEach(item => {
+                const n = item.neuron;
+                const isSelected = n.id === activeSelectedNeuronId;
+                const isActive = activeNeuronIds.has(n.id);
+                const isPre = preConnectedIds.has(n.id);
+                const isPost = postConnectedIds.has(n.id);
+
+                let stateClass = 'state-inactive';
+                let connTag = '';
+
+                if (isSelected) {
+                    stateClass = 'state-selected';
+                } else if (isActive) {
+                    stateClass = 'state-active';
+                } else if (isPre) {
+                    stateClass = 'state-connected-pre';
+                    connTag = `<span class="conn-tag pre">◄── PRE</span>`;
+                } else if (isPost) {
+                    stateClass = 'state-connected-post';
+                    connTag = `<span class="conn-tag post">POST ──►</span>`;
+                }
+
+                const pot = antBrain ? (antBrain.neuronStates[n.id] || n.resting_potential || -65.0) : -65.0;
+
+                html += `
+                    <div class="neuron-node-row ${stateClass}" 
+                         data-id="${n.id}" 
+                         onclick="selectHierarchicalNeuron('${n.id}')"
+                         onmouseenter="showNeuralTooltip(event, '${n.id}')"
+                         onmouseleave="hideNeuralTooltip()">
+                        <div class="node-left">
+                            <div class="node-dot"></div>
+                            <span class="node-id">${n.id}</span>
+                            <span class="node-region-tag">${n.region || ''}</span>
+                        </div>
+                        <div class="node-right">
+                            ${connTag}
+                            <span class="node-mv">${pot.toFixed(1)} mV</span>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        html += `
+                </div>
+            </div>
+        `;
+    });
+
+    stageContainer.innerHTML = html;
+    updateNeuronDetailDrawer(activeSelectedNeuronId);
+}
+
+function updateNeuronDetailDrawer(neuronId) {
+    if (!brainPackage || !brainPackage.neurons) return;
+    const n = brainPackage.neurons.find(bn => bn.id === neuronId) || brainPackage.neurons[0];
+    if (!n) return;
+
+    activeSelectedNeuronId = n.id;
+    updateNeuronInspector(n.id);
+
+    const elStageTag = document.getElementById('insp-stage-tag');
+    if (elStageTag) {
+        const origIdx = brainPackage.neurons.findIndex(bn => bn.id === n.id);
+        const stage = getNeuronStage(n, origIdx, brainPackage.neurons.length);
+        elStageTag.textContent = stage;
+        const cfg = STAGE_CONFIG[stage];
+        if (cfg) {
+            elStageTag.style.background = cfg.bg;
+            elStageTag.style.color = cfg.color;
+        }
+    }
+
+    const synapseList = document.getElementById('insp-synapses-list');
+    if (synapseList && brainPackage.synapses) {
+        const inSynapses = brainPackage.synapses.filter(s => s.post_neuron_id === n.id);
+        const outSynapses = brainPackage.synapses.filter(s => s.pre_neuron_id === n.id);
+
+        let synHtml = '';
+        inSynapses.forEach(s => {
+            const preN = brainPackage.neurons.find(bn => bn.id === s.pre_neuron_id);
+            const reg = preN ? preN.region : '';
+            synHtml += `
+                <div class="synapse-item" onclick="selectHierarchicalNeuron('${s.pre_neuron_id}')">
+                    <span style="color:#c084fc;">◄── IN PRE: <strong>${s.pre_neuron_id}</strong> (${reg})</span>
+                    <span class="${s.type === 'EXCITATORY' ? 'text-cyan' : 'text-amber'}">w: ${s.weight.toFixed(2)} (${s.type || 'EXC'})</span>
+                </div>
+            `;
+        });
+        outSynapses.forEach(s => {
+            const postN = brainPackage.neurons.find(bn => bn.id === s.post_neuron_id);
+            const reg = postN ? postN.region : '';
+            synHtml += `
+                <div class="synapse-item" onclick="selectHierarchicalNeuron('${s.post_neuron_id}')">
+                    <span style="color:#38bdf8;">POST ──►: <strong>${s.post_neuron_id}</strong> (${reg})</span>
+                    <span class="${s.type === 'EXCITATORY' ? 'text-cyan' : 'text-amber'}">w: ${s.weight.toFixed(2)} (${s.type || 'EXC'})</span>
+                </div>
+            `;
+        });
+
+        if (inSynapses.length === 0 && outSynapses.length === 0) {
+            synHtml = `<div class="text-muted" style="font-size:8.5px;">No direct synaptic connections mapped for this node.</div>`;
+        }
+
+        synapseList.innerHTML = synHtml;
+    }
+}
+
+function showNeuralTooltip(e, neuronId) {
+    if (!brainPackage || !brainPackage.neurons) return;
+    const n = brainPackage.neurons.find(bn => bn.id === neuronId);
+    if (!n) return;
+
+    const tooltip = document.getElementById('neural-hover-tooltip');
+    if (!tooltip) return;
+
+    const selectedAnt = activeAnts.find(a => a.id === activeSelectedAntId) || activeAnts[0];
+    const antBrain = selectedAnt ? selectedAnt.brain : null;
+    const pot = antBrain ? (antBrain.neuronStates[n.id] || n.resting_potential || -65.0) : -65.0;
+    const isSpike = antBrain ? (antBrain.spikes[n.id] || false) : false;
+
+    const inConn = (brainPackage.synapses || []).filter(s => s.post_neuron_id === n.id).length;
+    const outConn = (brainPackage.synapses || []).filter(s => s.pre_neuron_id === n.id).length;
+
+    const idx = brainPackage.neurons.findIndex(bn => bn.id === n.id);
+    const stage = getNeuronStage(n, idx, brainPackage.neurons.length);
+
+    tooltip.innerHTML = `
+        <div style="font-weight:bold; color:var(--accent-cyan); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:2px; margin-bottom:4px;">
+            ${n.id} <span style="font-size:8px; color:var(--text-muted);">(${stage})</span>
+        </div>
+        <div>Region: <strong>${n.region || 'DEFAULT'}</strong></div>
+        <div>Cell Type: <strong>${n.cell_type || 'Computational'}</strong> (${n.neurotransmitter || 'GABA'})</div>
+        <div>Potential: <strong style="color:${isSpike ? '#00e676' : '#00f2fe'};">${pot.toFixed(2)} mV</strong> ${isSpike ? '⚡ (FIRING)' : ''}</div>
+        <div>Synapses: In: <strong>${inConn}</strong> | Out: <strong>${outConn}</strong></div>
+    `;
+
+    tooltip.style.display = 'block';
+    tooltip.style.left = `${Math.min(window.innerWidth - 220, e.clientX + 12)}px`;
+    tooltip.style.top = `${Math.min(window.innerHeight - 120, e.clientY + 12)}px`;
+}
+
+function hideNeuralTooltip() {
+    const tooltip = document.getElementById('neural-hover-tooltip');
+    if (tooltip) tooltip.style.display = 'none';
+}
+
+function selectHierarchicalNeuron(id) {
+    activeSelectedNeuronId = id;
+    updateHierarchicalNeuralInspector();
+}
+
 function updateNeuronInspector(neuronId) {
     if (!brainPackage) return;
     const n = brainPackage.neurons.find(n => n.id === neuronId) || brainPackage.neurons[0];
@@ -1709,67 +2149,61 @@ function updateNeuronInspector(neuronId) {
 // Update Signal Transmission Inspector Card
 function updateSignalInspector(pkt) {
     if (!pkt) return;
-    const elSigId = document.getElementById('sig-id');
+    const elSynId = document.getElementById('sig-synapse-id') || document.getElementById('sig-id');
+    const elPathway = document.getElementById('sig-pathway');
+    const elType = document.getElementById('sig-type');
+    const elDelay = document.getElementById('sig-delay');
+    const elWeight = document.getElementById('sig-weight');
+    const elProgress = document.getElementById('sig-progress');
+    const elBar = document.getElementById('sig-progress-bar');
     const elSigAnt = document.getElementById('sig-ant');
-    const elSigPre = document.getElementById('sig-pre');
-    const elSigPost = document.getElementById('sig-post');
-    const elSigWeight = document.getElementById('sig-weight');
-    const elSigDelay = document.getElementById('sig-delay');
-    const elSigStatus = document.getElementById('sig-status');
 
-    if (elSigId) elSigId.textContent = pkt.synapseId || pkt.id;
+    if (elSynId) elSynId.textContent = pkt.synapseId || pkt.id;
     if (elSigAnt) elSigAnt.textContent = `ANT #${pkt.antId}`;
-    if (elSigPre) elSigPre.textContent = pkt.preId;
-    if (elSigPost) elSigPost.textContent = pkt.postId;
-    if (elSigWeight) elSigWeight.textContent = (pkt.weight || 0.5).toFixed(2);
-    if (elSigDelay) elSigDelay.textContent = `${(pkt.delay || 1.5).toFixed(2)} ms`;
-    
-    if (elSigStatus) {
-        const pct = Math.round(pkt.progress * 100);
-        if (pkt.progress >= 1.0) {
-            elSigStatus.textContent = "ARRIVED";
-            elSigStatus.className = "text-amber";
-        } else {
-            elSigStatus.textContent = `TRAVELLING (${pct}%)`;
-            elSigStatus.className = "text-green";
-        }
-    }
+    if (elPathway) elPathway.textContent = `${pkt.preId || 'N/A'} ──► ${pkt.postId || 'N/A'}`;
+    if (elType) elType.textContent = pkt.type || 'EXCITATORY';
+    if (elDelay) elDelay.textContent = `${(pkt.delay || 1.5).toFixed(1)}ms`;
+    if (elWeight) elWeight.textContent = (pkt.weight || 0.5).toFixed(2);
+    const pct = Math.min(100, Math.round((pkt.progress || 0) * 100));
+    if (elProgress) elProgress.textContent = `${pct}%`;
+    if (elBar) elBar.style.width = `${pct}%`;
 }
 
 // Update Live Causal Trace Panel UI
 function updateCausalTraceUI() {
-    const traceListContainer = document.getElementById('causal-trace-list');
+    const containers = [document.getElementById('causal-trace-list'), document.getElementById('causal-trace-container')].filter(Boolean);
     const stepBadge = document.getElementById('trace-step-count');
-    if (!traceListContainer) return;
 
     const selectedAnt = activeAnts.find(a => a.id === activeSelectedAntId) || activeAnts[0];
     const antBrain = selectedAnt ? selectedAnt.brain : null;
 
     if (stepBadge) stepBadge.textContent = `STEP #${simState.stepCount}`;
 
-    if (!antBrain || antBrain.causalTraceLog.length === 0) {
-        traceListContainer.innerHTML = '<div class="trace-item empty">Awaiting runtime neural signal transmission...</div>';
-        return;
-    }
+    containers.forEach(traceListContainer => {
+        if (!antBrain || antBrain.causalTraceLog.length === 0) {
+            traceListContainer.innerHTML = '<div class="trace-item empty">Awaiting runtime neural signal transmission...</div>';
+            return;
+        }
 
-    traceListContainer.innerHTML = '';
-    antBrain.causalTraceLog.slice(0, 10).forEach(logItem => {
-        const row = document.createElement('div');
-        row.className = 'trace-item font-mono';
-        row.innerHTML = `
-            <span class="trace-node">${logItem.sensoryNeuron}</span>
-            <span class="trace-arrow">──►</span>
-            <span class="trace-node">${logItem.interNeuron}</span>
-            <span class="trace-arrow">──►</span>
-            <span class="trace-node">${logItem.motorNeuron}</span>
-            <span class="trace-action">[${logItem.action}]</span>
-        `;
-        row.addEventListener('click', () => {
-            selectedNeuronId = logItem.interNeuron;
-            focusNeuron(selectedNeuronId);
-            updateNeuronInspector(selectedNeuronId);
+        traceListContainer.innerHTML = '';
+        antBrain.causalTraceLog.slice(0, 10).forEach(logItem => {
+            const row = document.createElement('div');
+            row.className = 'trace-item font-mono';
+            row.innerHTML = `
+                <span class="trace-node">${logItem.sensoryNeuron}</span>
+                <span class="trace-arrow">──►</span>
+                <span class="trace-node">${logItem.interNeuron}</span>
+                <span class="trace-arrow">──►</span>
+                <span class="trace-node">${logItem.motorNeuron}</span>
+                <span class="trace-action">[${logItem.action}]</span>
+            `;
+            row.addEventListener('click', () => {
+                selectedNeuronId = logItem.interNeuron;
+                focusNeuron(selectedNeuronId);
+                updateNeuronInspector(selectedNeuronId);
+            });
+            traceListContainer.appendChild(row);
         });
-        traceListContainer.appendChild(row);
     });
 }
 
@@ -1787,6 +2221,11 @@ function updateDebugDiagnosticsUI() {
     const elLatest = document.getElementById('debug-latest-event');
     const elStatusLine = document.getElementById('debug-status-line');
 
+    const elDiagErrors = document.getElementById('diag-errors');
+    const elDiagBlocked = document.getElementById('diag-blocked');
+    const elDiagDeadlocks = document.getElementById('diag-deadlocks');
+    const elDiagCommFail = document.getElementById('diag-comm-fail');
+
     const selectedAnt = activeAnts.find(a => a.id === activeSelectedAntId) || activeAnts[0];
     const antBrain = selectedAnt ? selectedAnt.brain : null;
 
@@ -1801,6 +2240,12 @@ function updateDebugDiagnosticsUI() {
     if (elRate) elRate.textContent = `${currentEventsPerSec}`;
     if (elRenderedSignals) elRenderedSignals.textContent = `${signalsRenderedCount}`;
     if (elCompleted) elCompleted.textContent = `${signalsCompletedCount}`;
+
+    const blockedCount = activeAnts.filter(a => a.isBlocked || a.status === 'RECOVERING').length;
+    if (elDiagErrors) elDiagErrors.textContent = `${rewardEngine.invalidEventCounter + rewardEngine.nanInfinityCounter}`;
+    if (elDiagBlocked) elDiagBlocked.textContent = `${blockedCount}`;
+    if (elDiagDeadlocks) elDiagDeadlocks.textContent = `0`;
+    if (elDiagCommFail) elDiagCommFail.textContent = `0`;
 
     if (elLatest) {
         if (lastEmittedEvent) {
@@ -1824,6 +2269,8 @@ function updateDebugDiagnosticsUI() {
 
 // --- UI & TELEMETRY BINDINGS ---
 function initUI() {
+    initHierarchicalNeuralInspectorControls();
+
     const inspectorSelect = document.getElementById('ant-inspector-select');
     if (inspectorSelect) {
         inspectorSelect.addEventListener('change', (e) => {
@@ -2002,10 +2449,15 @@ function initUI() {
     document.getElementById('btn-toggle-panels')?.addEventListener('click', () => {
         const leftP = document.getElementById('panel-left');
         const rightP = document.getElementById('panel-right');
-        const isHidden = leftP.style.display === 'none';
+        const isHidden = (leftP && (leftP.style.display === 'none' || getComputedStyle(leftP).display === 'none'));
         if (leftP) leftP.style.display = isHidden ? 'flex' : 'none';
         if (rightP) rightP.style.display = isHidden ? 'flex' : 'none';
         onWindowResize();
+    });
+
+    document.getElementById('terminal-filter-select')?.addEventListener('change', (e) => {
+        currentLogFilter = e.target.value;
+        appendTerminalLog(`[TERMINAL] Filter active: ${currentLogFilter}`, "text-cyan");
     });
 
     document.getElementById('btn-about')?.addEventListener('click', () => {
@@ -2048,10 +2500,15 @@ function initUI() {
         resetSimulation();
     });
 
-    document.getElementById('single-key-select')?.addEventListener('change', (e) => {
-        simState.singleKeyTarget = e.target.value.toUpperCase();
-        resetSimulation();
-    });
+    const singleKeyInput = document.getElementById('single-key-input');
+    if (singleKeyInput) {
+        singleKeyInput.addEventListener('input', (e) => {
+            if (e.target.value) {
+                simState.singleKeyTarget = e.target.value;
+                resetSimulation();
+            }
+        });
+    }
 
     const sequencePresetSelect = document.getElementById('sequence-preset-select');
     const customSeqInput = document.getElementById('custom-sequence-input');
@@ -2059,13 +2516,22 @@ function initUI() {
     sequencePresetSelect?.addEventListener('change', (e) => {
         simState.sequencePreset = e.target.value;
         if (simState.sequencePreset === 'CUSTOM') {
-            if (customSeqInput) customSeqInput.style.display = 'inline-block';
-            customSeqInput?.focus();
+            if (customSeqInput) {
+                customSeqInput.style.display = 'inline-block';
+                customSeqInput.focus();
+            }
         } else {
             if (customSeqInput) customSeqInput.style.display = 'none';
             resetSimulation();
         }
     });
+
+    if (customSeqInput) {
+        customSeqInput.addEventListener('input', (e) => {
+            simState.customSequence = e.target.value || "Hello, world!";
+            resetSimulation();
+        });
+    }
 
     document.getElementById('btn-play')?.addEventListener('click', () => {
         simState.isPlaying = !simState.isPlaying;
@@ -2086,13 +2552,21 @@ function initUI() {
     });
 
     document.getElementById('btn-reframe')?.addEventListener('click', () => {
-        camera.position.set(1.0, 4.5, 4.5);
-        controls.target.set(1.0, 0.3, 0.5);
+        if (simState.mode === "PARALLEL") {
+            camera.position.set(0.0, 9.5, 5.0);
+        } else {
+            camera.position.set(0.0, 6.5, 3.8);
+        }
+        controls.target.set(0.0, 0.0, -1.5);
     });
 
     document.getElementById('btn-topdown')?.addEventListener('click', () => {
-        camera.position.set(1.0, 6.0, -0.501);
-        controls.target.set(1.0, 0.0, -0.5);
+        if (simState.mode === "PARALLEL") {
+            camera.position.set(0.0, 11.0, -1.501);
+        } else {
+            camera.position.set(0.0, 8.5, -1.501);
+        }
+        controls.target.set(0.0, 0.0, -1.5);
     });
 }
 
@@ -2102,25 +2576,23 @@ function setSplitLayout(layoutMode) {
     const paneBrain = document.getElementById('pane-brain');
     const divider = document.getElementById('split-divider');
 
-    if (!paneSim || !paneBrain) return;
-
-    if (layoutMode === 'SIM_FULL') {
+    if (paneSim) {
         paneSim.style.display = 'flex';
         paneSim.style.flex = '1 1 100%';
-        paneBrain.style.display = 'none';
-        if (divider) divider.style.display = 'none';
-    } else if (layoutMode === 'BRAIN_FULL') {
-        paneSim.style.display = 'none';
-        paneBrain.style.display = 'flex';
-        paneBrain.style.flex = '1 1 100%';
-        if (divider) divider.style.display = 'none';
-    } else {
-        paneSim.style.display = 'flex';
-        paneBrain.style.display = 'flex';
-        paneSim.style.flex = `1 1 ${simState.splitPercent}%`;
-        paneBrain.style.flex = `1 1 ${100 - simState.splitPercent}%`;
-        if (divider) divider.style.display = 'flex';
     }
+    if (paneBrain) {
+        if (layoutMode === 'BRAIN_FULL') {
+            if (paneSim) paneSim.style.display = 'none';
+            paneBrain.style.display = 'flex';
+            paneBrain.style.flex = '1 1 100%';
+        } else if (layoutMode === 'SIM_FULL') {
+            paneBrain.style.display = 'none';
+        } else {
+            if (paneSim) paneSim.style.flex = `1 1 ${simState.splitPercent}%`;
+            paneBrain.style.flex = `1 1 ${100 - simState.splitPercent}%`;
+        }
+    }
+    if (divider) divider.style.display = paneBrain ? 'flex' : 'none';
 
     onWindowResize();
 }
@@ -2196,28 +2668,33 @@ function resetSimulation() {
     simState.stepCount = 0;
     simState.completedTasksCount = 0;
 
+    let targetSentence = "Hello, world!";
     if (simState.targetMode === "SINGLE") {
-        simState.activeSequence = [simState.singleKeyTarget];
+        targetSentence = simState.singleKeyTarget || "H";
     } else {
         if (simState.sequencePreset === "CUSTOM") {
-            const clean = simState.customSequence.toUpperCase().replace(/[^A-F]/g, '');
-            simState.activeSequence = clean ? clean.split('') : ['D', 'E', 'C', 'A', 'F'];
+            targetSentence = simState.customSequence || "Hello, world!";
         } else {
-            simState.activeSequence = simState.sequencePreset.split('');
+            targetSentence = simState.sequencePreset || "Hello, world!";
         }
     }
+
+    simState.targetSentence = targetSentence;
+    simState.activeSequence = targetSentence.split('');
 
     if (simState.mode === "PARALLEL") {
         commTasks = [];
         simState.activeSequence.forEach((char, idx) => {
-            commTasks.push({ id: `TA_${idx+1}_${char}#${idx+1}`, target: char, order: idx + 1, kbd: "KEYBOARD_A", status: "PENDING" });
-            commTasks.push({ id: `TB_${idx+1}_${char}#${idx+1}`, target: char, order: idx + 1, kbd: "KEYBOARD_B", status: "PENDING" });
+            commTasks.push({ id: `TA_${idx+1}_${ord(char)}_${char}`, target: char, order: idx + 1, kbd: "KEYBOARD_A", status: "PENDING" });
+            commTasks.push({ id: `TB_${idx+1}_${ord(char)}_${char}`, target: char, order: idx + 1, kbd: "KEYBOARD_B", status: "PENDING" });
         });
     } else {
         commTasks = simState.activeSequence.map((char, idx) => ({
-            id: `TASK_${idx+1}_${char}#${idx+1}`, target: char, order: idx + 1, kbd: "KEYBOARD_A", status: "PENDING"
+            id: `TASK_${idx+1}_${ord(char)}_${char}`, target: char, order: idx + 1, kbd: "KEYBOARD_A", status: "PENDING"
         }));
     }
+
+    function ord(c) { return c.charCodeAt(0); }
 
     const manifest = brainPackage ? brainPackage.manifest : {};
     const neurons = brainPackage ? brainPackage.neurons : [];
@@ -2225,27 +2702,54 @@ function resetSimulation() {
 
     for (let i = 0; i < simState.antCount; i++) {
         const ant = new SimAntAgent(i + 1, ANT_COLORS_HEX[i % ANT_COLORS_HEX.length]);
-        let startX = 1.0;
+        
+        let startX = 0.0;
         if (simState.mode === "PARALLEL" && i >= Math.ceil(simState.antCount / 2)) {
-            startX = 3.0;
+            startX = 5.0 + (i - Math.ceil(simState.antCount / 2)) * 0.8;
         } else {
-            startX = 1.0 + (i - (simState.antCount - 1) / 2) * 0.5;
+            startX = ((i - (simState.antCount - 1) / 2.0) * 1.5);
         }
-        ant.reset(startX, -0.8, manifest, neurons, synapses);
+        ant.reset(startX, -1.0, manifest, neurons, synapses);
+
+        if (simState.mode === "INDIVIDUAL") {
+            ant.individualTasks = simState.activeSequence.map((char, idx) => ({
+                id: `IND_ANT${ant.id}_${idx+1}_${ord(char)}_${char}`, target: char, order: idx + 1, kbd: "KEYBOARD_A", status: "PENDING"
+            }));
+        }
 
         const reserved = reserveTaskAtomicJS(ant);
         if (reserved) {
             ant.claimedTask = reserved;
             ant.targetKey = reserved.target;
-            const layout = reserved.kbd === "KEYBOARD_B" ? KEYS_KBD_B : (simState.mode === "PARALLEL" ? KEYS_KBD_A : KEYS_SINGLE);
-            const targetPos = layout[reserved.target] || layout[`A_${reserved.target}`] || layout[`B_${reserved.target}`] || { x: 1.0, y: 0.0 };
-            ant.targetX = targetPos.x;
-            ant.targetY = targetPos.y;
+            ant.currentKey = reserved.target;
+            ant.targetIndex = reserved.order || 1;
+            const xOff = reserved.kbd === "KEYBOARD_B" ? 5.0 : (simState.mode === "PARALLEL" ? -4.5 : 0.0);
+            const found = findKeyForChar(reserved.target);
+            const tile = found ? found.tile : { x: 0.0, y: 1.4 };
+            ant.targetX = tile.x + xOff;
+            ant.targetY = tile.y;
             ant.navigationState = "MOVING_TO_TARGET";
             ant.status = "APPROACHING";
+            ant.taskState = "APPROACHING";
             ant.lastDistance = Math.sqrt((ant.targetX - ant.x)**2 + (ant.targetY - ant.y)**2);
         }
         activeAnts.push(ant);
+    }
+
+    const inspSelect = document.getElementById('ant-inspector-select');
+    if (inspSelect) {
+        inspSelect.innerHTML = '';
+        activeAnts.forEach(a => {
+            const opt = document.createElement('option');
+            opt.value = `${a.id}`;
+            opt.textContent = `ANT #${a.id}`;
+            if (a.id === activeSelectedAntId) opt.selected = true;
+            inspSelect.appendChild(opt);
+        });
+        if (!activeAnts.some(a => a.id === activeSelectedAntId) && activeAnts.length > 0) {
+            activeSelectedAntId = activeAnts[0].id;
+            inspSelect.value = `${activeSelectedAntId}`;
+        }
     }
 
     rebuildKeyboards3D();
@@ -2280,8 +2784,9 @@ function stepSimulation() {
                 if (reserved) {
                     ant.claimedTask = reserved;
                     ant.targetKey = reserved.target;
-                    const layout = reserved.kbd === "KEYBOARD_B" ? KEYS_KBD_B : (simState.mode === "PARALLEL" ? KEYS_KBD_A : KEYS_SINGLE);
-                    const targetPos = layout[reserved.target] || layout[`A_${reserved.target}`] || layout[`B_${reserved.target}`] || { x: 1.0, y: 0.0 };
+                    const xOff = reserved.kbd === "KEYBOARD_B" ? 5.0 : (simState.mode === "PARALLEL" ? -4.5 : 0.0);
+                    const found = findKeyForChar(reserved.target);
+                    const targetPos = found ? { x: found.tile.x + xOff, y: found.tile.y } : { x: xOff, y: 1.4 };
                     ant.targetX = targetPos.x;
                     ant.targetY = targetPos.y;
                     ant.navigationState = "MOVING_TO_TARGET";
@@ -2453,6 +2958,10 @@ function stepSimulation() {
                 task.completedBy = ant.id;
                 simState.completedTasksCount++;
 
+                // Append physically verified key character to this ant's personal typed buffer
+                if (!ant.typedBuffer) ant.typedBuffer = [];
+                ant.typedBuffer.push(task.target);
+
                 // Reinforce successful route with strong HOME and FOOD pheromones
                 pheromoneField.deposit(ant.x, ant.y, 'FOOD', 3.0);
                 pheromoneField.deposit(ant.x, ant.y, 'HOME', 2.0);
@@ -2505,8 +3014,9 @@ function stepSimulation() {
                 if (nextTask) {
                     ant.claimedTask = nextTask;
                     ant.targetKey = nextTask.target;
-                    const layout = nextTask.kbd === "KEYBOARD_B" ? KEYS_KBD_B : (simState.mode === "PARALLEL" ? KEYS_KBD_A : KEYS_SINGLE);
-                    const targetPos = layout[nextTask.target] || layout[`A_${nextTask.target}`] || layout[`B_${nextTask.target}`] || { x: 1.0, y: 0.0 };
+                    const xOff = nextTask.kbd === "KEYBOARD_B" ? 5.0 : (simState.mode === "PARALLEL" ? -4.5 : 0.0);
+                    const found = findKeyForChar(nextTask.target);
+                    const targetPos = found ? { x: found.tile.x + xOff, y: found.tile.y } : { x: xOff, y: 1.4 };
                     ant.targetX = targetPos.x;
                     ant.targetY = targetPos.y;
                     ant.navigationState = "MOVING_TO_TARGET";
@@ -2629,7 +3139,32 @@ function updateTelemetryUI() {
             const elReason = document.getElementById('rwd-reason'); if (elReason) elReason.textContent = rwd.lastRewardReason;
             const elPos = document.getElementById('rwd-pos-total'); if (elPos) elPos.textContent = `+${rwd.positiveRewardTotal.toFixed(2)}`;
             const elNeg = document.getElementById('rwd-neg-total'); if (elNeg) elNeg.textContent = `-${rwd.negativeRewardTotal.toFixed(2)}`;
+            const elDup = document.getElementById('rwd-dup-count'); if (elDup) elDup.textContent = rewardEngine.duplicateEventCounter;
+            const elInv = document.getElementById('rwd-inv-count'); if (elInv) elInv.textContent = rewardEngine.invalidEventCounter;
+            const elNan = document.getElementById('rwd-nan-count'); if (elNan) elNan.textContent = rewardEngine.nanInfinityCounter;
         }
+
+        const elPhero = document.getElementById('val-pheromone');
+        if (elPhero) {
+            const activeTrails = pheromoneField.getActiveTrailCount();
+            elPhero.textContent = `Active Trails: ${activeTrails}`;
+        }
+
+        // Keep ant-inspector-select options synced with active ant count
+        const inspSelect = document.getElementById('ant-inspector-select');
+        if (inspSelect && inspSelect.options.length !== simState.antCount) {
+            inspSelect.innerHTML = '';
+            for (let i = 1; i <= simState.antCount; i++) {
+                const opt = document.createElement('option');
+                opt.value = `${i}`;
+                opt.textContent = `ANT #${i}`;
+                if (i === activeSelectedAntId) opt.selected = true;
+                inspSelect.appendChild(opt);
+            }
+        }
+
+        // Update Hierarchical Neural Inspector
+        updateHierarchicalNeuralInspector();
 
         // --- UPDATE "WHY IS THIS ANT DOING THIS?" INTENT INSPECTOR CARD ---
         const elIntAnt = document.getElementById('intent-ant-id'); if (elIntAnt) elIntAnt.textContent = `ANT #${selectedAnt.id}`;
@@ -2679,6 +3214,71 @@ function updateTelemetryUI() {
         }
     }
 
+    // Calculate Colony-Level Verified Typed Output from Completed Tasks
+    const completedTasks = commTasks.filter(t => t.status === 'COMPLETED');
+    completedTasks.sort((a, b) => (a.order || 0) - (b.order || 0));
+    const overallTypedText = completedTasks.map(t => t.target).join('');
+
+    const targetSentence = simState.targetSentence || "Hello, world!";
+    let matchCount = 0;
+    for (let i = 0; i < Math.min(overallTypedText.length, targetSentence.length); i++) {
+        if (overallTypedText[i] === targetSentence[i]) matchCount++;
+    }
+    const accuracy = targetSentence.length > 0 ? ((matchCount / Math.max(targetSentence.length, overallTypedText.length)) * 100).toFixed(1) : "100.0";
+    const isExactMatch = (overallTypedText === targetSentence && overallTypedText.length > 0);
+
+    let errorCount = 0;
+    const maxLen = Math.max(overallTypedText.length, targetSentence.length);
+    for (let i = 0; i < maxLen; i++) {
+        if (overallTypedText[i] !== targetSentence[i]) errorCount++;
+    }
+
+    const colonyTypedEl = document.getElementById('colony-typed-output');
+    if (colonyTypedEl) colonyTypedEl.textContent = overallTypedText.length > 0 ? `"${overallTypedText}"` : '(waiting for keypresses...)';
+
+    const matchBadgeEl = document.getElementById('colony-match-badge');
+    if (matchBadgeEl) {
+        if (isExactMatch) {
+            matchBadgeEl.textContent = 'MATCH: YES';
+            matchBadgeEl.className = 'sub-badge text-green';
+        } else if (overallTypedText.length >= targetSentence.length) {
+            matchBadgeEl.textContent = 'MATCH: NO';
+            matchBadgeEl.className = 'sub-badge text-amber';
+        } else {
+            matchBadgeEl.textContent = `PROGRESS: ${overallTypedText.length}/${targetSentence.length}`;
+            matchBadgeEl.className = 'sub-badge text-cyan';
+        }
+    }
+
+    const accuracyEl = document.getElementById('val-accuracy');
+    if (accuracyEl) {
+        accuracyEl.textContent = `${accuracy}%`;
+        accuracyEl.className = isExactMatch ? 'text-green' : (parseFloat(accuracy) > 70 ? 'text-cyan' : 'text-amber');
+    }
+
+    const errorsEl = document.getElementById('val-errors');
+    if (errorsEl) {
+        errorsEl.textContent = `${errorCount}`;
+        errorsEl.className = errorCount === 0 ? 'text-green' : 'text-amber';
+    }
+
+    const progressEl = document.getElementById('val-progress');
+    if (progressEl) {
+        progressEl.textContent = `${completedTasks.length} / ${targetSentence.length} Chars`;
+    }
+
+    const progressBarEl = document.getElementById('seq-progress-bar');
+    if (progressBarEl) {
+        const pct = targetSentence.length > 0 ? Math.min(100, Math.round((completedTasks.length / targetSentence.length) * 100)) : 0;
+        progressBarEl.style.width = `${pct}%`;
+    }
+
+    if (completedTasks.length >= targetSentence.length && !simState.completionLogged && targetSentence.length > 0) {
+        simState.completionLogged = true;
+        const perAntOutputs = activeAnts.map(a => `Ant #${a.id}: "${(a.typedBuffer || []).join('')}"`).join(' | ');
+        appendTerminalLog(`[FINAL RESULT] Target: "${targetSentence}" | Actual: "${overallTypedText}" | Exact Match: ${isExactMatch ? 'YES' : 'NO'} | Accuracy: ${accuracy}% | Errors: ${errorCount} | ${perAntOutputs}`, isExactMatch ? "text-green" : "text-amber");
+    }
+
     const roster = document.getElementById('agents-roster');
     if (roster) {
         roster.innerHTML = '';
@@ -2695,6 +3295,7 @@ function updateTelemetryUI() {
             const currentDist = (ant.targetX !== null && ant.targetY !== null) ? Math.sqrt((ant.targetX - ant.x)**2 + (ant.targetY - ant.y)**2) : 0.0;
             const distStr = (ant.targetX !== null) ? currentDist.toFixed(2) : "0.00";
             const deltaStr = ant.distanceDelta >= 0 ? `+${ant.distanceDelta.toFixed(3)}` : `${ant.distanceDelta.toFixed(3)}`;
+            const antTyped = (ant.typedBuffer && ant.typedBuffer.length > 0) ? `"${ant.typedBuffer.join('')}"` : '""';
 
             card.innerHTML = `
                 <div class="agent-header">
@@ -2706,9 +3307,9 @@ function updateTelemetryUI() {
                 <div class="agent-details font-mono" style="font-size: 9px; margin-top: 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;">
                     <div>Brain: <strong class="text-cyan">LIF #${ant.id}</strong></div>
                     <div>Task: <strong>#${ant.claimedTask ? ant.claimedTask.order : '-'} [${ant.targetKey || 'None'}]</strong></div>
+                    <div>Typed: <strong class="text-green">${antTyped}</strong></div>
                     <div>Distance: <strong>${distStr}m</strong></div>
                     <div>Progress: <strong class="${ant.distanceDelta >= 0 ? 'text-green' : 'text-amber'}">${deltaStr}m</strong></div>
-                    <div>Sub-Role: <strong class="text-purple">${ant.coActionSubRole}</strong></div>
                     <div>Blocked: <strong class="${ant.isBlocked ? 'text-amber' : 'text-muted'}">${ant.isBlocked ? 'YES' : 'NO'}</strong></div>
                     <div style="grid-column: span 2;">Reward: <strong>+${ant.totalReward.toFixed(2)}</strong> | Motivation: <span class="text-muted" style="font-size: 8px;">${ant.roleMotivation.substr(0, 30)}...</span></div>
                 </div>
@@ -2732,9 +3333,21 @@ function updateTelemetryUI() {
     }
 }
 
+let currentLogFilter = 'ALL';
 function appendTerminalLog(msg, colorClass = "") {
     const logBox = document.getElementById('comm-log');
     if (!logBox) return;
+
+    if (currentLogFilter !== 'ALL') {
+        const upper = (msg + " " + colorClass).toUpperCase();
+        if (currentLogFilter === 'ERROR' && !upper.includes('ERROR') && !upper.includes('FAIL') && !upper.includes('AMBER')) return;
+        if (currentLogFilter === 'BRAIN' && !upper.includes('BRAIN') && !upper.includes('NEURON') && !upper.includes('SPIKE') && !upper.includes('LIF')) return;
+        if (currentLogFilter === 'MOVEMENT' && !upper.includes('MOVE') && !upper.includes('STEER') && !upper.includes('STUCK') && !upper.includes('PATH') && !upper.includes('APPROACH')) return;
+        if (currentLogFilter === 'COMM' && !upper.includes('COMM') && !upper.includes('BROADCAST') && !upper.includes('CLAIM') && !upper.includes('MSG')) return;
+        if (currentLogFilter === 'PHEROMONE' && !upper.includes('PHERO') && !upper.includes('SCENT') && !upper.includes('TRAIL')) return;
+        if (currentLogFilter === 'TASK' && !upper.includes('TASK') && !upper.includes('REWARD') && !upper.includes('KEY') && !upper.includes('ORDER')) return;
+    }
+
     const line = document.createElement('div');
     line.className = `log-line ${colorClass}`;
     line.textContent = `[${(performance.now() / 1000).toFixed(2)}s] ${msg}`;
@@ -2762,24 +3375,24 @@ function inspectAndPrintModelDetails(manifest, neurons, synapses) {
 
 function loadPackage(dir) {
     Promise.all([
-        fetch(`${dir}/model_manifest.json`).then(r => r.json()),
-        fetch(`${dir}/neurons/neurons.json`).then(r => r.json()),
-        fetch(`${dir}/synapses/synapses.json`).then(r => r.json())
+        fetch(`${dir}/manifest.json`).then(r => r.json()),
+        fetch(`${dir}/brain/neurons.json`).then(r => r.json()),
+        fetch(`${dir}/brain/synapses.json`).then(r => r.json())
     ]).then(([manifest, neurons, synapses]) => {
         brainPackage = { manifest, neurons, synapses };
 
-        // Parse and build full 55,000 Modeled Neuron Dataset across 8 layers
+        // Parse and build full Modeled Neuron Dataset
         parsed55kNeurons = build55KModeledNeuronDataset(neurons);
 
         const elNCount = document.getElementById('model-neuron-count');
-        if (elNCount) elNCount.textContent = `55,000 Modeled Neurons`;
+        if (elNCount) elNCount.textContent = `${neurons.length} LIF Nodes`;
         const elSCount = document.getElementById('model-synapse-count');
         if (elSCount) elSCount.textContent = `${synapses.length} Synapses`;
 
         inspectAndPrintModelDetails(manifest, neurons, synapses);
         rebuildBrain3D();
         resetSimulation();
-        appendTerminalLog(`[MODEL] Loaded model package: ${manifest.model_name || dir} (55,000 Modeled Neurons in 8 Layers, ${synapses.length} Synapses)`, "text-cyan");
+        appendTerminalLog(`[MODEL] Loaded authoritative .antbrain package: ${manifest.antId || manifest.model_name || 'Ant-6DCT'} (${manifest.modelVersion || 'v1.0.0'}, ${neurons.length} Neurons, ${synapses.length} Synapses)`, "text-cyan");
     }).catch(err => {
         console.error("Error loading model package:", err);
         const errOverlay = document.getElementById('brain-error-overlay');
@@ -2791,10 +3404,10 @@ function loadPackage(dir) {
 }
 
 function onWindowResize() {
-    const paneSim = document.getElementById('pane-simulation');
-    if (paneSim && renderer && camera) {
-        const width = paneSim.clientWidth;
-        const height = paneSim.clientHeight;
+    const containerSim = document.getElementById('canvas-3d') || document.getElementById('pane-simulation');
+    if (containerSim && renderer && camera) {
+        const width = containerSim.clientWidth > 0 ? containerSim.clientWidth : window.innerWidth;
+        const height = containerSim.clientHeight > 0 ? containerSim.clientHeight : (window.innerHeight - 60);
         if (width > 0 && height > 0) {
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
@@ -2854,6 +3467,49 @@ function animate(time) {
     if (simState.isPlaying && simState.signalPlaybackMode !== 'PAUSE' && (time - lastStepTime > stepInterval)) {
         stepSimulation();
         lastStepTime = time;
+    }
+
+    // Dynamic 3D Keyboard visual state & target highlighting
+    if (allKeyMeshes && allKeyMeshes.length > 0) {
+        allKeyMeshes.forEach(keyMesh => {
+            const keyId = keyMesh.userData.keyId;
+            const tile = keyMesh.userData.tile;
+            const xOff = keyMesh.userData.xOffset || 0.0;
+            
+            let isTargeted = false;
+            let isPressed = false;
+
+            for (let aIdx = 0; aIdx < activeAnts.length; aIdx++) {
+                const ant = activeAnts[aIdx];
+                if (ant.targetKey) {
+                    const found = findKeyForChar(ant.targetKey);
+                    if (found && found.keyId === keyId) {
+                        isTargeted = true;
+                        const dist = Math.sqrt((ant.x - (tile.x + xOff))**2 + (ant.y - tile.y)**2);
+                        if (dist <= KEY_RADIUS) {
+                            isPressed = true;
+                        }
+                    }
+                }
+            }
+
+            if (isPressed) {
+                keyMesh.position.y = 0.02; // Physical key depression
+                keyMesh.material.color.setHex(0x00e676);
+                keyMesh.material.emissive.setHex(0x00e676);
+                keyMesh.material.emissiveIntensity = 0.9;
+            } else if (isTargeted) {
+                keyMesh.position.y = 0.06;
+                keyMesh.material.color.setHex(0x00f2fe);
+                keyMesh.material.emissive.setHex(0x00f2fe);
+                keyMesh.material.emissiveIntensity = 0.45;
+            } else {
+                keyMesh.position.y = 0.06;
+                keyMesh.material.color.setHex(0x1e293b);
+                keyMesh.material.emissive.setHex(0x0f172a);
+                keyMesh.material.emissiveIntensity = 0.1;
+            }
+        });
     }
 
     if (renderer && scene && camera) {
@@ -3076,12 +3732,76 @@ function animate(time) {
     }
 }
 
+function showInitializationError(subsystem, err) {
+    console.error(`[INIT ERROR] Subsystem: ${subsystem} | Cause:`, err);
+    const panel = document.getElementById('init-error-panel');
+    const subEl = document.getElementById('init-error-subsystem');
+    const causeEl = document.getElementById('init-error-cause');
+    if (panel) panel.style.display = 'block';
+    if (subEl) subEl.textContent = `Subsystem: ${subsystem}`;
+    if (causeEl) causeEl.textContent = `Cause: ${err ? (err.message || String(err)) : 'Unknown failure'}`;
+}
+
 // --- INITIALIZATION ---
 window.addEventListener('DOMContentLoaded', () => {
-    init3DSimulation();
-    init3DBrain();
-    initUI();
-    initResizeObserver();
-    loadPackage(simState.modelDir);
-    requestAnimationFrame(animate);
+    try {
+        // 1. APP / CANVAS INIT
+        try {
+            init3DSimulation();
+        } catch (e) {
+            showInitializationError("3D Simulation Viewport", e);
+        }
+
+        try {
+            init3DBrain();
+        } catch (e) {
+            console.warn("Brain viewport init warning:", e);
+        }
+
+        try {
+            initUI();
+            initResizeObserver();
+        } catch (e) {
+            console.warn("UI Bindings warning:", e);
+        }
+
+        // 2. WORLD & KEYBOARD & ANTS CREATION
+        try {
+            resetSimulation();
+        } catch (e) {
+            showInitializationError("Simulation World & Keyboard Initialization", e);
+        }
+
+        try {
+            onWindowResize();
+        } catch (e) {
+            console.warn("Resize calculation warning:", e);
+        }
+
+        // 3. FIRST FRAME RENDER (Guarantees visible keyboard & ants before brain loop)
+        try {
+            if (renderer && scene && camera) {
+                renderer.render(scene, camera);
+            }
+        } catch (e) {
+            showInitializationError("First Frame Renderer", e);
+        }
+
+        // 4. MODEL LOADING & PACKAGE INTEGRATION
+        try {
+            loadPackage(simState.modelDir);
+        } catch (e) {
+            showInitializationError("Model Package Loader", e);
+        }
+
+        // 5. ANIMATION & BRAIN SIMULATION LOOP
+        try {
+            requestAnimationFrame(animate);
+        } catch (e) {
+            showInitializationError("Simulation Animation Loop", e);
+        }
+
+    } catch (globalErr) {
+        showInitializationError("Core Application Engine", globalErr);
+    }
 });

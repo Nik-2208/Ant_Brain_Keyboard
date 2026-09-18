@@ -1,0 +1,12 @@
+{
+  "actuator_type": "THORACIC_CENTRAL_PATTERN_GENERATOR",
+  "locomotion": "TRIPOD_GAIT",
+  "max_speed_cm_s": 2.5,
+  "acceleration_cm_s2": 8,
+  "deceleration_cm_s2": 12,
+  "turn_rate_rad_s": 3.14,
+  "turning_limits_rad_s": 4.5,
+  "arrival_threshold_cm": 0.5,
+  "collision_behavior": "ELASTIC_COLLISION_WITH_UNSTUCK_ROUTINE",
+  "motor_noise_scale": 0.05
+}

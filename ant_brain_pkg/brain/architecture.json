@@ -1,0 +1,21 @@
+{
+  "architecture_type": "FEEDFORWARD_MLP",
+  "input_size": 14,
+  "hidden_layers": [
+    16
+  ],
+  "output_size": 4,
+  "activation_function": "RELU",
+  "connectivity_type": "FULLY_CONNECTED_FORWARD_PLUS_LATERAL_INHIBITION",
+  "recurrent_connections": false,
+  "normalization": "LAYER_NORM_INPUT_SCALING",
+  "inference_config": {
+    "device": "CPU",
+    "precision": "FLOAT32",
+    "stochastic_sampling": true
+  },
+  "provenance": {
+    "status": "MODELLED",
+    "notes": "Functional policy network mapped to insect neuropil layers."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "channels": {
+    "FOOD_TRAIL": {
+      "evaporation_half_life_s": 60,
+      "diffusion_coefficient": 0.02
+    },
+    "HOME_TRAIL": {
+      "evaporation_half_life_s": 90,
+      "diffusion_coefficient": 0.015
+    },
+    "ALARM": {
+      "evaporation_half_life_s": 8,
+      "diffusion_coefficient": 0.08
+    },
+    "RECRUITMENT": {
+      "evaporation_half_life_s": 30,
+      "diffusion_coefficient": 0.03
+    }
+  }
+}

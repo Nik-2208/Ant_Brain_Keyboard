@@ -1,0 +1,6 @@
+{
+  "tripod_phase_ms": 120,
+  "stride_length_mm": 2.2,
+  "energy_per_cm_moved": 0.02,
+  "status": "MODELLED"
+}

@@ -9,7 +9,7 @@ import sys
 from typing import Dict, List, Any, Tuple, Optional
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from ant_brain_model_v1_20260915_standard.run_model import load_model, ExecutableAntBrain
+from ant_brain_loader import AntBrainPackage, ExecutableAntBrain
 from config import KeyboardTrainingConfig
 from keyboard_environment import KeyboardEnv
 from keyboard_adapter import KeyboardObservationAdapter, KeyboardActionAdapter
@@ -33,7 +33,7 @@ class TaskGenerator:
         return configs.get(phase, configs[1])
 
 class CurriculumTrainer:
-    """Scalable Curriculum Training Pipeline using ant_brain_model_v1_20260915_standard."""
+    """Scalable Curriculum Training Pipeline using the authoritative AntWire .antbrain package."""
 
     def __init__(self, config: KeyboardTrainingConfig):
         self.config = config
@@ -46,20 +46,19 @@ class CurriculumTrainer:
         self.start_episode = 1
         self.curriculum_phase = config.current_phase
 
+        print(f"Loading authoritative AntBrainPackage from: {config.model_file}")
+        self.package = self.checkpoint_mgr.load_original_package()
+        self.brain = ExecutableAntBrain(self.package)
+
         if config.resume and config.checkpoint_to_resume:
             print(f"Resuming training from checkpoint: {config.checkpoint_to_resume}")
             cp = self.checkpoint_mgr.load_checkpoint(config.checkpoint_to_resume)
-            self.manifest = cp['manifest']
-            self.neurons = cp['neurons']
-            self.synapses = cp['synapses']
+            if 'trainable_params' in cp:
+                self.brain.set_trainable_parameters(cp['trainable_params'])
             self.start_episode = cp.get('episodeCount', 1) + 1
             self.curriculum_phase = cp.get('curriculumPhase', 1)
-        else:
-            print(f"Loading ant_brain_model_v1_20260915_standard from: {config.model_dir}")
-            self.manifest, self.neurons, self.synapses = self.checkpoint_mgr.load_original_model()
 
-        self.brain = ExecutableAntBrain(self.manifest, self.neurons, self.synapses)
-        self.params = [s["weight"] for s in self.synapses]
+        self.params = self.brain.get_trainable_parameters()
         self.trajectory_file = self.config.get_full_path(self.config.trajectory_csv_path)
 
         if not os.path.exists(self.trajectory_file):
@@ -68,15 +67,15 @@ class CurriculumTrainer:
                 writer.writerow(['episode', 'step', 'timestamp', 'ant_x', 'ant_y', 'target', 'action_throttle', 'action_turn', 'reward', 'done', 'success', 'phase'])
 
     def set_flat_params(self, params: List[float]) -> None:
-        for idx, s in enumerate(self.synapses):
-            s["weight"] = params[idx]
+        self.brain.set_trainable_parameters(params)
         self.params = list(params)
 
     def run_training(self) -> None:
         print(f"\n==================================================")
         print(f"STARTING ANT KEYBOARD CURRICULUM TRAINING")
-        print(f"Model            : {self.manifest['model_name']}")
-        print(f"Neurons / Synapses: {len(self.neurons)} / {len(self.synapses)}")
+        print(f"Model Manifest   : {self.package.manifest.get('antId')} ({self.package.manifest.get('modelVersion')})")
+        print(f"Neurons / Synapses: {len(self.package.neurons)} / {len(self.package.synapses)}")
+        print(f"Trainable Weights: {len(self.params)} Parameters")
         print(f"Target Episodes  : {self.config.episodes}")
         print(f"Start Episode    : {self.start_episode}")
         print(f"Trajectory File  : {self.trajectory_file}")
@@ -98,99 +97,93 @@ class CurriculumTrainer:
 
             for _ in range(pop_size):
                 noise = [random.gauss(0, 1) for _ in range(len(self.params))]
+                candidate_params = [p + sigma * n for p, n in zip(self.params, noise)]
+                self.brain.set_trainable_parameters(candidate_params)
 
-                # + Noise
-                p_plus = [self.params[i] + sigma * noise[i] for i in range(len(self.params))]
-                self.set_flat_params(p_plus)
-                r_plus, _ = self._rollout_episode(p_cfg, log_trajectory=False, episode_num=episode)
-
-                # - Noise
-                p_minus = [self.params[i] - sigma * noise[i] for i in range(len(self.params))]
-                self.set_flat_params(p_minus)
-                r_minus, _ = self._rollout_episode(p_cfg, log_trajectory=False, episode_num=episode)
-
+                ep_reward, _ = self.evaluate_episode(p_cfg, log_trajectory=(episode % 500 == 0))
                 noise_samples.append(noise)
-                returns.append((r_plus, r_minus))
+                returns.append(ep_reward)
 
-            # Apply Parameter Update to Synapse Weights
+            # Natural Evolution Strategy Gradient Step
+            mean_ret = sum(returns) / len(returns)
+            std_ret = math.sqrt(sum((r - mean_ret) ** 2 for r in returns) / max(1, len(returns) - 1)) + 1e-8
+            normalized_returns = [(r - mean_ret) / std_ret for r in returns]
+
+            grad = [0.0] * len(self.params)
             for i in range(len(self.params)):
-                grad = 0.0
-                for k in range(pop_size):
-                    r_p, r_m = returns[k]
-                    grad += (r_p - r_m) * noise_samples[k][i]
-                grad /= (2 * pop_size * sigma)
-                self.params[i] += lr * grad
+                for p_idx in range(pop_size):
+                    grad[i] += normalized_returns[p_idx] * noise_samples[p_idx][i]
+                grad[i] /= (pop_size * sigma)
 
-            self.set_flat_params(self.params)
+            new_params = [p + lr * g for p, g in zip(self.params, grad)]
+            self.set_flat_params(new_params)
 
-            mean_reward, traj_records = self._rollout_episode(p_cfg, log_trajectory=True, episode_num=episode)
-            self._append_trajectories(traj_records)
+            if episode % 500 == 0 or episode == 1:
+                eval_reward, success = self.evaluate_episode(p_cfg, log_trajectory=True, record_csv=True, ep_num=episode)
+                print(f"[Episode {episode:6d} | Phase {self.curriculum_phase}] Mean Reward: {mean_ret:6.2f} | Eval Reward: {eval_reward:6.2f} | Success: {'YES' if success else 'NO'}")
 
-            if episode % 100 == 0 or episode == 1:
-                print(f"Episode {episode:06d}/{total_episodes} | Phase {self.curriculum_phase} | Return: {mean_reward:+.3f} | Target: {self.env.target_key}")
-
-            if episode % self.config.checkpoint_interval == 0 or episode == total_episodes:
-                cp_filename = f"checkpoint_{episode:05d}.json"
-                metrics = {'meanReward': mean_reward, 'episodesCompleted': episode}
+            if episode % self.config.checkpoint_interval == 0:
+                cp_name = f"checkpoint_ep_{episode}_phase_{self.curriculum_phase}.json"
                 cp_path = self.checkpoint_mgr.save_checkpoint(
-                    self.manifest, self.neurons, self.synapses, episode, self.curriculum_phase, metrics, cp_filename
+                    self.package,
+                    self.params,
+                    episode,
+                    self.curriculum_phase,
+                    {'mean_reward': mean_ret, 'eval_reward': eval_reward},
+                    cp_name
                 )
-                print(f" [CHECKPOINT SAVED] -> {cp_path}")
+                print(f"[*] Checkpoint saved at episode {episode}: {cp_name}")
 
         final_path = self.checkpoint_mgr.save_final_policy(
-            self.manifest, self.neurons, self.synapses, total_episodes, self.curriculum_phase, {'episodesCompleted': total_episodes}
+            self.package,
+            self.params,
+            total_episodes,
+            self.curriculum_phase,
+            {'final_mean_reward': mean_ret}
         )
-        print(f"\n==================================================")
-        print(f"TRAINING COMPLETE! FINAL MODEL SAVED TO:")
-        print(f"{final_path}")
-        print(f"==================================================")
+        print(f"\n[+] Training Complete! Final policy saved to: {final_path}")
 
-    def _rollout_episode(self, p_cfg: Dict[str, Any], log_trajectory: bool = False, episode_num: int = 1) -> Tuple[float, List[List[Any]]]:
-        start_pos = None
-        if p_cfg['randomize_start']:
-            start_pos = (random.uniform(-0.5, 2.5), random.uniform(-1.5, -0.5))
-
-        layout = None
-        if p_cfg['randomize_layout']:
-            layout = {
-                'D': (0.0, 1.0), 'E': (1.0, 1.0), 'F': (2.0, 1.0),
-                'A': (0.0, 0.0), 'B': (1.0, 0.0), 'C': (2.0, 0.0)
-            }
-
-        obstacles = [(0.5, 0.5), (1.5, 0.5)] if p_cfg['obstacles'] else []
+    def evaluate_episode(self, p_cfg: Dict[str, Any], log_trajectory: bool = False, record_csv: bool = False, ep_num: int = 0) -> Tuple[float, bool]:
+        target_k = random.choice(list(self.env.layout.keys())) if p_cfg['randomize_target'] else 'E'
+        start_x = random.uniform(0.0, 2.0) if p_cfg['randomize_start'] else 1.0
+        start_y = random.uniform(-1.2, -0.6) if p_cfg['randomize_start'] else -0.8
+        start_theta = random.uniform(0, math.pi) if p_cfg['randomize_start'] else (math.pi / 2)
 
         env_state = self.env.reset(
-            custom_start_pos=start_pos,
-            obstacles=obstacles,
-            layout_override=layout
+            target_key=target_k,
+            custom_start_pos=(start_x, start_y),
+            custom_start_theta=start_theta
         )
-
         self.brain.reset()
+
         total_r = 0.0
-        traj_records = []
-        timestamp = time.time()
+        step_idx = 0
+        success = False
+        csv_rows = []
 
         while not self.env.done:
+            step_idx += 1
             obs_dict = KeyboardObservationAdapter.get_observation_dict(env_state, noise_level=p_cfg['noise'])
-            brain_output = self.brain.step(obs_dict)
-            throttle, turn, dep_food, dep_home = KeyboardActionAdapter.process_action(brain_output)
+            brain_out = self.brain.step(obs_dict)
+            throttle, turn, _, _ = KeyboardActionAdapter.process_action(brain_out)
 
-            env_state, r, done, info = self.env.step([throttle, turn, dep_food, dep_home], config=self.config)
+            env_state, r, done, info = self.env.step([throttle, turn], config=self.config)
             total_r += r
 
-            if log_trajectory:
-                traj_records.append([
-                    episode_num, env_state['step_count'], timestamp,
-                    f"{env_state['ant_x']:.3f}", f"{env_state['ant_y']:.3f}",
-                    env_state['target_key'], f"{throttle:.3f}", f"{turn:.3f}",
-                    f"{r:.3f}", 1 if done else 0, 1 if info.get('correct', False) else 0,
-                    self.curriculum_phase
+            if info.get('correct', False):
+                success = True
+
+            if record_csv:
+                csv_rows.append([
+                    ep_num, step_idx, time.time(),
+                    env_state['ant_x'], env_state['ant_y'],
+                    env_state['target_key'], throttle, turn,
+                    r, done, success, self.curriculum_phase
                 ])
 
-        return total_r, traj_records
+        if record_csv and csv_rows:
+            with open(self.trajectory_file, 'a', newline='') as f:
+                writer = csv.writer(f)
+                writer.writerows(csv_rows)
 
-    def _append_trajectories(self, records: List[List[Any]]) -> None:
-        if not records: return
-        with open(self.trajectory_file, 'a', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerows(records)
+        return total_r, success

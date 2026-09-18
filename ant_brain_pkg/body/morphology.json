@@ -1,0 +1,22 @@
+{
+  "species": "Atta cephalotes / Formica rufa",
+  "caste": "WORKER_MEDIA",
+  "segments": [
+    "HEAD",
+    "THORAX",
+    "PETIOLE",
+    "GASTER"
+  ],
+  "appendages": [
+    "ANTENNA_L",
+    "ANTENNA_R",
+    "MANDIBLES",
+    "LEG_L1",
+    "LEG_L2",
+    "LEG_L3",
+    "LEG_R1",
+    "LEG_R2",
+    "LEG_R3"
+  ],
+  "status": "MODELLED"
+}

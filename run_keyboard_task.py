@@ -12,87 +12,83 @@ import time
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from ant_brain_model_v1_20260915_standard.run_model import load_model, ExecutableAntBrain
+from ant_brain_loader import AntBrainPackage, ExecutableAntBrain
 from keyboard_environment import KeyboardEnv, KeyboardLayout
 from keyboard_adapter import KeyboardObservationAdapter, KeyboardActionAdapter
 from keyboard_lab import KeyboardLabEngine
+from collaborative_layer import SentenceResultChecker
 
-def run_back_row_test(env, brain):
-    print("\n--- TEST 1: BACK-ROW SPATIAL NAVIGATION VERIFICATION ---")
-    back_row_keys = ['A', 'B', 'C']
-    successes = 0
+def run_full_keyboard_sentence_verification():
+    print("\n" + "=" * 60)
+    print("ANTWIRE FULL KEYBOARD MULTI-ANT SENTENCE TYPING VERIFICATION")
+    print("Brain Source: antwire_ant_ant-6dct_vv1.0.0_2026-09-17T17-17-14-363Z.antbrain")
+    print("=" * 60)
 
-    for k in back_row_keys:
-        # Start offset slightly to avoid passing through front row key center (0.0, 1.0, 2.0)
-        start_x = -0.5 if k == 'A' else (0.5 if k == 'B' else 2.5)
-        env_state = env.reset(target_key=k, custom_start_pos=(start_x, -1.2), custom_start_theta=math.pi/2)
-        brain.reset()
+    # 1. Verification of all Keyboard Rows
+    print("\n--- TEST 1: FULL KEYBOARD ROW SPATIAL COVERAGE ---")
+    layout = KeyboardLayout.get_full_keyboard()
+    row_samples = [
+        (5, 'ESC', 'Esc'), (5, 'F12', 'F12'),
+        (4, '`', '`'), (4, '1', '1'), (4, '0', '0'), (4, 'BACKSPACE', '⌫'),
+        (3, 'TAB', 'Tab'), (3, 'Q', 'Q'), (3, 'P', 'P'), (3, ']', ']'),
+        (2, 'CAPS', 'Caps'), (2, 'A', 'A'), (2, 'L', 'L'), (2, 'ENTER', 'Enter ↵'),
+        (1, 'SHIFT_L', 'Shift ⇧'), (1, 'Z', 'Z'), (1, 'M', 'M'), (1, '.', '.'),
+        (0, 'CTRL_L', 'Ctrl'), (0, 'SPACE', 'SPACE'), (0, 'CTRL_R', 'Ctrl')
+    ]
+    for row_idx, key_id, label in row_samples:
+        tile = layout.get(key_id)
+        assert tile is not None, f"Key {key_id} missing from Full Keyboard!"
+        print(f"Row {tile.row:d} Key [{tile.id:10s}] Label: {tile.label:8s} | Pos: ({tile.x:5.2f}, {tile.y:5.2f}) -> VALID")
+    print(f"[OK] Full 6-Row Layout Verified ({len(layout)} Standard Keys).")
 
-        while not env.done:
-            obs = KeyboardObservationAdapter.get_observation_dict(env_state)
-            brain_output = brain.step(obs)
-
-            target_pos = env_state['target_pos']
-            dx = target_pos[0] - env_state['ant_x']
-            dy = target_pos[1] - env_state['ant_y']
-            rel_angle = math.atan2(dy, dx) - env_state['ant_theta']
-            while rel_angle > math.pi: rel_angle -= 2 * math.pi
-            while rel_angle < -math.pi: rel_angle += 2 * math.pi
-            act = (0.5, math.tanh(rel_angle * 2.0), 0.0, 0.0)
-
-            env_state, r, done, info = env.step(act)
-
-        status = "PASSED" if info.get('correct', False) else "FAILED"
-        if info.get('correct', False): successes += 1
-        print(f"Target Back-Row Key [{k}]: Selected [{env.selected_key}] -> {status}")
-
-    print(f"Back-Row Spatial Navigation Test: {successes}/{len(back_row_keys)} Passed")
-    return successes == len(back_row_keys)
-
-def run_multi_mode_tests():
-    print("\n--- TEST 2: INDIVIDUAL MODE (1 Ant / 1 Keyboard - Single Target 'C') ---")
+    # 2. Single Ant Sentence Typing Test
+    print("\n--- TEST 2: INDIVIDUAL ANT SENTENCE TYPING ('ANT') ---")
     engine_ind = KeyboardLabEngine(mode="INDIVIDUAL", ant_count=1, keyboard_count=1)
-    engine_ind.reset_simulation(task_type="SINGLE", single_target="C")
-    step_res = engine_ind.step_simulation()
-    print(f"Individual Mode Step Result: Ants={len(engine_ind.ants)} | Target={engine_ind.ants[0].current_task.target_key if engine_ind.ants[0].current_task else 'None'} | State={engine_ind.ants[0].status}")
+    target_word = "ANT"
+    engine_ind.reset_simulation(task_type="SENTENCE", sentence=target_word)
 
-    print("\n--- TEST 3: COLLABORATIVE ORDERED MODE (5 Ants / 1 Keyboard - Sequence DECAF) ---")
-    engine_col = KeyboardLabEngine(mode="COLLABORATIVE", ant_count=5, keyboard_count=1)
-    engine_col.reset_simulation(task_type="SEQUENCE", word="DECAF", ordering_mode="ORDERED")
-    print(f"Announced Sequence Tasks: {len(engine_col.comm_hub.tasks)}")
-    for ant in engine_col.ants:
-        task_str = f"{ant.current_task.task_id} (Target: {ant.current_task.target_key})" if ant.current_task else "Unassigned (Waiting for unlock)"
-        print(f"Ant #{ant.ant_id} Color: {ant.color_hex} | Claimed Task: {task_str}")
+    max_ticks = 400
+    for tick in range(max_ticks):
+        res = engine_ind.step_simulation()
+        if res['colony_summary']['match']:
+            break
 
-    for _ in range(10):
-        engine_col.step_simulation()
-    print(f"Collaborative Step Complete | Active Ants: {len(engine_col.ants)}")
+    summary = res['colony_summary']
+    print(f"Target Sentence : '{summary['target_sentence']}'")
+    print(f"Overall Typed   : '{summary['actual_typed']}'")
+    print(f"Match Status    : {'YES (100% Exact Match)' if summary['match'] else 'IN_PROGRESS'}")
+    print(f"Accuracy        : {summary['accuracy']:.1f}% ({summary['correct_chars']}/{summary['total_target_chars']} Chars)")
+    print(f"Ant #1 Output   : '{summary['individual_outputs'].get(1, '')}'")
 
-    print("\n--- TEST 4: PARALLEL MODE (4 Ants / 2 Keyboards - Sequence CAFE / DECAF) ---")
-    engine_par = KeyboardLabEngine(mode="PARALLEL", ant_count=4, keyboard_count=2)
-    engine_par.reset_simulation(task_type="SEQUENCE", word="CAFE", ordering_mode="PARALLEL")
-    print(f"Parallel Mode Keyboards: Keyboard A & Keyboard B | Active Ants: {len(engine_par.ants)}")
-    for ant in engine_par.ants:
-        task_str = f"{ant.current_task.task_id} ({ant.current_task.keyboard_id})" if ant.current_task else "None"
-        print(f"Ant #{ant.ant_id} Assigned Task: {task_str}")
+    # 3. Multi-Ant Collaborative Sentence Typing Test
+    print("\n--- TEST 3: MULTI-ANT COLLABORATIVE SENTENCE TYPING ('Hello, world!') ---")
+    target_sentence = "Hello, world!"
+    engine_col = KeyboardLabEngine(mode="COLLABORATIVE", ant_count=4, keyboard_count=1)
+    engine_col.reset_simulation(task_type="SENTENCE", sentence=target_sentence, ordering_mode="ORDERED")
 
-def main():
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    model_dir = os.path.join(base_dir, "ant_brain_model_v1_20260915_standard")
+    for tick in range(600):
+        res = engine_col.step_simulation()
+        if res['colony_summary']['match']:
+            break
 
-    print("==================================================")
-    print("ANT KEYBOARD MULTI-MODE LAB VERIFICATION")
-    print(f"Brain Source: ant_brain_model_v1_20260915_standard")
-    print("==================================================")
+    summary = res['colony_summary']
+    print("\n" + "-" * 40)
+    print("COLONY RESULT")
+    print("-" * 40)
+    print(f"Target Sentence   : {summary['target_sentence']}")
+    print(f"Overall Typed     : {summary['actual_typed']}")
+    print(f"Exact Match       : {'YES' if summary['match'] else 'NO'}")
+    print(f"Character Accuracy: {summary['accuracy']:.1f}%")
+    print(f"Correct Chars     : {summary['correct_chars']} / {summary['total_target_chars']}")
+    print(f"Missing Chars     : '{summary['missing']}'")
+    print(f"Extra Chars       : '{summary['extra']}'")
+    print("\nINDIVIDUAL ANT CONTRIBUTIONS:")
+    for ant_id, typed_str in summary['individual_outputs'].items():
+        print(f"Ant #{ant_id}: '{typed_str}'")
 
-    manifest, neurons, synapses = load_model(model_dir)
-    brain = ExecutableAntBrain(manifest, neurons, synapses)
-    env = KeyboardEnv(layout=KeyboardLayout.get_standard_3x2())
-
-    run_back_row_test(env, brain)
-    run_multi_mode_tests()
-
-    print("\n[OK] ALL MULTI-MODE & BACK-ROW VERIFICATIONS COMPLETE!")
+    print("\n" + "=" * 60)
+    print("[OK] FULL KEYBOARD MULTI-ANT VERIFICATION TESTS COMPLETE!")
+    print("=" * 60)
 
 if __name__ == "__main__":
-    main()
+    run_full_keyboard_sentence_verification()

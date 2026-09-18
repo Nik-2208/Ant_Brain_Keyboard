@@ -1,0 +1,12 @@
+{
+  "task": "FORAGE",
+  "controller_type": "NEURAL",
+  "training_steps": 0,
+  "episodes_completed": 0,
+  "environment": {
+    "worldSize": 70,
+    "obstacleDensity": 0.15,
+    "predatorPresence": false,
+    "temperature": 24
+  }
+}

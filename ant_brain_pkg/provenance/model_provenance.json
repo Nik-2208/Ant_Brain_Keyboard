@@ -1,0 +1,6 @@
+{
+  "model_id": "model-1789665431997-6dct",
+  "model_name": "FORAGE Policy Trained_AntWire_Brain_Step_0",
+  "lineage_parent": "Scratch",
+  "training_platform": "AntWire Training Arena (Reinforcement Learning Engine)"
+}

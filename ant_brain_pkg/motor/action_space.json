@@ -1,0 +1,18 @@
+{
+  "discrete_actions": [
+    "STOP",
+    "MOVE_FORWARD",
+    "TURN_LEFT",
+    "TURN_RIGHT",
+    "COLLECT_FOOD",
+    "DEPOSIT_FOOD",
+    "FLEE",
+    "DEPOSIT_PHEROMONE"
+  ],
+  "continuous_channels": [
+    "throttle",
+    "turn",
+    "depositFoodTrail",
+    "depositHomeTrail"
+  ]
+}

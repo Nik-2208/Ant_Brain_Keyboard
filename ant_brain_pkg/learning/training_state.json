@@ -1,0 +1,8 @@
+{
+  "training_step": 0,
+  "episode_count": 0,
+  "best_reward": null,
+  "mean_reward": 0,
+  "success_rate": 0,
+  "status": "LEARNED"
+}

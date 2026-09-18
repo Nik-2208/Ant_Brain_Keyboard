@@ -1,0 +1,145 @@
+[
+  {
+    "parameter": "Neuropil Parcellation (Mushroom Body, Antennal Lobe, Central Complex)",
+    "category": "Brain",
+    "biological_status": "BIOLOGICALLY_SUPPORTED",
+    "implemented_in_antwire": true,
+    "value": "10 anatomical neuropil compartments",
+    "unit": "regions",
+    "species_scope": "Hymenoptera general",
+    "source": "Strausfeld (2012) Arthropod Brains",
+    "notes": "Compartment layout adheres to anatomical coordinates."
+  },
+  {
+    "parameter": "Neuron Population Count",
+    "category": "Neurons",
+    "biological_status": "APPROXIMATION",
+    "implemented_in_antwire": true,
+    "value": 128,
+    "unit": "neurons (simulated)",
+    "species_scope": "Formica rufa (~250,000 in vivo)",
+    "source": "Gronenberg (2008)",
+    "notes": "In vivo ants possess ~250k-500k neurons; AntWire models functional subcircuits."
+  },
+  {
+    "parameter": "Single-Neuron Glial Cell Metabolic Shuttling",
+    "category": "Neurons",
+    "biological_status": "NOT_IMPLEMENTED",
+    "implemented_in_antwire": false,
+    "value": null,
+    "unit": "N/A",
+    "species_scope": "All social insects",
+    "source": "Biological parameter not computationally modeled",
+    "notes": "AntWire does not simulate astrocyte/glial glycogen storage or micro-metabolic shuttles."
+  },
+  {
+    "parameter": "Synaptic Plasticity (Three-Factor STDP / Octopaminergic Neuromodulation)",
+    "category": "Synapses",
+    "biological_status": "BIOLOGICALLY_SUPPORTED",
+    "implemented_in_antwire": true,
+    "value": "Octopamine = Appetitive Reward, Dopamine = Aversive Punishment",
+    "unit": "transmitter channels",
+    "species_scope": "Apis mellifera / Formicidae",
+    "source": "Hammer (1993) Nature",
+    "notes": "Modulates synaptic eligibility traces."
+  },
+  {
+    "parameter": "Exact Connectome Electron-Microscopy Synaptome",
+    "category": "Synapses",
+    "biological_status": "NOT_IMPLEMENTED",
+    "implemented_in_antwire": false,
+    "value": null,
+    "unit": "N/A",
+    "species_scope": "Formicidae",
+    "source": "Empirical complete ant connectome not yet published as of 2026",
+    "notes": "No whole-brain serial-section TEM connectome exists for an adult worker ant."
+  },
+  {
+    "parameter": "Bilateral Antennal Tropotaxis",
+    "category": "Sensors",
+    "biological_status": "BIOLOGICALLY_SUPPORTED",
+    "implemented_in_antwire": true,
+    "value": 0.6,
+    "unit": "mm separation",
+    "species_scope": "Atta / Formica",
+    "source": "Hangartner (1969)",
+    "notes": "Samples dual spatial odor vectors simultaneously."
+  },
+  {
+    "parameter": "Skylight E-Vector Celestial Polarization (Dorsal Rim Area)",
+    "category": "Sensors",
+    "biological_status": "BIOLOGICALLY_SUPPORTED",
+    "implemented_in_antwire": true,
+    "value": 16,
+    "unit": "wedges",
+    "species_scope": "Cataglyphis fortis",
+    "source": "Wehner (2003)",
+    "notes": "Feeds heading accumulator in protocerebral bridge."
+  },
+  {
+    "parameter": "Alternating Tripod Gait",
+    "category": "Motor",
+    "biological_status": "BIOLOGICALLY_SUPPORTED",
+    "implemented_in_antwire": true,
+    "value": "L1-R2-L3 / R1-L2-R3",
+    "unit": "phase groups",
+    "species_scope": "Formicidae general",
+    "source": "Cruse (1990)",
+    "notes": "Provides static kinematic stability during locomotion."
+  },
+  {
+    "parameter": "Worker Body Mass and Load Carriage Ratio",
+    "category": "Body",
+    "biological_status": "BIOLOGICALLY_SUPPORTED",
+    "implemented_in_antwire": true,
+    "value": "3x body mass (up to 10x for majors)",
+    "unit": "ratio",
+    "species_scope": "Atta cephalotes",
+    "source": "Wilson (1980)",
+    "notes": "Applied in simulation carrying capacity limits."
+  },
+  {
+    "parameter": "Hemolymph Hormone Titers (Juvenile Hormone / Ecdysone Titers)",
+    "category": "Body",
+    "biological_status": "NOT_IMPLEMENTED",
+    "implemented_in_antwire": false,
+    "value": null,
+    "unit": "pg/uL",
+    "species_scope": "Formicidae",
+    "source": "Biological parameter not computationally modeled",
+    "notes": "Endocrine titer kinetics are omitted from the real-time simulation."
+  },
+  {
+    "parameter": "Pheromone Trail Evaporation Kinetics",
+    "category": "Pheromones",
+    "biological_status": "BIOLOGICALLY_SUPPORTED",
+    "implemented_in_antwire": true,
+    "value": 60,
+    "unit": "seconds half-life",
+    "species_scope": "Atta sexdens / Formica rufa",
+    "source": "Hölldobler & Wilson (1990)",
+    "notes": "Exponential chemical decay with continuous field diffusion."
+  },
+  {
+    "parameter": "Division of Labor Response Thresholds",
+    "category": "Behavior",
+    "biological_status": "BIOLOGICALLY_SUPPORTED",
+    "implemented_in_antwire": true,
+    "value": "Dynamic task stimulus vector vs worker response thresholds",
+    "unit": "stimulus threshold",
+    "species_scope": "Social insects",
+    "source": "Bonabeau et al. (1996)",
+    "notes": "Governs role transitions between forager, nurse, builder, and soldier."
+  },
+  {
+    "parameter": "Cuticular Hydrocarbon Mass Spectrometry Fingerprint",
+    "category": "Colony",
+    "biological_status": "APPROXIMATION",
+    "implemented_in_antwire": true,
+    "value": "Scalar colonyId match check",
+    "unit": "discrete ID",
+    "species_scope": "Formicidae",
+    "source": "van Zweden & d’Ettorre (2010)",
+    "notes": "In vivo ants compare complex methyl-alkane blends; AntWire abstracts as colony identifier."
+  }
+]

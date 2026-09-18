@@ -9,14 +9,14 @@ class KeyboardTrainingConfig:
     max_steps: int = 50
     learning_rate: float = 0.04
     gamma: float = 0.99
-    sigma: float = 0.05               # Perturbation scale for NES over synapses
+    sigma: float = 0.05               # Perturbation scale for NES over trainable parameters
     population_size: int = 40
     checkpoint_interval: int = 5000
     seed: int = 42
 
     # Paths
     project_dir: str = field(default_factory=lambda: os.path.dirname(os.path.abspath(__file__)))
-    model_dir: str = "ant_brain_model_v1_20260915_standard"
+    model_file: str = "antwire_ant_ant-6dct_vv1.0.0_2026-09-17T17-17-14-363Z.antbrain"
     output_model_path: str = "keyboard_policy_v1.json"
     checkpoints_dir: str = "checkpoints"
     trajectory_csv_path: str = "training_trajectories.csv"
@@ -27,7 +27,7 @@ class KeyboardTrainingConfig:
 
     # Default Keyboard Layout (3x2 grid)
     keyboard_layout: Dict[str, Tuple[float, float]] = field(default_factory=lambda: {
-        'A': (0.0, 1.0), 'B': (1.0, 1.0), 'C': (2.0, 1.0),
+        'A': (0.0, 1.5), 'B': (1.0, 1.5), 'C': (2.0, 1.5),
         'D': (0.0, 0.0), 'E': (1.0, 0.0), 'F': (2.0, 0.0)
     })
 

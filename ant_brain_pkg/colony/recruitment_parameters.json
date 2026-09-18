@@ -1,0 +1,5 @@
+{
+  "recruitment_threshold": 0.65,
+  "recruitment_radius_cm": 5,
+  "tandem_running_supported": true
+}

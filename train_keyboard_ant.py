@@ -38,7 +38,7 @@ def main():
     print(f"Mode         : {args.mode}")
     print(f"Ant Count    : {args.ants}")
     print(f"Keyboards    : {args.keyboards}")
-    print(f"Model Source : {config.model_dir}")
+    print(f"Brain Package: {config.model_file}")
     print(f"==================================================")
 
     trainer = CurriculumTrainer(config)

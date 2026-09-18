@@ -1,0 +1,10 @@
+{
+  "heavy_object_collective_transport": true,
+  "living_bridges": true,
+  "group_size_requirements": {
+    "light": 1,
+    "medium": 3,
+    "heavy": 6
+  },
+  "coordination_threshold": 0.7
+}

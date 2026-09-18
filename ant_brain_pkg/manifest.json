@@ -1,0 +1,289 @@
+{
+  "packageFormatVersion": "2.0.0",
+  "antwireVersion": "1.0.0",
+  "modelVersion": "v1.0.0",
+  "brainType": "Complete Computational Ant Brain / Agent Package",
+  "createdAt": "2026-09-17T17:17:14.363Z",
+  "trainedAt": "2026-09-17T17:17:11.856Z",
+  "antId": "Ant-6DCT",
+  "speciesInspiredBy": "Formica rufa",
+  "biologicalFidelityLevel": "BIOLOGICALLY_INFORMED_COMPUTATIONAL_MODEL",
+  "exportProfile": "FULL_EXPERIMENT",
+  "privacyTier": "PUBLIC",
+  "runtimeCompatibility": {
+    "minAntwireVersion": "1.0.0",
+    "engine": "AntWire Simulation & Python 3.9+ Engine",
+    "targetPlatforms": [
+      "AntWire Web Browser (TypeScript)",
+      "AntWire CLI (Node.js)",
+      "Python Standalone Runner"
+    ]
+  },
+  "capabilities": {
+    "neural_runtime": true,
+    "learning": true,
+    "memory": true,
+    "pheromone_behavior": true,
+    "communication": true,
+    "multi_agent_behavior": true,
+    "behavior_replay": true
+  },
+  "fileIndex": [
+    {
+      "path": "brain/architecture.json",
+      "bytes": 539,
+      "checksum": "02cba4b8"
+    },
+    {
+      "path": "brain/neurons.json",
+      "bytes": 73030,
+      "checksum": "-7ab64eea"
+    },
+    {
+      "path": "brain/synapses.json",
+      "bytes": 96871,
+      "checksum": "699e1f63"
+    },
+    {
+      "path": "brain/regions.json",
+      "bytes": 14293,
+      "checksum": "2aeb1099"
+    },
+    {
+      "path": "brain/connectivity.json",
+      "bytes": 196,
+      "checksum": "668c376d"
+    },
+    {
+      "path": "brain/runtime_state.json",
+      "bytes": 964,
+      "checksum": "-8d139ca"
+    },
+    {
+      "path": "learning/learned_parameters.json",
+      "bytes": 8615,
+      "checksum": "40421510"
+    },
+    {
+      "path": "learning/optimizer_state.json",
+      "bytes": 226,
+      "checksum": "58ac436f"
+    },
+    {
+      "path": "learning/normalization.json",
+      "bytes": 2,
+      "checksum": "017500f9"
+    },
+    {
+      "path": "learning/reward_config.json",
+      "bytes": 650,
+      "checksum": "71e6a60e"
+    },
+    {
+      "path": "learning/training_state.json",
+      "bytes": 133,
+      "checksum": "-5839d850"
+    },
+    {
+      "path": "memory/long_term_memory.json",
+      "bytes": 376,
+      "checksum": "-4b56a8a4"
+    },
+    {
+      "path": "memory/learned_associations.json",
+      "bytes": 129,
+      "checksum": "-328ad74c"
+    },
+    {
+      "path": "memory/navigation_memory.json",
+      "bytes": 228,
+      "checksum": "-2e61ba59"
+    },
+    {
+      "path": "memory/task_memory.json",
+      "bytes": 129,
+      "checksum": "-67e6d730"
+    },
+    {
+      "path": "sensors/sensor_config.json",
+      "bytes": 1023,
+      "checksum": "54cb354d"
+    },
+    {
+      "path": "sensors/sensory_mapping.json",
+      "bytes": 485,
+      "checksum": "0320911f"
+    },
+    {
+      "path": "sensors/normalization.json",
+      "bytes": 54,
+      "checksum": "44380cf3"
+    },
+    {
+      "path": "motor/motor_config.json",
+      "bytes": 354,
+      "checksum": "-222b9333"
+    },
+    {
+      "path": "motor/action_space.json",
+      "bytes": 281,
+      "checksum": "-e4ab66a"
+    },
+    {
+      "path": "motor/movement_parameters.json",
+      "bytes": 110,
+      "checksum": "616820f9"
+    },
+    {
+      "path": "body/morphology.json",
+      "bytes": 332,
+      "checksum": "4bc44e37"
+    },
+    {
+      "path": "body/dimensions.json",
+      "bytes": 207,
+      "checksum": "404e3f27"
+    },
+    {
+      "path": "body/mass.json",
+      "bytes": 123,
+      "checksum": "29bb2548"
+    },
+    {
+      "path": "body/locomotion.json",
+      "bytes": 192,
+      "checksum": "-55a0d733"
+    },
+    {
+      "path": "body/physical_parameters.json",
+      "bytes": 212,
+      "checksum": "-1c99be5e"
+    },
+    {
+      "path": "behavior/behavior_parameters.json",
+      "bytes": 327,
+      "checksum": "7b7e6ab0"
+    },
+    {
+      "path": "behavior/exploration.json",
+      "bytes": 100,
+      "checksum": "7c101fb5"
+    },
+    {
+      "path": "behavior/task_preferences.json",
+      "bytes": 142,
+      "checksum": "-76eeddca"
+    },
+    {
+      "path": "behavior/role_preferences.json",
+      "bytes": 98,
+      "checksum": "-1680e092"
+    },
+    {
+      "path": "colony/communication_config.json",
+      "bytes": 166,
+      "checksum": "-262fc6e6"
+    },
+    {
+      "path": "colony/pheromone_config.json",
+      "bytes": 418,
+      "checksum": "-29e8aa0"
+    },
+    {
+      "path": "colony/recruitment_parameters.json",
+      "bytes": 101,
+      "checksum": "-3f66dd6b"
+    },
+    {
+      "path": "colony/cooperation_parameters.json",
+      "bytes": 190,
+      "checksum": "-5affc3d3"
+    },
+    {
+      "path": "experiments/training_config.json",
+      "bytes": 230,
+      "checksum": "-5958bbfd"
+    },
+    {
+      "path": "experiments/evaluation_results.json",
+      "bytes": 121,
+      "checksum": "2b052647"
+    },
+    {
+      "path": "experiments/metrics.json",
+      "bytes": 153,
+      "checksum": "527e300b"
+    },
+    {
+      "path": "experiments/seed.json",
+      "bytes": 41,
+      "checksum": "-1707f3c6"
+    },
+    {
+      "path": "provenance/model_provenance.json",
+      "bytes": 218,
+      "checksum": "-3314b980"
+    },
+    {
+      "path": "provenance/data_provenance.json",
+      "bytes": 161,
+      "checksum": "415f3a4c"
+    },
+    {
+      "path": "provenance/biological_sources.json",
+      "bytes": 524,
+      "checksum": "-afd679d"
+    },
+    {
+      "path": "provenance/software_versions.json",
+      "bytes": 125,
+      "checksum": "52182506"
+    },
+    {
+      "path": "biological_parameter_catalog.json",
+      "bytes": 5415,
+      "checksum": "-203d3922"
+    },
+    {
+      "path": "audit/model_audit_report.json",
+      "bytes": 14380,
+      "checksum": "-5a67c78a"
+    },
+    {
+      "path": "MODEL_CARD.md",
+      "bytes": 1961,
+      "checksum": "0f2b8791"
+    },
+    {
+      "path": "provenance/validation_matrix.json",
+      "bytes": 655,
+      "checksum": "5767be66"
+    }
+  ],
+  "parameterIndex": {
+    "brain": 14,
+    "neurons": 1408,
+    "synapses": 2048,
+    "learned": 308,
+    "memory": 12,
+    "sensors": 18,
+    "motor": 14,
+    "body": 22,
+    "behavior": 15,
+    "colony": 20,
+    "experiments": 16,
+    "provenance": 12,
+    "totalParameters": 3907
+  },
+  "trainingStatus": "INITIALIZED",
+  "experimentId": "FORAGE",
+  "randomSeed": 42,
+  "checksum": "86d3fc80",
+  "author": {
+    "name": "Nikhilesh H. Chavda",
+    "role": "Creator & Lead Architect",
+    "github": "https://github.com/Nik-2208",
+    "linkedin": "https://www.linkedin.com/in/nikhilesh-chavda-2b779533a/"
+  },
+  "scientificDisclaimer": "This package is a complete export of the parameters and state represented by the AntWire computational model. It is not a complete export of every parameter of a living biological ant. Biological systems contain many variables that are unknown, species-specific, context-dependent, or not represented by this computational model."
+}

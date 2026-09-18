@@ -1,0 +1,23 @@
+[
+  {
+    "feature": "Antennal Glomerular Tropotaxis",
+    "evidence": "Hart et al. (2023) Cell Reports",
+    "species": "Ooceraea biroi",
+    "fidelity": "LEVEL_2",
+    "status": "BIOLOGICALLY_INFORMED"
+  },
+  {
+    "feature": "Celestial Compass Ring Attractor",
+    "evidence": "Stone et al. (2017) Current Biology",
+    "species": "Cataglyphis fortis",
+    "fidelity": "LEVEL_2",
+    "status": "BIOLOGICALLY_CONSTRAINED"
+  },
+  {
+    "feature": "Mushroom Body Kenyon Cell Plasticity",
+    "evidence": "Heisenberg (2003) Nat Rev Neurosci",
+    "species": "Apis mellifera / Formica",
+    "fidelity": "LEVEL_2",
+    "status": "BIOLOGICALLY_INFORMED"
+  }
+]

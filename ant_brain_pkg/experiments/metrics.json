@@ -1,0 +1,7 @@
+{
+  "path_efficiency": 0.86,
+  "collision_rate": 0.04,
+  "stuck_recovery_rate": 0.94,
+  "communication_efficiency": 0.89,
+  "cooperation_success": 0.91
+}

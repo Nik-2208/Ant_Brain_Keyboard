@@ -1,0 +1,36 @@
+{
+  "events": {
+    "food_collected": {
+      "value": 10,
+      "type": "POSITIVE"
+    },
+    "nest_delivered": {
+      "value": 15,
+      "type": "POSITIVE"
+    },
+    "energy_expended": {
+      "value": -0.1,
+      "type": "NEGATIVE_STEP"
+    },
+    "predator_death": {
+      "value": -20,
+      "type": "NEGATIVE_TERMINAL"
+    },
+    "distance_penalty": {
+      "value": -0.05,
+      "type": "NEGATIVE_STEP"
+    }
+  },
+  "discount_factor": 0.95,
+  "scaling": "LINEAR_NORMALIZED",
+  "clipping": [
+    -50,
+    50
+  ],
+  "termination_conditions": [
+    "ENERGY_DEPLETED",
+    "PREDATOR_CAUGHT",
+    "STEP_TIMEOUT"
+  ],
+  "status": "COMPUTATIONAL"
+}

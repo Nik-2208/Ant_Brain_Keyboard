@@ -1,0 +1,10 @@
+{
+  "total_nodes": 128,
+  "total_edges": 256,
+  "mean_in_degree": "2.00",
+  "mean_out_degree": "2.00",
+  "sparsity": "0.0156",
+  "directed": true,
+  "weighted": true,
+  "status": "COMPUTATIONAL"
+}

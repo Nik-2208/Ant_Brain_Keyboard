@@ -1,0 +1,412 @@
+{
+  "regions": {
+    "ANTENNAL_LOBE": {
+      "id": "ANTENNAL_LOBE",
+      "name": "Antennal Lobe (AL)",
+      "anatomicalDivision": "HEAD_BRAIN",
+      "estimatedBiologicalNeuronCount": 600,
+      "simulatedNodeCount": 8,
+      "primaryFunction": "Glomerular odor processing, bilateral contrast sharpening via local interneurons.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "RECONSTRUCTED",
+      "scientificDescription": "The primary olfactory center in the insect deutocerebrum. Possesses spherical microglomeruli where ORN axons synapse onto PNs and LNs."
+    },
+    "MUSHROOM_BODY_CALYX": {
+      "id": "MUSHROOM_BODY_CALYX",
+      "name": "Mushroom Body Calyx (MB-CA)",
+      "anatomicalDivision": "HEAD_BRAIN",
+      "estimatedBiologicalNeuronCount": 15000,
+      "simulatedNodeCount": 16,
+      "primaryFunction": "Sensory convergence of PN olfactory axons onto Kenyon cell dendritic claws.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "RECONSTRUCTED",
+      "scientificDescription": "Dorsal neuropil receiving dense uniglomerular and multiglomerular projection neuron axons."
+    },
+    "MUSHROOM_BODY_PEDUNCLE": {
+      "id": "MUSHROOM_BODY_PEDUNCLE",
+      "name": "Mushroom Body Peduncle (MB-PED)",
+      "anatomicalDivision": "HEAD_BRAIN",
+      "estimatedBiologicalNeuronCount": 20000,
+      "simulatedNodeCount": 32,
+      "primaryFunction": "Parallel axonal transmission of sparse Kenyon Cell population activity.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "RECONSTRUCTED",
+      "scientificDescription": "Fascicle of parallel Kenyon cell axons traversing anteriorly toward the vertical and medial lobes."
+    },
+    "MUSHROOM_BODY_LOBES": {
+      "id": "MUSHROOM_BODY_LOBES",
+      "name": "Mushroom Body Output Lobes (MB-LOBES)",
+      "anatomicalDivision": "HEAD_BRAIN",
+      "estimatedBiologicalNeuronCount": 200,
+      "simulatedNodeCount": 6,
+      "primaryFunction": "Associative memory readout (MBONs) modulated by Dopamine (punishment) and Octopamine (reward).",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "RECONSTRUCTED",
+      "scientificDescription": "Divided into alpha/beta and gamma compartments where valence-specific MBONs and DANs/OANs intersect."
+    },
+    "CENTRAL_COMPLEX_EB": {
+      "id": "CENTRAL_COMPLEX_EB",
+      "name": "Ellipsoid Body / Central Body Lower (CX-EB)",
+      "anatomicalDivision": "HEAD_BRAIN",
+      "estimatedBiologicalNeuronCount": 120,
+      "simulatedNodeCount": 16,
+      "primaryFunction": "Internal celestial polarized light compass & 16-wedge angular heading ring attractor.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "RECONSTRUCTED",
+      "scientificDescription": "Toroidal/annular midline neuropil holding a persistent localized bump of neuronal activity encoding current heading orientation."
+    },
+    "CENTRAL_COMPLEX_PB": {
+      "id": "CENTRAL_COMPLEX_PB",
+      "name": "Protocerebral Bridge (CX-PB)",
+      "anatomicalDivision": "HEAD_BRAIN",
+      "estimatedBiologicalNeuronCount": 160,
+      "simulatedNodeCount": 16,
+      "primaryFunction": "Angular velocity integration and left/right optical flow calibration.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "RECONSTRUCTED",
+      "scientificDescription": "Handlebar-shaped dorsal midline neuropil computing directional steering differentials."
+    },
+    "CENTRAL_COMPLEX_FB": {
+      "id": "CENTRAL_COMPLEX_FB",
+      "name": "Fan-Shaped Body / Central Body Upper (CX-FB)",
+      "anatomicalDivision": "HEAD_BRAIN",
+      "estimatedBiologicalNeuronCount": 400,
+      "simulatedNodeCount": 16,
+      "primaryFunction": "Path integration accumulator (Odometer + Compass) storing Euclidean return home vectors.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "RECONSTRUCTED",
+      "scientificDescription": "Stratified modular neuropil maintaining translational step displacements relative to internal compass heading."
+    },
+    "CENTRAL_COMPLEX_NO": {
+      "id": "CENTRAL_COMPLEX_NO",
+      "name": "Noduli (CX-NO)",
+      "anatomicalDivision": "HEAD_BRAIN",
+      "estimatedBiologicalNeuronCount": 80,
+      "simulatedNodeCount": 4,
+      "primaryFunction": "Translational step odometer, mechanosensory stepping frequency input.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "RECONSTRUCTED",
+      "scientificDescription": "Paired ventral sub-neuropils encoding ground step frequency and optical flow speed."
+    },
+    "LATERAL_ACCESSORY_LOBE": {
+      "id": "LATERAL_ACCESSORY_LOBE",
+      "name": "Lateral Accessory Lobe (LAL)",
+      "anatomicalDivision": "HEAD_BRAIN",
+      "estimatedBiologicalNeuronCount": 150,
+      "simulatedNodeCount": 6,
+      "primaryFunction": "Premotor descending steering commands (flip-flop interneurons driving left/right motor bias).",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "INFERRED",
+      "scientificDescription": "Primary output hub of the Central Complex projecting descending commands to thoracic motor ganglia."
+    },
+    "SUBESOPHAGEAL_ZONE": {
+      "id": "SUBESOPHAGEAL_ZONE",
+      "name": "Subesophageal Zone (SEZ)",
+      "anatomicalDivision": "SUBCEREBRAL",
+      "estimatedBiologicalNeuronCount": 500,
+      "simulatedNodeCount": 6,
+      "primaryFunction": "Mandibular motor grasping, gustatory sugar/protein tasting, trophallaxis food exchange reflex.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "RECONSTRUCTED",
+      "scientificDescription": "Ventral ganglion controlling mouthparts, mandibles, and labial glands."
+    },
+    "OPTIC_LOBE": {
+      "id": "OPTIC_LOBE",
+      "name": "Optic Lobe (OL)",
+      "anatomicalDivision": "HEAD_BRAIN",
+      "estimatedBiologicalNeuronCount": 4000,
+      "simulatedNodeCount": 8,
+      "primaryFunction": "Visual obstacle avoidance, celestial polarized UV light detection, motion parallax.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "RECONSTRUCTED",
+      "scientificDescription": "Lamina, medulla, and lobula processing compound eye ommatidia inputs and dorsal rim area (DRA) polarization."
+    },
+    "VENTRAL_NERVE_CORD": {
+      "id": "VENTRAL_NERVE_CORD",
+      "name": "Ventral Nerve Cord (VNC)",
+      "anatomicalDivision": "VENTRAL_NERVE_CORD",
+      "estimatedBiologicalNeuronCount": 1200,
+      "simulatedNodeCount": 8,
+      "primaryFunction": "Ascending proprioceptive feedback and descending locomotor rhythm coordination.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "INFERRED",
+      "scientificDescription": "Paired axonal longitudinal connectives linking the subesophageal zone to the thoracic and abdominal ganglia."
+    },
+    "PROTHORACIC_GANGLION": {
+      "id": "PROTHORACIC_GANGLION",
+      "name": "Prothoracic Ganglion (T1 Ganglion)",
+      "anatomicalDivision": "THORACIC_GANGLIA",
+      "estimatedBiologicalNeuronCount": 800,
+      "simulatedNodeCount": 6,
+      "primaryFunction": "Front leg stepping, antennal grooming reflex, and tactile substrate probe.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "INFERRED",
+      "scientificDescription": "Segmental ganglion controlling T1 anterior legs and anterior body posture."
+    },
+    "MESOTHORACIC_GANGLION": {
+      "id": "MESOTHORACIC_GANGLION",
+      "name": "Mesothoracic Ganglion (T2 Ganglion)",
+      "anatomicalDivision": "THORACIC_GANGLIA",
+      "estimatedBiologicalNeuronCount": 800,
+      "simulatedNodeCount": 6,
+      "primaryFunction": "Middle leg tripodal coordination, stance phase support, and cargo weight bearing.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "INFERRED",
+      "scientificDescription": "Segmental ganglion coordinating middle pair of walking legs during alternating tripod locomotion."
+    },
+    "METATHORACIC_GANGLION": {
+      "id": "METATHORACIC_GANGLION",
+      "name": "Metathoracic Ganglion (T3 Ganglion)",
+      "anatomicalDivision": "THORACIC_GANGLIA",
+      "estimatedBiologicalNeuronCount": 900,
+      "simulatedNodeCount": 6,
+      "primaryFunction": "Hind leg propulsion, bridging anchor gripping, and jumping/climbing thrust.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "INFERRED",
+      "scientificDescription": "Segmental ganglion powering rear propulsion and tarsal grip strength during living bridge attachments."
+    },
+    "ABDOMINAL_GANGLIA": {
+      "id": "ABDOMINAL_GANGLIA",
+      "name": "Abdominal & Gaster Ganglia",
+      "anatomicalDivision": "ABDOMEN",
+      "estimatedBiologicalNeuronCount": 600,
+      "simulatedNodeCount": 4,
+      "primaryFunction": "Stridulatory organ vibration, Dufour trail pheromone gland deposition, and defensive posture.",
+      "provenanceStatus": "BIOLOGICAL_FACT",
+      "evidence": "INFERRED",
+      "scientificDescription": "Posterior chain of ganglia controlling gaster flexion, sting/acidopore, and stridulatory plectrum rubs."
+    }
+  },
+  "synthetic_atlas": [
+    {
+      "regionId": 0,
+      "systemId": "CHEMOSENSORY",
+      "name": "Left Antennal Lobe (AL-L)",
+      "code": "AL-L",
+      "ratio": 0.075,
+      "center3D": [
+        -0.75,
+        -0.45,
+        0.85
+      ],
+      "spread3D": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "colorHex": "#10b981",
+      "description": "Left chemosensory deutocerebrum processing odorant receptor antennal inputs."
+    },
+    {
+      "regionId": 1,
+      "systemId": "CHEMOSENSORY",
+      "name": "Right Antennal Lobe (AL-R)",
+      "code": "AL-R",
+      "ratio": 0.075,
+      "center3D": [
+        0.75,
+        -0.45,
+        0.85
+      ],
+      "spread3D": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "colorHex": "#10b981",
+      "description": "Right chemosensory deutocerebrum processing odorant receptor antennal inputs."
+    },
+    {
+      "regionId": 2,
+      "systemId": "VISUAL",
+      "name": "Left Optic Lobe (OL-L)",
+      "code": "OL-L",
+      "ratio": 0.075,
+      "center3D": [
+        -1.65,
+        0.15,
+        0.2
+      ],
+      "spread3D": [
+        0.35,
+        0.4,
+        0.35
+      ],
+      "colorHex": "#ec4899",
+      "description": "Left compound eye retinotopic processing, optic flow, and polarization vision."
+    },
+    {
+      "regionId": 3,
+      "systemId": "VISUAL",
+      "name": "Right Optic Lobe (OL-R)",
+      "code": "OL-R",
+      "ratio": 0.075,
+      "center3D": [
+        1.65,
+        0.15,
+        0.2
+      ],
+      "spread3D": [
+        0.35,
+        0.4,
+        0.35
+      ],
+      "colorHex": "#ec4899",
+      "description": "Right compound eye retinotopic processing, optic flow, and polarization vision."
+    },
+    {
+      "regionId": 4,
+      "systemId": "CENTRAL_INTEGRATION",
+      "name": "Central Complex (CX - EB/PB/FB)",
+      "code": "CX",
+      "ratio": 0.18,
+      "center3D": [
+        0,
+        0.15,
+        0.05
+      ],
+      "spread3D": [
+        0.45,
+        0.3,
+        0.3
+      ],
+      "colorHex": "#06b6d4",
+      "description": "16-wedge heading orientation ring attractor and Euclidean home-vector path integrator."
+    },
+    {
+      "regionId": 5,
+      "systemId": "ASSOCIATIVE_MEMORY",
+      "name": "Left Mushroom Body (MB-L)",
+      "code": "MB-L",
+      "ratio": 0.08,
+      "center3D": [
+        -0.9,
+        0.75,
+        -0.3
+      ],
+      "spread3D": [
+        0.35,
+        0.35,
+        0.35
+      ],
+      "colorHex": "#f59e0b",
+      "description": "Left high-dimensional associative olfactory-visual memory and conditioned valence."
+    },
+    {
+      "regionId": 6,
+      "systemId": "ASSOCIATIVE_MEMORY",
+      "name": "Right Mushroom Body (MB-R)",
+      "code": "MB-R",
+      "ratio": 0.08,
+      "center3D": [
+        0.9,
+        0.75,
+        -0.3
+      ],
+      "spread3D": [
+        0.35,
+        0.35,
+        0.35
+      ],
+      "colorHex": "#f59e0b",
+      "description": "Right high-dimensional associative olfactory-visual memory and conditioned valence."
+    },
+    {
+      "regionId": 7,
+      "systemId": "MOTOR_STEERING",
+      "name": "Subesophageal Zone (SEZ)",
+      "code": "SEZ",
+      "ratio": 0.08,
+      "center3D": [
+        0,
+        -0.85,
+        0.25
+      ],
+      "spread3D": [
+        0.3,
+        0.25,
+        0.3
+      ],
+      "colorHex": "#8b5cf6",
+      "description": "Gnathal premotor center controlling mandibular grasp, feeding, and forward thrust."
+    },
+    {
+      "regionId": 8,
+      "systemId": "MOTOR_STEERING",
+      "name": "Lateral Accessory Lobes (LAL)",
+      "code": "LAL",
+      "ratio": 0.08,
+      "center3D": [
+        0,
+        -0.25,
+        -0.45
+      ],
+      "spread3D": [
+        0.45,
+        0.25,
+        0.3
+      ],
+      "colorHex": "#a855f7",
+      "description": "Descending steering flip-flop network computing bilateral thoracic turn bias."
+    },
+    {
+      "regionId": 9,
+      "systemId": "SOCIAL_COMMUNICATION",
+      "name": "Social Recognition & Cuticular Hydrocarbon Zone",
+      "code": "SOC",
+      "ratio": 0.1,
+      "center3D": [
+        0,
+        -0.35,
+        0.5
+      ],
+      "spread3D": [
+        0.4,
+        0.3,
+        0.35
+      ],
+      "colorHex": "#14b8a6",
+      "description": "Nestmate recognition, trophallactic coordination, and trail recruitment processing."
+    },
+    {
+      "regionId": 10,
+      "systemId": "MOTIVATION_HOMEOSTASIS",
+      "name": "Protocerebral Motivation Hub",
+      "code": "MOTIV",
+      "ratio": 0.08,
+      "center3D": [
+        0,
+        0.45,
+        0.35
+      ],
+      "spread3D": [
+        0.35,
+        0.3,
+        0.3
+      ],
+      "colorHex": "#f97316",
+      "description": "Integrates metabolic energy reserves, hunger drive, and task demand priorities."
+    },
+    {
+      "regionId": 11,
+      "systemId": "NEUROMODULATORY",
+      "name": "Dopaminergic / Octopaminergic Modulatory Cluster",
+      "code": "MODUL",
+      "ratio": 0.02,
+      "center3D": [
+        0,
+        0,
+        0
+      ],
+      "spread3D": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "colorHex": "#e11d48",
+      "description": "Neuromodulatory neurons broadcasting reward prediction error (RPE) and arousal."
+    }
+  ],
+  "status": "BIOLOGICALLY_INSPIRED",
+  "notes": "Neuropil coordinate volumes derived from standard hymenopteran brain atlases."
+}

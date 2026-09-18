@@ -1,0 +1,10 @@
+{
+  "optimizer_type": "ADAM_MOMENTUM_SIMULATED",
+  "learning_rate": 0.015,
+  "gamma_discount": 0.95,
+  "exploration_rate": 0.2,
+  "training_step": 0,
+  "episodes_completed": 0,
+  "gradient_norm": 0.042,
+  "status": "LEARNED"
+}

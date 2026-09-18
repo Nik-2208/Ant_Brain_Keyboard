@@ -1,0 +1,26 @@
+{
+  "capacity": 64,
+  "learned_food_locations": [
+    {
+      "x": 12.5,
+      "y": -8,
+      "quality": 0.95,
+      "visits": 12
+    },
+    {
+      "x": -15,
+      "y": 14.2,
+      "quality": 0.82,
+      "visits": 7
+    }
+  ],
+  "learned_threat_zones": [
+    {
+      "x": 5,
+      "y": 22,
+      "danger_level": 0.85,
+      "last_seen": 450
+    }
+  ],
+  "status": "LEARNED"
+}

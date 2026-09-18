@@ -3,7 +3,7 @@ import random
 from typing import Dict, List, Any, Tuple, Union
 
 class KeyboardObservationAdapter:
-    """Converts raw keyboard environment state into the observation dictionary & array expected by ant_brain_model_v1_20260915_standard."""
+    """Converts raw keyboard environment state into the 14-channel observation dictionary expected by the AntWire .antbrain package."""
 
     @staticmethod
     def get_observation_dict(env_state: Dict[str, Any], noise_level: float = 0.0) -> Dict[str, float]:
@@ -75,10 +75,12 @@ class KeyboardObservationAdapter:
         ]
 
 class KeyboardActionAdapter:
-    """Maps output dict from ExecutableAntBrain.step() into kinematic control variables [throttle, turn]."""
+    """Maps output dict from ExecutableAntBrain.step() into kinematic control variables [throttle, turn, depFood, depHome]."""
 
     @staticmethod
     def process_action(brain_output: Dict[str, Any]) -> Tuple[float, float, float, float]:
         throttle = brain_output.get("speed_throttle", 0.5)
         turn = brain_output.get("steering_bias", 0.0)
-        return throttle, turn, 0.0, 0.0
+        dep_food = brain_output.get("deposit_food_trail", 0.0)
+        dep_home = brain_output.get("deposit_home_trail", 0.0)
+        return throttle, turn, dep_food, dep_home

@@ -4,21 +4,20 @@ import copy
 import sys
 from typing import Dict, Any, Tuple
 
-# Ensure ant_brain_model_v1_20260915_standard is in Python path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from ant_brain_model_v1_20260915_standard.run_model import load_model
+from ant_brain_loader import AntBrainPackage, ExecutableAntBrain
 
 class CheckpointManager:
-    """Manages saving, loading, and checkpointing for ant_brain_model_v1_20260915_standard."""
+    """Manages saving, loading, and checkpointing for the authoritative AntWire .antbrain package."""
 
     def __init__(self, config: Any):
         self.config = config
         self.checkpoints_dir = config.get_full_path(config.checkpoints_dir)
         os.makedirs(self.checkpoints_dir, exist_ok=True)
-        self.model_dir = config.get_full_path(config.model_dir)
+        self.model_file = config.get_full_path(config.model_file)
 
-    def load_original_model(self) -> Tuple[Dict[str, Any], list, list]:
-        return load_model(self.model_dir)
+    def load_original_package(self) -> AntBrainPackage:
+        return AntBrainPackage(self.model_file)
 
     def load_checkpoint(self, checkpoint_path: str) -> Dict[str, Any]:
         full_path = self.config.get_full_path(checkpoint_path)
@@ -30,18 +29,17 @@ class CheckpointManager:
 
     def save_checkpoint(
         self,
-        manifest: Dict[str, Any],
-        neurons: list,
-        synapses: list,
+        package: AntBrainPackage,
+        trainable_params: list,
         episode: int,
         curriculum_phase: int,
         metrics: Dict[str, Any],
         filename: str
     ) -> str:
         data = {
-            'manifest': copy.deepcopy(manifest),
-            'neurons': copy.deepcopy(neurons),
-            'synapses': copy.deepcopy(synapses),
+            'manifest': copy.deepcopy(package.manifest),
+            'architecture': copy.deepcopy(package.architecture),
+            'trainable_params': copy.deepcopy(trainable_params),
             'trainingStep': episode,
             'episodeCount': episode,
             'curriculumPhase': curriculum_phase,
@@ -54,17 +52,16 @@ class CheckpointManager:
 
     def save_final_policy(
         self,
-        manifest: Dict[str, Any],
-        neurons: list,
-        synapses: list,
+        package: AntBrainPackage,
+        trainable_params: list,
         episode: int,
         curriculum_phase: int,
         metrics: Dict[str, Any]
     ) -> str:
         data = {
-            'manifest': copy.deepcopy(manifest),
-            'neurons': copy.deepcopy(neurons),
-            'synapses': copy.deepcopy(synapses),
+            'manifest': copy.deepcopy(package.manifest),
+            'architecture': copy.deepcopy(package.architecture),
+            'trainable_params': copy.deepcopy(trainable_params),
             'trainingStep': episode,
             'episodeCount': episode,
             'curriculumPhase': curriculum_phase,

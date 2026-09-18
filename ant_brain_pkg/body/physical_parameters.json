@@ -1,0 +1,11 @@
+{
+  "metabolic_base_rate": 0.05,
+  "max_energy_storage": 100,
+  "starvation_threshold": 0,
+  "critical_temperature_celsius": [
+    5,
+    42
+  ],
+  "optimal_temperature_celsius": 25,
+  "status": "APPROXIMATION"
+}

@@ -1,0 +1,23 @@
+{
+  "input_cues": [
+    "foodLeft",
+    "foodCenter",
+    "foodRight",
+    "homeLeft",
+    "homeCenter",
+    "homeRight",
+    "foodOdorConcentration",
+    "nestOdorConcentration",
+    "obstacleCenter",
+    "predatorProximity",
+    "energy",
+    "hunger",
+    "carryingFoodAmount",
+    "threatAvoidance"
+  ],
+  "brain_entry_points": {
+    "food_odor": "AL_L / AL_R (Antennal Lobe Glomeruli)",
+    "polarization": "CX_PB (Protocerebral Bridge)",
+    "mechanosensation": "SEZ / VNC"
+  }
+}

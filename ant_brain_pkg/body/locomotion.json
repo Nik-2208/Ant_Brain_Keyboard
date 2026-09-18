@@ -1,0 +1,16 @@
+{
+  "gait": "ALTERNATING_TRIPOD",
+  "tripod_pairs": [
+    [
+      "L1",
+      "R2",
+      "L3"
+    ],
+    [
+      "R1",
+      "L2",
+      "R3"
+    ]
+  ],
+  "status": "BIOLOGICALLY_SUPPORTED"
+}
